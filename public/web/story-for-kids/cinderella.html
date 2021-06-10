@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Smart Kids | က႑မ်ား</title>
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="v3TwdJDYhw8dGeKkTzypt04ggz344PZWr1t3tlmg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description">
+    <meta name="author">
+    <meta name="tags">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../css/swiper.min.css" rel="stylesheet">
+    <link href="../css/all.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-datepicker.standalone.min.css" rel="stylesheet">
+    <link href="../css/select2.min.css" rel="stylesheet">
+    <link href="../jquery.scrollbar.min.css" rel="stylesheet">
+    <link href="../css/index.css@v=5.css" rel="stylesheet">
+    <link href="../css/custom.css@v=5.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84607448-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84607448-2');
+    </script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar sidebar-right py-4"><img class="d-table m-auto" src="../images/logo-white.png"
+                height="50px">
+            <nav class="navbar mt-4">
+                <ul class="navbar-nav">
+                    <!-- categories -->
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../all-categories.html">
+                            <div class="item-title">ကဏ္ဍများ</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../horoscope.html">
+                            <div class="item-title">ဗေဒင်</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../educational-videos.html">
+                            <div class="item-title">ပညာပေးရုပ်သံ</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../brain-teaser.html">
+                            <div class="item-title">ဉာဏ်စမ်း</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../song-for-kids.html">
+                            <div class="item-title">ကလေးသီချင်းများ</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../funny-games.html">
+                            <div class="item-title">ကစားကြမယ်</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../health.html">
+                            <div class="item-title">ကျန်းမာရေး</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../story-for-kids.html">
+                            <div class="item-title">ကလေးပုံပြင်များ</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../faq.html">
+                            <div class="item-title">မေးခွန်း နှင့် အဖြေများ</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="px-3 mt-4">
+                <a class="btn btn-outline-light btn-block text-left" href="../myprofile.html">
+                    <i class="fas fa-user mr-2"></i><span>ကလေး၏ကိုယ်ပိုင်အချက်အလက်များ</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="page">
+            <header class="row m-0 fixed-header top-menu bg-purple">
+                <div class="top-menu-left">
+                    <a class="top-menu-back active" href="../all-categories.html">
+                        <i class="fas fa-arrow-left"></i></a>
+                    <a class="top-menu-left-open" href="../faq.html">
+                        <i class="fas fa-info-circle"></i>
+                    </a>
+                </div>
+                <div class="top-menu-center"><a class="logo" href="cinderella.html">စင်ဒရဲလား</a></div>
+                <div class="top-menu-right">
+                    <a class="menu-search" href="javascript:void(0)"><i class="fas fa-search"></i></a>
+                    <a class="top-menu-close" href="cinderella.html#"><i class="fas fa-times"></i></a>
+                    <a class="top-menu-right-open active" href="cinderella.html#"><i class="fas fa-bars"></i></a>
+                </div>
+
+
+
+
+
+            </header>
+            <div class="page-content">
+                <style>
+                    .fav {
+                        color: #fcad04;
+                    }
+                </style>
+                <div class="page-video">
+                    <div class="text-center">
+                        <img class="img-responsive"
+                            src="../storage/articles/old/painel-cinderela-1-20-x-1-00m-cinderela.jpg">
+                    </div>
+                    <section class="border-bottom py-3" id="detail">
+                        <div class="container-fluid">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap">
+                                <div class="flex-1 mr-2">
+                                    <h1 class="h5 page-video__title mb-2 font-weight-bold">စင်ဒရဲလား</h1>
+                                    <h2 class="h6 page-video__sub-title mb-0"></h2>
+                                </div>
+                                <div class="page-video-buttons d-flex align-items-center ">
+                                    <a id="favoriteBtn"
+                                        class="favorite-btn page-video-buttons__item btn btn-light rounded-circle mr-2 active favorite-add"
+                                        href="http://my-smartkids.com/favorites/stories-for-kids/7">
+                                        <i class="far fa-star"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">စင်ဒရဲလား
+                                            အတော်ငယ်ငယ် ကလေးဘဝထဲက သူ့အမေဟာ သူမကို သူ့ထက် အသက်အများကြီး ကြီးတဲ့
+                                            ဖအေတူမအေကွဲမောင်နှမတွေနဲ့
+                                            သူ့အဖေရဲ့အုပ်ထိန်းမှုအောက်မှာချန်ထားပြီး ဆုံးပါးသွားခဲ့ပါတယ်။စင်ဒရဲလား
+                                            ရဲ့အဖေဟာ အိမ်ထောင်နှစ်ကြိမ်ပြုခဲ့ပြီး
+                                            သူ့အမေဟာ ဒုတိယဇနီးဖြစ်ခဲ့ပါတယ်။အခုတော့စင်ဒရဲလားရဲ့မောင်နှမ တွေဟာ သူမကို
+                                            မချစ်ကြသည့်အပြင်
+                                            အလွန်ကရုဏာမဲ့နေခဲ့ကြပါတယ်။ သူမကြီးပျင်းလာတဲ့အခါမှာ သူတို့ဟာ
+                                            အစေခံတစ်ယောက်အဖြစ် သူမကိုအလုပ်လုပ်စေခဲ့ပြီး
+                                            ကျောက်မီးသွေးများပင် ခွဲခိုင်းခဲ့လေသတဲ့။တကယ်တော့ &nbsp;Cinderella ဆိုတာဟာ
+                                            သူမရဲ့နာမည်အရင်းမဟုတ်ခဲ့ပါဘူး။ကျောက်မီးသွေး(cinder)ခွဲခြင်းကို
+                                            အကြောင်းပြုပြီး သူတို့က သူမကို စင်ဒရဲလားဟု လှောင်ပြောင်ခေါ်ဆိုခဲ့ကြတာ
+                                            ဖြစ်ပါတယ်။
+                                            သို့ပေမဲ့ အဲဒီနောက်ပိုင်းမှာတော့ သူမနာမည်အရင်းကို မေ့သွားကြသည်အထိ
+                                            အဲဒီနာမည်ပြောင်နဲ့ဘဲ
+                                            သူမကို လူအများသိခဲ့ကြပါတယ်။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">သူမဟာ
+                                            အလွန်သည်းခံတတ်တဲ့ မိန်းမကောင်းတစ်ဦး ဖြစ်တာကြောင့် ရက်စြက်ကမ်းကြုတ်တဲ့
+                                            သူမရဲ့အစ်မ
+                                            တွေကလွဲပြီး အားလုံးက သူမကို ချစ်ခင်နှစ်သက်ခဲ့ကြပါတယ်။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">စင်ဒရဲလား
+                                            အသက် (၇)နှစ်လောက်တုန်းက သူတို့နေနေကြတဲ့ တိုင်းပြည်ရဲ့ဘုရင်ဟာ
+                                            တိုင်းပြည်အတွင်းရှိ
+                                            အမျိုးသမီးအားလုံးအတွက် ကပွဲတစ်ခု စီစဉ်ပေးခဲ့ပါတယ်။ အခြားသူများနည်းတူ
+                                            စင်ဒရဲလားရဲ့
+                                            အစ်မတွေကို လည်း ဖိတ်ကြားခဲ့ပါတယ်။ ကပွဲသွားဖို့အတွက် စင်ဒရဲလားကို သူတို့
+                                            အဝတ်အစားတွေ
+                                            ပြင်ဆင်ခိုင်းခဲ့ပေမဲ့ စင်ဒရဲလားကို ကပွဲသွားခွင့်ပြုဖို့တော့ ဘယ်တုန်းကမှ
+                                            မတွေးခဲ့ပါဘူး။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">“အသင်တို့နဲ့အတူ
+                                            ကျွန်မကို ကပွဲခေါ်သွားမယ်လို့ ကျွန်မမျှော်လင့်တယ်” ဟု စင်ဒရဲလား
+                                            နူးညံ့သိမ်မွ့စွာဖြင့်
+                                            ပြောခဲ့လေ၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">“အော်….သေချာပေါက်
+                                            ခေါ်သွားမှာပေါ့” ဟု အစ်မအကြီးက မျက်နှာရွဲ့၍ အဖြေပေးပြီးနောက် “အဲဒီမှာ
+                                            ကျောက်မီးသွေးခွဲတဲ့
+                                            သူတစ်ယောက်အတွက် နေရာမရှိဘူး၊ အိမ်မှာနေပြီး နင့်အလုပ်ကို နင်လုပ်” ဟု ဆိုခဲ့၏။
+                                            <o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">သူတို့ထွက်သွားကြတဲ့အခါ
+                                            စင်ဒရဲလားဟာ စိတ်ထဲအလွန်ဝမ်းနည်းသွားခဲ့ပြီး နာကြည်းစွာ ထိုင်၍ ငိုကြွေးခဲ့
+                                            လေ၏။ သို့သော်ငြားလည်း
+                                            အစ်မတွေရဲ့ အကြင်နာမဲ့မှုကိုတွေးပြီး သူမ ဝမ်းနည်းစွာ ထိုင်ချလိုက်သည်နှင့်
+                                            ပန်းခြံထဲမှ
+                                            အသံတစ်ခုက သူမကို ခေါ်နေခဲ့ပါတယ်။ ဒါနဲ့ ပန်းခြံထဲ ဘယ်သူရှိနေသလဲကြည့်ဖို့ သူမ
+                                            အပြင်ထွက်
+                                            သွားခဲ့လေ၏။ အဲဒီမှာ ရှိနေခဲ့တာကတော့ သူမကြုံနေရတဲ့ အခက်အခဲကို ကူညီပေးမယ့်
+                                            ကောင်းမွန်သော
+                                            မှော်အစွမ်းရှိသည့် နတ်မိမယ်အိုတစ်ဦးဘဲ ဖြစ်ပါတယ်။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">“
+                                            မငိုပါနဲ့ စင်ဒရဲလား….သင်ဟာ ကြင်နာစိတ်ရှိတဲ့ မိန်းမရွယ်တစ်ဦးဖြစ်တာမို့
+                                            သင်လည်း ကပွဲကို
+                                            သွားရမှာပါ။ ငါ့ကို ရွှေဖရုံသီး ခပ်ကြီးကြီးတစ်လုံး ယူလာပေး” ဟု နတ်မိမယ်က
+                                            ဆိုခဲ့၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">သူမအား
+                                            ပြောသည့်အတိုင်း စင်ဒရဲလားနာခံခဲ့ပြီး နတ်မိမယ်က ရွှေဖရုံသီးကို သူမ၏
+                                            မှော်တုတ်တံဖြင့်ထိကာ
+                                            ခမ်းနားတဲ့မြင်းလှည်းတစ်ခုအဖြစ် ပြောင်းလဲသွားစေခဲ့ပါတယ်။ပြီးနောက်
+                                            စင်ဒရဲလားကို ကြွက်ထောင်ချောက်ဆီ
+                                            သွားပြီး သူမအား ကြွက်အကြီးတစ်ကောင် ယူလာပေးဖို့ ပြောခဲ့ပါတယ်။ စင်ဒရဲလားလည်း
+                                            သူ့အားပြောသည်ကို
+                                            နာခံခဲ့ပြီး မှော်တုတ်တံဖြင့် ကြွက်ကိုထိလိုက်တဲ့အခါမှာတော့ အဲဒီကြွက်ဟာ
+                                            ထက်မြက်တဲ့
+                                            မြင်းလှည်းသမား တစ်ဦးအဖြစ် ပြောင်းသွားခဲ့ပါတယ်။ ထို့နောက်
+                                            ကြွက်ပေါက်စနှစ်ကောင်ကို
+                                            အခိုင်းစေအမျိုးသားများအဖြစ် ပြောင်းလဲခဲ့ပြီး နှံကောင်လေးကောင်ကို
+                                            မြင်းဖြူများအဖြစ်
+                                            ပြောင်းလဲခဲ့ပါတယ်။ ပြီးနောက် စင်ဒရဲလားရဲ့ စုတ်ပြဲ နေတဲ့ အဝတ်အစားကို
+                                            နတ်မိမယ်ကြီး
+                                            ထိလိုက်တဲ့အခါမှာတော့ ဇာဖြင့် စက္ကူပုံကွန့် အလှဆင်ထားတဲ့ အလွန်
+                                            တန်ဖိုးကြီးသည့် ပိုးထည်ပွဲတက်ဂါဝန်အရှည်
+                                            ဖြစ်သွားခဲ့ပါတယ်။ စင်ဒရဲလားရဲ့ လက်တွေ၊ လည်ပင်းနဲ့သူ့ဆံပင် တွေထဲမှာ စိန်တွေ
+                                            လင်းလက်တောက်ပနေခဲ့ပါတယ်။
+                                            စင်ဒရဲလားရဲ့ ကြင်နာတဲ့ နတ်မိမယ်ကြီးက “ဒီလောက် ချစ်စရာကောင်းတဲ့
+                                            မိန်းကလေးမျိုး သူမတွေ့ဖူးပါလား”
+                                            ဟုတွေးနေခဲ့လေ၏။ သူမရဲ့ဟောင်းနွမ်းနေတဲ့ ဖိနပ်ဟာ ဆွဲဆောင်မှုအတိရှိပြီး
+                                            စိန်ကဲ့သို့
+                                            လင်းလင်းလက်လက် ဖန်သား ရှေ့ထိုးဖိနပ်တစ်ရံ ဖြစ်သွားလေတော့၏။<o:p></o:p></span>
+                                    </p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">“
+                                            အခု ကပွဲကို သွားပေတော့ ကလေးမရေ….ပျော်ပျော်နေပါ သို့သော် အဲဒီအခန်းထဲက
+                                            ၁၁နာရီမထိုးခင်
+                                            ထွက်လာဖို့တော့ သတိရှိပါ။ ၁၁နာရီထိုးလို့မှ မထွက်လာဘူးဆိုရင်တော့
+                                            သင့်အဝတ်အစားတွေဟာ
+                                            နဂိုအတိုင်း စုတ်ပြဲနေတဲ့ အဝတ်အစားတွေ ပြန်ဖြစ်သွားလိမ့်မယ်။
+                                            စိတ်ပျော်ရွှင်မှုကို ငါအလိုတူပေမဲ့
+                                            အပျော်လွန်ကျူးတာ ကိုတော့ ငါခွင့်မပြုဘူး…..ငါ့စကားကို နားထောင်ပြီး
+                                            မင်းရဲ့ကျေးဇူးသိတတ်မှုကို
+                                            ထုတ်ဖော်ပြသလိမ့်မယ်လို့ ငါ မျှော်လင့်တယ်” ဟု နတ်မိမယ်ကြီးက ဆိုခဲ့၏။<o:p>
+                                            </o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;"><br>
+                                            စင်ဒရဲလားလည်း နတ်မိမယ်ကြီးကိုနမ်းပြီး ကျေးဇူးတင်စကားဆိုခဲ့လေ၏။ ထို့နောက်
+                                            မြင်းလှည်းထဲဝင်ပြီး
+                                            အနောက်တွင် သူမ၏ အစေခံအမျိုးသားများ လိုက်ပါလျှက် ခမ်းခမ်းနားနားပုံစံဖြင့်
+                                            ထွက်ခွာသွားခဲ့လေ၏။
+                                            နတ်မိမယ်ကြီးလည်း သူမထွက်သွားသည့်အခါ နတ်ပြည်သို့ ပြန်သွားခဲ့လေ၏။<o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">ဘုရင့်နန်းတော်တွင်
+                                            စင်ဒရဲလားအား အထူးလေးစားစွာဖြင့် ကြိုဆိုခဲ့ကြလေ၏။ နန်းတော်၏ ရာထူးအကြီးဆုံး
+                                            အမှုထမ်းကပင်
+                                            သူမ၏မြင်းလှည်းနှင့် အဝတ်အစားကိုကြည့်ပြီး အလွန်ကြီးကျယ်မြင့်မြတ်တဲ့
+                                            အမျိုးသမီးတစ်ဦး
+                                            ဖြစ်ရမည်ဟုတွေးကာ သူမကိုဦးညွတ်နှုတ်ဆက်ပြီး ကပွဲခန်းမထဲ
+                                            ချက်ချင်းခေါ်ဆောင်သွားခဲ့လေတော့၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">လူတိုင်း
+                                            သူမကိုကြည့်ပြီး ဘယ်သူများဖြစ်မလဲလို့ အံ့အားသင့်နေခဲ့ကြသည်အထိ သူမ
+                                            အလွန်လှနေခဲ့ပါတယ်။
+                                            မင်းသားလေးဟာ သူမကိုသူနဲ့အတူကဖို့ တောင်းဆိုခဲ့ပြီး
+                                            အဲဒီနောက်မှာတော့ဘယ်သူနဲ့မှကဖို့
+                                            မလိုလားခဲ့ပါဘူး။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">သို့ပေမဲ့
+                                            သူမဟာ အချိန်မပြည့်ခင်အရင် ကပွဲမှ အနည်းငယ် စောထွက်ဖို့
+                                            အလျင်စလိုပြုလုပ်ခဲ့ပြီး သူ့အစ်မတွေ
+                                            အိမ်ပြန်မရောက်လာခင် အဝတ်အစားလဲဖို့ အချိန်ရခဲ့ပါတယ်။ သူတို့ ပြန်ရောက်ကြတဲ့အခါ
+                                            ကပွဲမှာ
+                                            လှပတဲ့ မင်းသမီးတစ်ယောက်ရှိနေခဲ့ပြီး မင်းသားလေးဟာ သူမနဲ့
+                                            အလွန်ပျော်နေခဲ့ကြောင်း စင်ဒရဲလားအား
+                                            ပြန်ပြော ကြ၏။ သူတို့ပြောနေတဲ့ အမျိုးသမီးဟာ စင်ဒရဲလားမှန်း
+                                            သူတို့မသိခဲ့ကြပါဘူး။ သူ့အစ်မတွေ
+                                            သူ့ရဲ့အလှအပနဲ့ တင့်တယ်မှုကို ချီးမွမ်းနေကြပြီး သူတို့တွေ့ခဲ့တဲ့မိန်းကလေးဟာ
+                                            တော်ဝင်မိန်းကလေးတစ်ယောက်မှန်းကျိန်းသေ
+                                            တယ်လို့ ပြောနေသည်ကိုကြားရခြင်းဟာ စင်ဒရဲလားအတွက် ရယ်စရာဖြစ်နေခဲ့လေ၏။<o:p>
+                                            </o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">မင်းသားလေးဟာ
+                                            သူ့ရဲ့လှပတဲ့ အဖော်ဘက်(စင်ဒရဲလား)ကို ရှာမတွေ့ခဲ့၊ ဘယ်သူကမှလည်း ကပွဲခန်းမထဲက
+                                            သူမထွက်သွားသည်ကို
+                                            မမြင်ခဲ့ကြသည့်အတွက် ညစာစားချိန်မှာ မင်းသားလေးဟာ အတော် စိတ်အလိုမကျ
+                                            ဖြစ်နေခဲ့ပါတယ်။
+                                            သို့သော်ငြားလည်း သူမကို နောက်တစ်ကြိမ်ထပ်တွေ့ရဖို့ဆိုတဲ့ မျှော်လင့်ချက်နဲ့
+                                            ဘုရင်ကြီးကို
+                                            နောက်ကပွဲတစ်ခု ထပ်ပြီးစီစဉ်ပေးဖို့ သူ နားသွင်းဖျောင်းဖျခဲ့ပါတယ်။
+                                            အဲ….ဒီတစ်ကြိမ်လည်း
+                                            အရင်အတိုင်း စင်ဒရဲလားအစ်မတွေ ကပွဲသို့ ထွက်သွားကြသည်နှင့် စင်ဒရဲလား၏
+                                            နတ်မိမယ်အိုကြီး
+                                            ရောက်လာခဲ့ပြန်လေ၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">“
+                                            သင်ဟာ အရင်တစ်ခေါက်တုန်းက အလွန်လိမ္မာပြီး စကားနားထောင်ခဲ့တဲ့အတွက် အခုထပ်ပြီး
+                                            ငါမင်းကို
+                                            အပြင်ထွက်ခွင့်ပေးမယ်” ဟု နတ်မိမယ်ကြီးက ကလေးမ(စင်ဒရဲလား)အား ဆိုခဲ့၏။<o:p>
+                                            </o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">နတ်မိမယ်ဟာ
+                                            ပထမ ကပွဲအပြီး နဂိုပုံစံတွေ ပြန်ဖြစ်သွားခဲ့ကြတဲ့ ကြွက်ကြီး၊
+                                            ကြွက်ပေါက်စတွေ၊နှံကောင်တွေနဲ့
+                                            ရွှေဖရုံသီးတွေကို ခမ်းနားတဲ့ မြင်းလှည်းနဲ့ အခြွေအရံတွေအဖြစ်
+                                            ပြန်ပြောင်းလိုက်ပြီး
+                                            စင်ဒရဲလားဟာလည်း နှင်းဆီရောင်ပိုးထည်နှင့် ပတ္တမြားတွေဝတ်ဆင်ပြီး
+                                            တော်ဝင်ကပွဲသို့ သွားခဲ့ပြန်လေ၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">မင်းသားလေးဟာ
+                                            သူမကိုတွေ့တာနဲ့ ကဖို့တောင်းဆိုခဲ့ပြီး အခြားဘယ်အဖော်နဲ့မှ တွဲမကခဲ့ပါဘူး။
+                                            သူတို့နှစ်ဦး
+                                            အတူကရင်း အကြင်နာမဲ့တဲ့ သူ့အစ်မတွေအနား ဖြတ်ကျော်သွားတဲ့အခါ သူတို့က
+                                            သူမရဲ့အဝတ်အစားကို
+                                            အားကျတဲ့ မျက်လုံးတွေနဲ့ ငေးနေခဲ့ကြသည်ကို လည်းကောင်း၊
+                                            သူမလိုကောင်းမွန်စွာဝတ်ဆင်၍
+                                            လှပနေဖို့ စိတ်ကူးနေကြသည်ကို လည်းကောင်း စင်ဒရဲလား သိနေခဲ့ပါတယ်။<o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">ပျော်ရွှင်မှုတွေအကြား
+                                            ရှိနေခဲ့သော်လည်း စင်ဒရဲလားဟာ နတ်မိမယ်ကြီးရဲ့ အမိန့်ကို သတိရှိနေခဲ့ပြီး
+                                            ၁၀နာရီခွဲ၌
+                                            အခန်းထဲမှထွက်ကာ အိမ်သို့ပြန်လာခဲ့လေ၏။ သူ့အစ်မတွေလည်း စင်ဒရဲလား
+                                            သူ့ရဲ့ဝတ်နေကျအဝတ်အစား
+                                            အဟောင်းအစုတ်လေးတွေ ဝတ်ဆင်ထားပြီး သူတို့အား အဝတ်အစားလဲပေးဖို့
+                                            စောင့်နေသည်ကိုသာ တွေ့ခဲ့ကြ
+                                            လေ၏။ ပြီးနောက် ယခင်အတိုင်း ဘယ်သူမှန်းမသိ သူတို့တွေ့ခဲ့တဲ့ မင်းသမီးလေး
+                                            ဘယ်လောက်လှကြောင်း၊
+                                            ဘယ်လို ကောင်းမွန်စွာ ဝတ်ဆင်ထားကြောင်း စင်ဒရဲလားအား ပြန်ပြောကြလေ၏။<o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">မင်းသားလေးဟာ
+                                            သူ့ရဲ့ လှပတဲ့မိန်းကလေး ရုတ်တရက် ပျောက်ကွယ်သွားမှုအပေါ် ပြန်၍
+                                            စိတ်တိုနေခဲ့ပြီး ခမ်းနားတဲ့
+                                            ပြည်လုံးကျွတ်ကပွဲတစ်ခု ပြုလုပ်ပေးရန် ဘုရင်ကြီးအား နောက်တစ်ကြိမ်ထပ်၍
+                                            နားသွင်းဖျောင်းဖျခဲ့
+                                            ပြန်လေ၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">“
+                                            ဟို အလှမယ်လေး ကပွဲမှာ ရှိနေမလားလို့ တွေးနေတာ….သူမဟာ
+                                            အလွန်စွဲမက်ဖွယ်ကောင်းပြီး လူတိုင်းကို
+                                            အကျည်းတန်သွားအောင် လုပ်ပစ်တာမို့ ငါတို့ အဝတ်အစားအသစ်တွေ ဝတ်သွားမှကိုရမယ်” ဟု
+                                            စင်ဒရဲလား၏
+                                            အစ်မများက သူမကို ပြောခဲ့၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">စင်ဒရဲလားလည်း
+                                            သူတို့ကို အဝတ်အစားဝတ်ဖို့ ကူညီပေးရင်း ပြုံးနေခဲ့ပါတယ်။ နတ်မိမယ်ကြီး သူမကို
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ကပွဲသွားခွင့် ပေးမယ်လို့
+                                            သူမတတ်အပ်သိနေခဲ့သည့်အတိုင်း
+                                            နတ်မိမယ်ကြီးကလည်း အချိန်ကိုက်ရောက်လာ ခဲ့ပြန်ပါတယ်။ စင်ဒရဲလား၏ နာခံမှုကို
+                                            ကျေနပ်နေခဲ့ပြီး
+                                            ဒီတစ်ကြိမ်မှာတော့ သူမကို အပြာရောင် ပိုးထည်နှင့် ပုလဲတွေ ဝင်ဆင်စေခဲ့ပါတယ်။
+                                            ပြီးနောက်
+                                            စင်ဒရဲလားလည်း ယခင်ပုံစံအတိုင်း ကပွဲသို့ သွားခဲ့လေတော့၏။<o:p></o:p></span>
+                                    </p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">မင်းသားလေးဟာ
+                                            စင်ဒရဲလားကို မျက်စိအောက်ကပင် အပျောက်မခံခဲ့ပါဘူး။ စင်ဒရဲလားကတော့ သူ့ကို
+                                            ချီးမွမ်း
+                                            မြှောက်ပင့်တဲ့ စကားတွေကိုကြားပြီး ဒီတစ်ကြိမ်မှာတော့ နည်းနည်းလေး
+                                            အကျင့်ပျက်နေခဲ့ပါတယ်။
+                                            သူမကိုယ် သူမ ပိုပြီးတွေးနေမိခဲ့ပြီး နတ်မိမယ်ကြီးကို သိပ်မစဉ်းစားမိခဲ့ပါဘူး။
+                                            ဒီလိုနဲ့
+                                            အချိန်တွေ ကုန်လာခဲ့ပြီး နာရီကို ကြည့်လိုက်မိချိန်မှာတော့ ၁၁ နာရီထိုးဖို့
+                                            &nbsp;၅မိနစ်သာ လိုတော့ကြောင်း သူမသိသွားလေတော့၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">သူမ
+                                            ချက်ချင်းပင် အခန်းထဲမှ အလျှင်အမြန် အပြင်ထွက်ပြီး တတ်နိုင်သမျှ မြန်မြန်
+                                            နန်းတော်တလျောက်
+                                            ပြေးထွက်ခဲ့လေ၏။ သို့သော်လည်း အဝင်ခန်းမဆီရောက်သည့်အခါ သူမရဲ့တန်ဖိုးကြီး
+                                            ဖန်သား ရှေ့ထိုးဖိနပ်
+                                            တစ်ဖက်ကို ဆုံးရှုံးခဲ့လေ၏။ ကျွတ်ကျန်ခဲ့သည့် ဖိနပ်ကိုကောက်ဖို့ မရပ်လိုက်ဘဲ
+                                            တံခါးဆီသာ
+                                            တစ်ဟုန်တိုး &nbsp;သူမ ဆက်သွားခဲ့လေ၏။ စိတ်မကောင်းစရာ…..အခုတော့
+                                            နာရီက ၁၁ နာရီ ထိုးသည့်အသံ ပေးခဲ့လေပြီ။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">၁၁နာရီ….ဘာမြင်းလှည်းမှ
+                                            သူမ မတွေ့တော့ပါဘူး။ ရွှေဖရုံသီး၊ ကြွက်ကြီး နှင့် ကြွက်ပေါက်စတွေကိုသာ သူမ
+                                            တွေ့ရပါတော့တယ်။
+                                            သူမ အဝတ်အစားတွေ နဂို အဟောင်းအစုတ်တွေအဖြစ် ပြောင်းခဲ့စဉ်မှာဘဲ ကြွက်တွေဟာ လည်း
+                                            သူမကိုတွေ့ပြီး
+                                            အဝေးကို ထွက်ပြေးသွားခဲ့ကြပါတယ်။ ဒီလိုနဲ့ ညအမှောင်ထဲဝယ် တစ်ယောက်တည်း အိမ်သို့
+                                            သူမ
+                                            ပြေးသွားခဲ့ရလေတော့၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">စင်ဒရဲလားကို
+                                            ထပ်၍လွဲချော်သွားတဲ့အခါ မင်းသားလေးဟာ အလွန် အံ့အားသင့်သွားပြီး
+                                            ကပွဲမှအပြင်ထွက်ကာ သူမအား
+                                            လိုက်ရှာခဲ့လေ၏။ အစေခံအားလုံးကို သူမေးခဲ့သော်လည်း ဘယ်သူကမှ သူမထွက်သွားတာကို
+                                            မမြင်ခဲ့ကြပါဘူး။
+                                            တံခါးစောင့်ကို မေးမြန်းကြည့်တဲ့အခါ တံခါးစောင့်က စုတ်ပြတ်စွာဝတ်ဆင်ထားတဲ့
+                                            သူဆင်းရဲ
+                                            မိန်းကလေးတစ်ဦးကလွဲပြီး ဘယ်သူမှ နန်းတော်ထဲက အပြင်ထွက်မလာဘူးဟု ပြောခဲ့လေ၏။
+                                            <o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">သို့သော်လည်း
+                                            စင်ဒရဲလားရဲ့ ဖန်ဖိနပ်လေးကို တွေ့မိခဲ့ခြင်းက မင်းသားလေးအဖို့ သ့ူရဲ့
+                                            လိုက်လံရှာဖွေခြင်း
+                                            အတွက် ဆုလာဘ်တစ်ခု ဖြစ်ခဲ့ပါတယ်။ထိုဖိနပ်ဟာ ဘယ်ကမှန်းမသိတဲ့
+                                            သူ့မင်းသမီးလေးဖိနပ် ဆိုတာကိုတော့
+                                            သူ ကောင်းကောင်းသိနေခဲ့ပါတယ်။ သူ စင်ဒရဲလားကို အလွန်ချစ်နေခဲ့တာဟာ အခုတော့
+                                            သူမကို လက်ထပ်ဖို့
+                                            ပြတ်ပြတ်သားသား ဆုံးဖြတ်စေခဲ့ပါပြီ။သူ့မင်းသမီးဖိနပ်လို ဖိနပ်သေးသေးတစ်ရံကို
+                                            အခြားဘယ်သူမှ
+                                            ဝတ်နိုင်မှာ မဟုတ်မှန်း သူသိနေခဲ့တဲ့အတွက် သံတော်ဆင့်တစ်ယောက်ကိုလွှတ်၍
+                                            နိုင်ငံအတွင်းက
+                                            အဲဒီဖန်ဖိနပ်ကိုစီးနိုင်တဲ့ ဘယ်မိန်းကလေးဖြစ်ဖြစ် သူ့ဇနီးဖြစ်ရလိမ့်မည်ဟု
+                                            ကြေငြာခဲ့လေ၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">မင်းသားလေးရဲ့
+                                            ကြင်ယာတော်ဖြစ်လိုတဲ့ ကျော်ကြားသူအမျိုးသမီးအားလုံး ထိုဖိနပ်ကိုစီးနိုင်ဖို့
+                                            ကြိုးစားခဲ့ကြပေမဲ့
+                                            မအောင်မြင်ခဲ့ကြပါဘူး။ စင်ဒရဲလားရဲ့ အစ်မတွေလည်း ကြိုးစားခဲ့ကြပြီး သူတို့လည်း
+                                            ဝတ်လို့မရခဲ့ကြပါဘူး။
+                                            အဲဒီနောက် စင်ဒရဲလားက သူစမ်းကြည့်နိုင်မလားဟု မေးခဲ့ရာ သူ့အစ်မတွေက သူ့ကို
+                                            ရယ်ခဲ့ကြလေ၏။
+                                            သို့ပေမဲ့ သူမ ဆန္ဒကိုကြားတဲ့အခါ မင်းသားလေးက သူမကို ဆင့်ခေါ်ခဲ့လေ၏။
+                                            စင်ဒရဲလားဟာ အလွန်သန့်ရှင်းသပ်ရပ်
+                                            သော်လည်း ဟောင်းနွမ်းနေတဲ့ သူမအဝတ်အစားကိုဝတ်ဆင်လျှက် အစ်မများနှင့်သွားပြီး
+                                            ဖိနပ်ကို
+                                            ချက်ချင်းစီးပြ ခဲ့လေ၏။ ထို့နောက် သူမအိပ်ထဲက ကျန်ဖိနပ်တစ်ဖက်ကိုထုတ်ပြီး
+                                            အခြားခြေတစ်ဖက်တွင်
+                                            ဝတ်ဆင်ပြခဲ့လေ၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">စင်ဒရဲလားကို
+                                            စတွေ့ကတည်းက ဒီသူဆင်းရဲမလေးဟာ သူနဲ့တွဲကခဲ့တဲ့ မိန်းမလှလေးနဲ့ အတော်တူပါလားလို့
+                                            တွေးနေခဲ့တဲ့
+                                            မင်းသားလေးလည်း အလွန် ဝမ်းမြောက်သွားလေ၏။ မင်းသားလေးဟာ စင်ဒရဲလားကို သူမရဲ့
+                                            ဇာတ်လမ်း
+                                            သူ့ကိုပြောပြဖို့ အလေးအနက် တောင်းဆိုခဲ့လေ၏။ သူမလည်း အလွန်ကျိုးနွံစွာဖြင့်
+                                            ပြောပြခဲ့ပြီး
+                                            အားလုံးလည်း အံ့သြကြီးစွာဖြင့် နားထောင်ခဲ့ကြလေ၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">သူမ၏
+                                            ဇာတ်လမ်းအဆုံးသတ်သွားသည်နှင့် နတ်မိမယ်ကြီး ရုတ်တရက် အခန်းထဲသို့ ဝင်လာခဲ့ပြီး
+                                            စင်ဒရဲလား၏
+                                            လက်ကို မင်းသားလေး၏ လက်ထဲထည့်ကာ…..<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">“ဒီကလေးမလေးကို
+                                            သင့်ဇနီးမယားအဖြစ် ယူလိုက်ပါ မင်းသားလေး…သူမဟာ ကောင်းမွန်တယ်၊
+                                            ခန္တီတရားရှိပြီး&nbsp; မတရားမှုအား သိမ်သိမ်မွေ့မွေ့နဲ့ ဘယ်လို
+                                            အကြံပြုတင်ပြရမလဲဆိုတာကို
+                                            သိပြီးဖြစ်တဲ့အတွက် တရားမျှတစွာနဲ့ ဘယ်လိုအုပ်ချုပ်ရမလဲ သူမ သိပါလိမ့်မယ်” ဟု
+                                            ဆိုခဲ့၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    </p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">ဒီလိုနဲ့
+                                            စင်ဒရဲလားဟာ မင်းသားလေးကို တရားဝင် ခမ်းခမ်းနားနား လက်ထပ်ခဲ့ပြီး
+                                            အလွန်ပျော်ရွှင်စွာဖြင့်
+                                            သူတို့နှစ်ဦး အတူနေသွားခဲ့ကြလေ၏။ သူမဟာ သူ့အစ်မတွေကို ခွင့်လွှတ်ပေးခဲ့ပြီး
+                                            အလွန်ကြင်နာစွာဖြင့်
+                                            သူတို့အား အမြဲဆက်ဆံခဲ့လေ၏။ စင်ဒရဲလားရဲ့ ဖန်ဖိနပ်ကို ရှာတွေ့ခဲ့ခြင်းဟာ
+                                            မင်းသားလေးအဖို့တော့
+                                            သူဝမ်းသာနေရတဲ့ အဓိက အကြောင်းအရင်းပါဘဲ။<o:p></o:p></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <script type="text/javascript"
+                        src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b06d274b98b9384"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.scrollbar.min.js"></script>
+    <script src="../js/amplitude.min.js"></script>
+    <script src="../js/index.js@v=5"></script>
+    <script src="../js/custom.js@v=5"></script>
+</body>
+
+</html>

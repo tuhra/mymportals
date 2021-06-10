@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['namespace' => 'Frontend', 'middleware' => 'signature'], function() {
+	Route::get('/', 'WebController@index');
+	Route::get('/singleHE', 'WebController@singleHE');
+	Route::get('msisdn', 'WebController@msisdn');
+	Route::post('msisdn', 'WebController@postMsisdn');
+	Route::get('otp', 'WebController@otp');
+	Route::post('otp', 'WebController@postOtp');
+	Route::get('resentotp', 'WebController@resentOtp');
+
+	Route::get('checkstatus', 'MptCallbackController@notify');
+	Route::get('callback', 'MptCallbackController@callback');
+});

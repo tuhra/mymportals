@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Smart Kids | က႑မ်ား</title>
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="v3TwdJDYhw8dGeKkTzypt04ggz344PZWr1t3tlmg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description">
+    <meta name="author">
+    <meta name="tags">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../css/swiper.min.css" rel="stylesheet">
+    <link href="../css/all.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-datepicker.standalone.min.css" rel="stylesheet">
+    <link href="../css/select2.min.css" rel="stylesheet">
+    <link href="../jquery.scrollbar.min.css" rel="stylesheet">
+    <link href="../css/index.css@v=5.css" rel="stylesheet">
+    <link href="../css/custom.css@v=5.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84607448-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84607448-2');
+    </script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar sidebar-right py-4"><img class="d-table m-auto" src="../images/logo-white.png"
+                height="50px">
+            <nav class="navbar mt-4">
+                <ul class="navbar-nav">
+                    <!-- categories -->
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../all-categories.html">
+                            <div class="item-title">ကဏ္ဍများ</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../horoscope.html">
+                            <div class="item-title">ဗေဒင်</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../educational-videos.html">
+                            <div class="item-title">ပညာပေးရုပ်သံ</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../brain-teaser.html">
+                            <div class="item-title">ဉာဏ်စမ်း</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../song-for-kids.html">
+                            <div class="item-title">ကလေးသီချင်းများ</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../funny-games.html">
+                            <div class="item-title">ကစားကြမယ်</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../health.html">
+                            <div class="item-title">ကျန်းမာရေး</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../story-for-kids.html">
+                            <div class="item-title">ကလေးပုံပြင်များ</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../faq.html">
+                            <div class="item-title">မေးခွန်း နှင့် အဖြေများ</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="px-3 mt-4">
+                <a class="btn btn-outline-light btn-block text-left" href="../myprofile.html">
+                    <i class="fas fa-user mr-2"></i><span>ကလေး၏ကိုယ်ပိုင်အချက်အလက်များ</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="page">
+            <header class="row m-0 fixed-header top-menu bg-purple">
+                <div class="top-menu-left">
+                    <a class="top-menu-back active" href="../all-categories.html">
+                        <i class="fas fa-arrow-left"></i></a>
+                    <a class="top-menu-left-open" href="../faq.html">
+                        <i class="fas fa-info-circle"></i>
+                    </a>
+                </div>
+                <div class="top-menu-center"><a class="logo" href="children-and-broken-bones.html">ကလေးများနှင့်
+                        အရိုးကျိုးခြင်း</a></div>
+                <div class="top-menu-right">
+                    <a class="menu-search" href="javascript:void(0)"><i class="fas fa-search"></i></a>
+                    <a class="top-menu-close" href="children-and-broken-bones.html#"><i class="fas fa-times"></i></a>
+                    <a class="top-menu-right-open active" href="children-and-broken-bones.html#"><i
+                            class="fas fa-bars"></i></a>
+                </div>
+
+
+
+
+
+            </header>
+            <div class="page-content">
+                <style>
+                    .fav {
+                        color: #fcad04;
+                    }
+                </style>
+                <div class="page-video">
+                    <div class="text-center">
+                        <img class="img-responsive" src="../storage/articles/old/healthy-kid3.jpg">
+                    </div>
+                    <section class="border-bottom py-3" id="detail">
+                        <div class="container-fluid">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap">
+                                <div class="flex-1 mr-2">
+                                    <h1 class="h5 page-video__title mb-2 font-weight-bold">ကလေးများနှင့် အရိုးကျိုးခြင်း
+                                    </h1>
+                                    <h2 class="h6 page-video__sub-title mb-0"></h2>
+                                </div>
+                                <div class="page-video-buttons d-flex align-items-center ">
+                                    <a id="favoriteBtn"
+                                        class="favorite-btn page-video-buttons__item btn btn-light rounded-circle mr-2 active favorite-add"
+                                        href="http://my-smartkids.com/favorites/health/30">
+                                        <i class="far fa-star"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;"><b>က ျွန် တော ် / က ျွန် မ ကေ လး
+                                                        အရိုး တစ် ချေ ာင်း ကျ ိုး သွား သလား ဆိုတာကို ဘယ် လို လုပ် ေ ြ
+                                                        ပာန ိုင် မလဲ ??</b></font>
+                                            </font>
+                                            <o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">အရိုး အက် ြ ခင်း (kırılması)
+                                                    ဆိုတဲ့ စကား လုံး အ သုံး က အ လွန် ဆိုး ရွား သ ည့ ် ဟန် ပေါက် ကောင်း
+                                                    ပေါက် ပေ မဲ့ အ မှန် တော့ အရိုး ကျ ိုး ြ ခင်း (kırık kemik) အ တွက် အ
+                                                    သုံး ြ ပု တဲ့ အြ ခား နာ မည် တစ် ခု ပါဘဲ. </font>
+                                                <font style="vertical-align: inherit;">သ င့ ် ကိုယ် ပိုင် ကေ လး ဘဝနဲ 4
+                                                    ပတ် သက် ြ ပီး သင် မှတ် မိေ ကာင်း မှတ် မိေ နန ိုင် တဲ့ အ တိုင်း ဘဲ
+                                                    အရိုး ကျ ိုး ြ ခင်း ဟာ အေ တာ ် လေး ကို အြ ဖစ် မျ ား ပါ တယ်. </font>
+                                                <font style="vertical-align: inherit;">တ ကယ် တော့ အရိုး ကျ ိုး ြ ခင်း ဟာ
+                                                    ေ ြ ခာက်န ှ စ ် အောက် အ ရွယ် ကေ လး တွေ မှာ စ တု တ္ထေ ြ မာက် အြ ဖစ်
+                                                    မျ ား ဆုံး အနာ တ ရြ ဖစ် မှု ပါဘဲ. </font>
+                                                <font style="vertical-align: inherit;">အရိုး ကျ ိုး ြ ခင်း ဟာ ဤ အ ရွယ်
+                                                    အုပ် စု အ တွင်း ြ ပုတ် ကျ ရာ မှ အမျ ား ဆုံး ြ ဖစ် ြ ပီး အဆိုး ရွား
+                                                    ဆုံး သော အရိုး ကျ ိုး ြ ခင်း ြ ဖစ် စဉ် တွေ ကေ တာ့ ယာဉ် တိုက် မှု တွေ
+                                                    က တစ် ဆ င့ ် အမျ ား ဆုံး ြ ဖစ် ြ က ပါ တယ်.</font>
+                                            </font>
+                                            <o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><b><span lang="EN-US"
+                                                style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">အရိုး ကျ ိုး ြ ခင်း န ှ င့ ်
+                                                        သက် ဆိုင် သ ည့ ် ပုံ စံ အမျ ိုး အစား မျ ား</font>
+                                                </font>
+                                                <o:p></o:p>
+                                            </span></b></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">လူ ငယ် အမျ ားစု မှာ ağaç kırığı
+                                                    သို 4 မ ဟုတ် Torus Kırılma လို 4 ခေ ါ် တဲ့ အရိုး ကျ ိုး ြ ခင်း ပုံ
+                                                    စံန ှ စ ်မ ျ ိုး ကို တွေ </font>
+                                                <font style="vertical-align: inherit;">4 ရပါ တယ်. </font>
+                                                <font style="vertical-align: inherit;">Ağaç kırığı ဆိုတာ ကေ တာ့ သစ်
+                                                    စိမ်း ကဲ့သို 4 အရိုး ကွေး ြ ပီး တစ် ဖက် တည်း တွင် ကျ ိုး ြ ခင်း ြ
+                                                    ဖစ် ြ ပီး </font>
+                                                <font style="vertical-align: inherit;">Torus Kırılma ကေ တာ့ အရိုး ဟာ
+                                                    လိမ် ကွေး ြ ပီး အား နည်း သွား သော ် လည်း လုံး လုံး လျ ား လျ ား ကျ
+                                                    ိုး ြ ခင်း မ ဟုတ် ပါဘူး </font>
+                                                <font style="vertical-align: inherit;">. </font>
+                                                <font style="vertical-align: inherit;">Viraj Kırılma ဆိုတာ ကေ တာ့ အရိုး
+                                                    မကျ ိုး ဘဲ ကွေး သွား ြ ခင်း ကို ရည် ညွှ န ် း ြ ပီး </font>
+                                            </font>&nbsp; <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">ဒီ ပုံ စံ ဟာ လူ ငယ် မျ ား အ ြ ကား
+                                                    န ှို င ် း စာ ြ က ည့ ် မယ် ဆို ရင် အြ ဖစ် မျ ား ပါ တယ်. </font>
+                                                <font style="vertical-align: inherit;">Komple Kırılma ဆိုတာ ကေ တာ့ အရိုး
+                                                    တစ် ချေ ာင်း လုံး အ စ အ ဆုံး ကျ ိုး သွား ြ ခင်း ကို ဆိုလို ြ ပီး ကေ
+                                                    လး ငယ် တွေ မှာ လည်း ဒီလို အရိုး ကျ ိုး ြ ခင်း မျ ိုး ကို တွေ </font>
+                                                <font style="vertical-align: inherit;">4 ရပါ တယ်.</font>
+                                            </font>
+                                            <o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">သ င့ ် ကေ လး ရဲ 5 အရိုး တွေ ဟာ ြ
+                                                    ကီး ထွား ဆဲ ြ ဖစ် တာေ ြ ကာ င့ ် အ ရွယ် ရောက် ြ ပီး သူေ တွ မှာ မေ တွ
+                                                    4 ရတဲ့ နောက် ထပ် အရိုး ကျ ိုး ြ ခင်း ပုံ စံ တစ် မျ ိုး ပါ သူ 4 အ ဖို
+                                                    4 ခံစား ရန ိုင် ချေ ရှိ ပါ တယ်. </font>
+                                                <font style="vertical-align: inherit;">ဒါ ဟာေ တာ့ အရိုး ၏ အ စွန်း မျ ား
+                                                    ရှိ အရိုး ဆက် လက် ြ ကီး ထွား မှု အ တွက် ထိန်း ချ ုပ် အ လုပ် လုပ်
+                                                    ဆောင် ပေး သ ည့ ် ဖွံ ြ ဖိုး ဆဲ တစ် ရှု း ဧ ရိ ယာမျ ား ထိ ခိုက် အနာ တ
+                                                    ရြ ဖစ် ြ ခင်း ပါဘဲ. </font>
+                                                <font style="vertical-align: inherit;">အရိုး ၏ ယင်း အ စိတ် အ ပိုင်း ကျ
+                                                    ိုး ြ ပီး နောက် အချ ိုး ကျ မှန် ကန် စွာ ြ ပန် လည် ကောင်း မွန် လာ ြ
+                                                    ခင်း မ ရှိ ပါ က ယင်း အရိုး ဟာ စောင်း. ြ ကီး ထွား ြ ခင်း သို 4 မ ဟုတ်
+                                                    ခန ္ဓာ ကိုယ် ရှိ အြ ခား အရိုး မျ ား ထက် နေ ှ း ကွေး. ဖွံ 4 ြ ဖိုး ြ
+                                                    ခင်း တို 4 ြ ဖစ်န ိုင် ပေ သည်. </font>
+                                                <font style="vertical-align: inherit;">ကံ ဆိုး သ ည့ ် အချ က ် မှာ ထိ
+                                                    ခိုက် အနာ တ ရြ ဖစ် ြ ပီး တစ်န ှ စ ် (သို 4) တစ်န ှ စ ် ကျေ ာ ် သည်
+                                                    အထိ ယင်း အရိုး ၏ ြ ကီး ထွား မှု န ှ င့ ် ပတ် သက် သ ည့ ် သက် ရောက်
+                                                    မှု ကို မြ မင်န ိုင် ြ ခင်း ပါဘဲ. </font>
+                                                <font style="vertical-align: inherit;">သို 4 ြ ဖစ်. ထိုသို 4 သော အရိုး
+                                                    ကျ ိုး ြ ခင်း ြ ဖစ် စဉ် မျ ား န ှ င့ ် ပတ် သက် ြ ပီး နည်း လမ်း မကျ
+                                                    သော ဖွံ 4 ြ ဖိုး မှု မ ရှိေ စ ဖို 4 (12) လ မှ (18) လ အထိ ကေ လး
+                                                    အထူးကု ၏ ညွန် ြ ကား ချ က ် အ တိုင်း ဂရု တ စိုက် ြ ပု မူေ ဆာင် ရွက် ရ
+                                                    မှာ ြ ဖစ် ပါ တယ်.</font>
+                                            </font>
+                                            <o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">ဤသို 4 ဖွံ ြ ဖိုး ဆဲ တစ် ရှု း ဧ
+                                                    ရိ ယာမျ ား အား ထိ ခိုက် အနာ တ ရြ ဖစ် မှု ပါ ဝင် သ ည့ ် အရိုး ကျ ိုး
+                                                    ြ ခင်း ြ ဖစ် စဉ် မျ ား ၌ နောင် ြ ဖစ် လာ မ ည့ ် အရိုး ြ ကီး ထွား ြ
+                                                    ခင်း ဆိုင် ရာ ြ ပ သ နာမျ ား ၏ အန ္တ ရာယ် ကို လှေ ျ ာ့ ချ ရန် တစ် ခါ
+                                                    တစ် ရံ ခွဲ စိတ် ကုသ မှု </font>
+                                            </font>&nbsp; <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">ြ ပု လုပ် ဖို 4 လို အပ် ပါ တယ်.
+                                                </font>
+                                                <font style="vertical-align: inherit;">တံေ တာင် ဆစ် အနား မှာ ြ ဖစ် တဲ့
+                                                    အရိုး ကျ ိုး ြ ခင်း တွေ ဟာ မ ြ ကာ ခဏ ကွေး သွား သ ည့ ် အေ န အ ထား တစ်
+                                                    ခုကို ြ ဖစ် စေ ရင်း ပုံ မှန် မ ဟုတ် သ ည့ ် ပုံ စံ ြ ဖ င့ ် လက်
+                                                    မောင်း ကို သက် သာ သွား စေ တတ် ပါ တယ် </font>
+                                                <font style="vertical-align: inherit;">. </font>
+                                                <font style="vertical-align: inherit;">ဤ အန ္တ ရာယ် ကို လှေ ျ ာ့ ချ ဖို
+                                                </font>
+                                                <font style="vertical-align: inherit;">4 အ တွက် ယခုလို အေ ြ ခ အေ န အေ တာ
+                                                    ်မ ျ ား မျ ား မှာ ခွဲ စိတ် ကုသ မှု လို အပ် ပါ တယ် </font>
+                                                <font style="vertical-align: inherit;">. </font>
+                                                <font style="vertical-align: inherit;">တံေ တာင် ဆစ် အနီး အရိုး ကျ ိုး ြ
+                                                    ခင်း မျ ား ရှိ သ ည့ ် ကေ လး မျ ား အား အရိုး အထူးကု တစ် ဦး ဆီ ညွှ န ်
+                                                    ပေး န ိုင် ပါ တယ် </font>
+                                                <font style="vertical-align: inherit;">.</font>
+                                            </font>
+                                            <o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">အရိုး ကျ ိုး ြ ခင်း ကို ကျ ိုး
+                                                    ပဲ့ သွား သ ည့ ် အရိုး အ စွန်း မျ ား နေ ရာ အ တိုင်း ရှိေ န က
+                                                    “değiştirmemiş” န ှ င့ ် အရိုး အ စွန်း မျ ား ကွဲ ကွာ ပုံပျ က ် ြ ပီး
+                                                    နေ ရာ အ တိုင်း မ ရှိေ တာ့ ပါ က “yerinden” ဟူ. လည်း အမျ ိုး အစား ခွဲန
+                                                    ိုင် ပါ တယ်. </font>
+                                                <font style="vertical-align: inherit;">“Açık Kırılma” Com Com Com
+                                                    “Bileşik Kırık” မှာ အရိုး ဟာ အေ ရြ ပား ထဲ မှ အြ ပင် သို့ ထိုး ထွက်
+                                                    မှ တယ်။ </font>
+                                                <font style="vertical-align: inherit;">Closed ရြ ပား ဟာ နဂို ပုံ စံ အ
+                                                    တိုင်း မပျ ဆို ရင် တော့ ဒါဟာ “Kapalı Kırılma” ပါ။</font>
+                                            </font>
+                                            <o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><b><span lang="EN-US"
+                                                style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">အရိုး ကျ ိုး ြ ခင်န ှ င့ က ်
+                                                        ြ ပ သေ င်္က တမျ ား န ှ င့ ် ရော ဂါ န ှ င့ ် ရော ဂါ လ က ှ ် ် ဂါ
+                                                        ား က ှ င့ ်</font>
+                                                </font>
+                                                <o:p></o:p>
+                                            </span></b></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">ဘယ် အချ ိန် မှာ အရိုး ကျ ိုး
+                                                    သလဲဆိုတာ ကို ေ ြ ပာ ဖို 4 ဆိုတာ အြ မဲ တမ်း တော့ မ လွယ် ကူ လှ ပါဘူး.
+                                                </font>
+                                                <font style="vertical-align: inherit;">အထူး သြ ဖ င့ ် သ င့ ် ကေ လး ဟာ သူ
+                                                    ဘာ ကို ခံစား နေ ရ တယ် ဆိုတာ ထုတ် ေ ြ ပာ ဖို 4 အ လွန် ငယ် လွန်း နေ
+                                                    တဲ့ အ ခါမျ ိုး မှာ တစ် ကယ် ကို မ လွယ် ပါဘူး. </font>
+                                                <font style="vertical-align: inherit;">အြ မဲ လို လို အရိုး ကျ ိုး သ ည့ ်
+                                                    အခါ ရောင် ရမ်း နြေ ခင်း ကို သင် တွေ 4 ရပါ လိ မ့ ် မယ်. </font>
+                                                <font style="vertical-align: inherit;">ြ ပီး တော့ ကေ လး ဟာ ပီး အနာ တ ရြ
+                                                    ဖစ် ထားတဲ့ ေ ြ တ၊၊ </font>
+                                                <font style="vertical-align: inherit;">လက် ကို မ လှု ပ ် ရှား န ိုင် တာ
+                                                    (သို 4) မ လှု ပ ် ရှား ချ င ် တာမျ ိုး ရှိ ပါ လိ မ့ ် မယ်. </font>
+                                                <font style="vertical-align: inherit;">သို 4 သော ် ြ ငား လည်း ကေ လး ေ ြ
+                                                    ခေ ထာက် လှု ပ ် ရှား န ိုင် သည် ကို ြ က ည့ ် ရုံ ြ ဖ င့ ် အရိုး မကျ
+                                                    ိုး ဘူး ဟု လည်း အေ ြ ခ အေ န တိုင်း အ တွက် မ ဆိုန ိုင် ပါဘူး. </font>
+                                                <font style="vertical-align: inherit;">မည် သ ည့ ် အချ ိန် မ ဆို အရိုး ကျ
+                                                    ိုး တာ ြ ဖစ်န ိုင် တယ် လို 4 သင် ယူဆ ပါ က သ င့ ် ကေ လး အထူးကု အား ချ
+                                                    က်ခ ျ င ် း အ သိေ ပး အေ ြ ကာင်း ြ ကား ပါ.</font>
+                                            </font>
+                                            <o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><b><span lang="EN-US"
+                                                style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">အိမ် တွင်း ကု ထုံး</font>
+                                                </font>
+                                                <o:p></o:p>
+                                            </span></b></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">င့ ် ကေ သ လး ကို </font>
+                                            </font><b> </b>
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">ကေ လး အထူး ကုေ ဆး ခန်း, </font>
+                                                <font style="vertical-align: inherit;">အေ ရး ပေ ါ် ခန်း (သို 4) အေ ရး ပေ
+                                                    ါ်ေ ဆး ကုသ မှု စင် တာ ဆီ မေ ခ ါ် သွား မီ အလျ င ် ဒဏ် ရာ ကို မ လို
+                                                    အပ် တဲ့ လှု ပ ် ရှား မှု မ ရှိေ စ ရန် လက် တလော လွယ် လွယ် ကူ ကူ ရန
+                                                    ိုင် မ ယ့ ် သိုင်း စရာ တစ် ခု ခု </font>
+                                                <font style="vertical-align: inherit;">(သို 4) လိပ် ထား သော သ တင်း စာ,
+                                                </font>
+                                                <font style="vertical-align: inherit;">မ ဂ္ဂ ဇင်း တစ် ခု ခုကို ြ ကိုး
+                                                    သိုင်း တစ် ခု အြ ဖစ် အ သုံး ြ ပု ပါ </font>
+                                                <font style="vertical-align: inherit;">.</font>
+                                            </font>
+                                            <o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">ဆရာ ဝန်န ှ င့ ် အ ရင် မ တိုင် ပင်
+                                                    ဘဲ ကေ လး အား တစ် ခု ခုေ သာက် သုံး စေ ဖို 4 သော ် 4 င ် း, </font>
+                                                <font style="vertical-align: inherit;">နာကျ င ် မှု သက် သာေ စ င့ သော ် ်
+                                                    ၄ င ် း၊ </font>
+                                                <font style="vertical-align: inherit;">ပါး စပ် ထဲ ဘာ ကို မှ မ ထ ည့ ် ပေး
+                                                    ပါ နဲ့။ </font>
+                                                <font style="vertical-align: inherit;">သ င့ ် ကေ လး ဟာ နည်း နည်း ပို ြ
+                                                    ကီး တဲ့ အ ရွယ် ြ ဖစ် မယ် ဆို ရင် တော့ အေး ြ မ တဲ့ ပု ဝါ တစ် ထည် သို
+                                                    4 မ ဟုတ် ရေ ခဲ ထုပ် တစ် ထုပ် (soğuk paket) ကို ဒဏ် ရာ ရ သ ည့ ် နေ ရာ
+                                                    အေ ပ ါ် တင် ြ ပီး နာကျ င ် မှု ကို လျေ ာ့ နည်း သွား စေ ဖို 4 အ သုံး
+                                                    ြ ပုန ိုင် ပါ တယ်. </font>
+                                                <font style="vertical-align: inherit;">အေ အး ဓါတ် လွန် ကဲ မှု ဟာ မွေး
+                                                    ကင်း စ အ ရွယ် ကေ လး မျ ား န ှ င့ ် လမ်း လှေ ျ ာက် တတ် စ ကေ လး မျ ား
+                                                    ၏ န ူး ညံ့ သ ည့ ် အေ ရြ ပား ကို အနာတရ ြ ဖစ် စေန ိုင် တာေ ြ ကာ င့ ်
+                                                    ယင်း အ ရွယ် ကေ လး မျ ား အ တွက် တော့ ရေ ခဲ ကို အ သုံး မြ ပု ပါ နဲ 4.
+                                                </font>
+                                            </font>
+                                            <o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">သ င့ ် ကေ လး ေ ြ ခေ ထာက် ကျ ိုး
+                                                    သွား တယ် ဆိုပါစို 4 .... သူ 4 ကို သင် ကိုယ် တိုင် ရွှေ 5 ဖို 4 မ ြ
+                                                    ကိုး စား ပါ နဲ 4. </font>
+                                                <font style="vertical-align: inherit;">လူနာ တင် ယာဉ် ခေ ါ်ြ ပီး ကေ လး ၏
+                                                    သယ် ယူ ပို 4 ဆောင် ရေး ကို ဆေး ဘက် အ ကူမျ ား အား ြ ကီး ြ ကပ် ညွှ န ်
+                                                    ြ ကား စေ ရင်း ကေ လး ကို ြ ဖစ်န ိုင် သ မှ ျ သက် တော င့ ် သက် သာ ရှိေ
+                                                    အာင် ြ ပု လုပ် ပေး ပါ.</font>
+                                            </font>
+                                            <o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><b><span lang="EN-US"
+                                                style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">ဆေး ရုံေ ဆး ခန်း သုံး ကု ထုံး
+                                                    </font>
+                                                </font>
+                                                <o:p></o:p>
+                                            </span></b></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">အရိုး ကျ ိုး မူ ကို စမ်း သပ် ြ
+                                                    ပီး နောက် ထိ ခိုက် မှု ပမာဏကို ဆုံး ြ ဖတ် သိ ရှိ ရန် ဆရာ ဝန် က ဓါတ်
+                                                    မှန် ရိုက် ဖို 4 ညွှ န ် ြ ကား ပါ လိ မ့ ် မယ်. </font>
+                                                <font style="vertical-align: inherit;">အရိုး ၏ ဖွံ ြ ဖိုး ဆဲ တစ် ရှု း ဧ
+                                                    ရိ ယာမျ ား အား ထိ ခိုက် သွား သည် (သို 4) အရိုး မျ ား နေ ရာ လွဲ သွား
+                                                    သည် ဟု ဆရာ ဝန် က ယူဆ ပါ က အရိုး န ှ င့ ် သက် ဆိုင် သော အ ြ ကံ ဉာဏ်
+                                                    ရယူ မှု တစ် ခု လို အပ် ပါ လိ မ့ ် မယ်.</font>
+                                            </font>
+                                            <o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">ကေ လး တွေ ရဲ 5 အရိုး ဟာ အလျ င ်
+                                                    အြ မန် ြ ပန် လည် သက် သာ ကောင်း မွန်န ိုင် တာေ ြ ကာ င့ ် အမျ ား စုေ
+                                                    သာ အေ သး အ မွှ ား အရိုး ကျ ိုး ြ ခင်း မျ ား အ တွက် ကျေ ာက် ပတ် တီး,
+                                                </font>
+                                                <font style="vertical-align: inherit;">ရေ စို ခံ ကျေ ာက် ပတ် တီး (သို 4)
+                                                    တစ် ခါ တစ် ရံ အရိုး ကို လှု ပ ် ရှား မှု မ ရှိေ အာင် ထိန်း ပေး မ ည့
+                                                    ် အြ ပား လေး တစ် ြ ပား စ သည် တို 4 သာ လို အပ် ပေ သည်. </font>
+                                                <font style="vertical-align: inherit;">ကျ ိုး သွား သ ည့ ် အရိုး ပုံ မှန်
+                                                    နေ ရာ မှာ မ ရှိ ဘဲ နေ ရာေ ရွ 5 သွား သ ည့ ် Olmuş Kırılma တစ် ခု အ
+                                                    တွက် အရိုး ခွဲ စိတ် ဆရာ ဝန် အေ န နဲ 5 အရိုး တွေ ကို ပုံ မှန် နေ ရာ ြ
+                                                    ပန် ြ ဖစ် ဖို 4 လုပ် ယူ ရပါ လိ မ့ ် မယ်. </font>
+                                                <font style="vertical-align: inherit;">ဒါ ကိုေ တာ့ ခွဲ စိတ် ဆရာ ဝန် က
+                                                    Kapalı Azaltma ဟုေ ခ ါ် သ ည့ ် နည်း ြ ဖ င့ ် ခန ္ဓာ ကိုယ် ၏ အ စိတ် အ
+                                                    ပိုင်း အ လိုက် အ သုံး ြ ပု သ ည့ ် မေ့ ဆေး, </font>
+                                                <font style="vertical-align: inherit;">ထုံေ ဆး (သို့) ယေ ဘုယျ မေ့ ဆေး၊
+                                                </font>
+                                                <font style="vertical-align: inherit;">ထုံေ ဆး မျ ားကို သုံး. အရိုး မျ
+                                                    ား ေ ြ ဖာ င့ ် တန်း သွား သည် အထိ ြ ကွက် သား မျ ား အေ ပ ါ် လက် ြ ဖ င့
+                                                    ် ဖိ. ြ ပန် လည် လုပ် ယူ ပါ သည်. </font>
+                                                <font style="vertical-align: inherit;">ထို 4 နောက် ကျေ ာက် ပတ် တီး တစ်
+                                                    ခု စည်း ပေး ပါ သည်. </font>
+                                                <font style="vertical-align: inherit;">Açık Azaltma ဆို သည် မှာ ခွဲ စိတ်
+                                                    ခန်း တစ် ခု အ တွင်း ဆောင် ရွက် ရ သ ည့ ် ခွဲ စိတ် မှု န ှ င့ ် သက်
+                                                    ဆိုင် သော လုပ် ငန်း စဉ် တစ် ခု ြ ဖစ် ပါ သည်. </font>
+                                                <font style="vertical-align: inherit;">Red့ သော ် လည်း ဒီ Açık Azaltma
+                                                    ကို</font>
+                                            </font>
+                                            <o:p></o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <o:p>&nbsp;</o:p>
+                                        </span></p>
+                                    <p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    </p>
+                                    <p class="MsoNormal"><span lang="EN-US"
+                                            style="font-family:&quot;Zawgyi-One&quot;,&quot;sans-serif&quot;">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">ကျ ိုး သွား သ ည့ ် အရိုး မျ ားကို
+                                                    ခွဲ စိတ် </font>
+                                                <font style="vertical-align: inherit;">. တစ် တန်း တည်း ြ ဖစ် အောင် ြ ပန်
+                                                    ထား ြ ပီး နောက် အရိုး သက် သာ ကောင်း မွန် သွား သည် အထိ ကျေ ာက် ပတ်
+                                                    တီး တစ် ခုကို အ သုံး ြ ပု ပါ လိ မ့ ် မယ် </font>
+                                                <font style="vertical-align: inherit;">. </font>
+                                                <font style="vertical-align: inherit;">ကေ လး မျ ား ၏ အရိုး ြ ပန် လည် သက်
+                                                    သာ ရန် ြ ကာချ ိန် မှာ ကေ လး ၏ အ သက် အ ရွယ် ကို လိုက် </font>
+                                                <font style="vertical-align: inherit;">. အ ရွယ် ရောက် သူ တစ် ဦး ၏ အရိုး
+                                                    ြ ပန် လည် ကောင်း မွန် ရန် လို အပ် သ ည့ ် အချ ိန် ၏ တ ဝက် </font>
+                                                <font style="vertical-align: inherit;">(သို 4) ယင်း ထက် ပင် နည်း ပေ သည်.
+                                                </font>
+                                                <font style="vertical-align: inherit;">ကောင်း တဲ့ အချ က ် ကေ တာ့ ကေ လး
+                                                    တွေ ရဲ </font>
+                                                <font style="vertical-align: inherit;">5 အရိုး ဟာ ကျ ိုး သွား ြ ပီး သ ည့
+                                                    ် အခါ တစ် ေ ြ ဖာ င့ ် တည်း အတိ အကျ ြ ပန် ြ ဖစ် ဖို </font>
+                                                <font style="vertical-align: inherit;">4 မလိုပါဘူး. အ နည်း နဲ 4 အမျ ား
+                                                    နေ ရာ မှန် မှာ ရှိေ န သ. အရိုး ြ ကီး ထွား လာတာ နဲ </font>
+                                                <font style="vertical-align: inherit;">4 အ မှ ျ ပုံ စံ အ သစ် ြ ပန် ြ ဖစ်
+                                                    ပေ ါ် လာပါ တယ် </font>
+                                                <font style="vertical-align: inherit;">. အရိုး အေ ြ ခ အေ န တိုး တက် ေ ြ
+                                                    ပာင်း လဲ နေ စဉ် အ တွင်း အရိုး တွေ တစ် ေ ြ ဖာ င့ ် တည်း အချ ိုး ကျ
+                                                    စွာ ရှိေ နေ စ ရန် ကေ လး အထူးကု က </font>
+                                            </font>&nbsp; <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">အချ ိန် အ ပိုင်း အြ ခား အ လိုက်
+                                                    ဓါတ် မှန် ရိုက် ဖို 4 သ င့ ် ကို ညွှ န </font>
+                                                <font style="vertical-align: inherit;">် ြ ကား ကောင်း ညွှ န ် ြ ကား န
+                                                    ိုင် ပေ သည် </font>
+                                                <font style="vertical-align: inherit;">.</font>
+                                            </font>
+                                            <o:p></o:p>
+                                        </span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <script type="text/javascript"
+                        src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b06d274b98b9384"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.scrollbar.min.js"></script>
+    <script src="../js/amplitude.min.js"></script>
+    <script src="../js/index.js@v=5"></script>
+    <script src="../js/custom.js@v=5"></script>
+</body>
+
+</html>

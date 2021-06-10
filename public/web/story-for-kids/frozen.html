@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Smart Kids | က႑မ်ား</title>
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="v3TwdJDYhw8dGeKkTzypt04ggz344PZWr1t3tlmg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description">
+    <meta name="author">
+    <meta name="tags">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../css/swiper.min.css" rel="stylesheet">
+    <link href="../css/all.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-datepicker.standalone.min.css" rel="stylesheet">
+    <link href="../css/select2.min.css" rel="stylesheet">
+    <link href="../jquery.scrollbar.min.css" rel="stylesheet">
+    <link href="../css/index.css@v=5.css" rel="stylesheet">
+    <link href="../css/custom.css@v=5.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84607448-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84607448-2');
+    </script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar sidebar-right py-4"><img class="d-table m-auto" src="../images/logo-white.png"
+                height="50px">
+            <nav class="navbar mt-4">
+                <ul class="navbar-nav">
+                    <!-- categories -->
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../all-categories.html">
+                            <div class="item-title">ကဏ္ဍများ</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../horoscope.html">
+                            <div class="item-title">ဗေဒင်</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../educational-videos.html">
+                            <div class="item-title">ပညာပေးရုပ်သံ</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../brain-teaser.html">
+                            <div class="item-title">ဉာဏ်စမ်း</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../song-for-kids.html">
+                            <div class="item-title">ကလေးသီချင်းများ</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../funny-games.html">
+                            <div class="item-title">ကစားကြမယ်</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../health.html">
+                            <div class="item-title">ကျန်းမာရေး</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../story-for-kids.html">
+                            <div class="item-title">ကလေးပုံပြင်များ</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-close" href="../faq.html">
+                            <div class="item-title">မေးခွန်း နှင့် အဖြေများ</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="px-3 mt-4">
+                <a class="btn btn-outline-light btn-block text-left" href="../myprofile.html">
+                    <i class="fas fa-user mr-2"></i><span>ကလေး၏ကိုယ်ပိုင်အချက်အလက်များ</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="page">
+            <header class="row m-0 fixed-header top-menu bg-purple">
+                <div class="top-menu-left">
+                    <a class="top-menu-back active" href="../all-categories.html">
+                        <i class="fas fa-arrow-left"></i></a>
+                    <a class="top-menu-left-open" href="../faq.html">
+                        <i class="fas fa-info-circle"></i>
+                    </a>
+                </div>
+                <div class="top-menu-center"><a class="logo" href="frozen.html">အေးခဲသွားသော ဇာတ်လမ်း</a></div>
+                <div class="top-menu-right">
+                    <a class="menu-search" href="javascript:void(0)"><i class="fas fa-search"></i></a>
+                    <a class="top-menu-close" href="frozen.html#"><i class="fas fa-times"></i></a>
+                    <a class="top-menu-right-open active" href="frozen.html#"><i class="fas fa-bars"></i></a>
+                </div>
+
+
+
+
+
+            </header>
+            <div class="page-content">
+                <style>
+                    .fav {
+                        color: #fcad04;
+                    }
+                </style>
+                <div class="page-video">
+                    <div class="text-center">
+                        <img class="img-responsive" src="../storage/articles/old/frozen&#32;(1).jpg">
+                    </div>
+                    <section class="border-bottom py-3" id="detail">
+                        <div class="container-fluid">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap">
+                                <div class="flex-1 mr-2">
+                                    <h1 class="h5 page-video__title mb-2 font-weight-bold">အေးခဲသွားသော ဇာတ်လမ်း</h1>
+                                    <h2 class="h6 page-video__sub-title mb-0"></h2>
+                                </div>
+                                <div class="page-video-buttons d-flex align-items-center ">
+                                    <a id="favoriteBtn"
+                                        class="favorite-btn page-video-buttons__item btn btn-light rounded-circle mr-2 active favorite-add"
+                                        href="http://my-smartkids.com/favorites/stories-for-kids/3">
+                                        <i class="far fa-star"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">သင့်
+                                            ကလေးက သင့်ကို ညတိုင်း ပုံပြောပြဖို့ ပူစာပါသလား? ကျွန်မ ကလေးကတော့ ကျွန်မကို
+                                            ညတိုင်း
+                                            ပူစာပါ တယ်။ ညတိုင်း ပုံပြင်တွေ ထွင်လုံးလုပ်ပြီးပြောနေရတာ ပင်ပန်းနေခဲ့ပြီမို့
+                                            နောက်ကို
+                                            ဦးနှောက်မချောက်ရအောင် ရှည်လျားတဲ့ ကလေးထိန်း နေ့တစ်နေ့ နောက်ပိုင်းမှာ
+                                            ဒါလေးကို ကျွန်မ
+                                            ချရေးခဲ့ပါတယ်။ သင့်အတွက် အသုံးဝင် မယ်ဆို…….ဒီပုံပြင်လေးကို ဖတ်ပြီး
+                                            သူတို့လေးတွေအတွက်
+                                            မှတ်ထားလိုက်ပါအုံး။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">ဟိုးရှေးရှေးတုန်းက……အန်နာ
+                                            နဲ့ အလ်ဆာ ဆိုတဲ့ မင်းသမီးလေးနှစ်ယောက် ရှိခဲ့သတဲ့။ သူတို့ နှစ်ဦးဟာ ညီအစ်မတွေ
+                                            ဖြစ်ကြသလို
+                                            အရင်းနှီးဆုံး သူငယ်ချင်းတွေလည်း ဖြစ်ခဲ့ကြပါတယ်။အလ်ဆာဟာ မှော်ရေခဲအစွမ်း 
+                                            တွေနဲ့ မွေးဖွားလာခဲ့ပြီး သူတိုညီအစ်မနှစ်ဦးဟာ
+                                            နှင်းတွေနဲ့ လူပုံတည်ဆောက်ရတာ၊ အလ်ဆာ ပြုလုပ်တဲ့ ရေခဲ တွေနဲ့ ဆော့ကစားရတာကို
+                                            နှစ်သက်ခဲ့ကြပါတယ်။တစ်နေ့တော့
+                                            ဆော့ကစားနေတုန်း အလ်ဆာ ချော်လဲသွားပြီး အန်နာရဲ့ ဦးခေါင်းကို မှော်ရေခဲနဲ့
+                                            မတော်တဆ
+                                            ပစ်မိသွားခဲ့ပါတယ်။ အန်နာဟာ အလွန်အေးဆက်သွားခဲ့ပြီး
+                                            တဖြည်းဖြည်းနဲ့အားလျော့လာခဲ့ပါတယ်။ဒါနဲ့သူတို့မိဘတွေဟာ
+                                            တောင်တွေ၊ဂူတွေထဲက ကိုယ်ပိုင်မှော်အစွမ်း တွေရှိကြတဲ့ သက်ရှိသတ္တဝါတွေဆီ သူမကို
+                                            ခေါ်ဆောင်သွားခဲ့ပါတယ်။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">ထို
+                                            မှော်စွမ်းအားရှင်တွေဟာ အန်နာ၏ ဦးခေါင်းထဲက ရေခဲကို
+                                            ဖယ်ထုတ်နိုင်ခဲ့ပါတယ်။သို့သော်လည်း
+                                            သူတို့ဟာ အလ်ဆာရဲ့ မှော်အစွမ်းနဲ့ ပတ်သတ်တဲ့ မှတ်ဉာဏ်ကိုပါ ရေခဲနဲ့အတူ
+                                            တစ်ခါတည်း ဖယ်ထုတ်ခဲ့ရပါတယ်။
+                                            ဒါ့ကြောင့် အန်နာဟာ ဘာဖြစ်ခဲ့သလဲဆိုတာကို မမှတ်မိသလို အလ်ဆာမှာ
+                                            မှော်အစွမ်းရှိတယ် ဆိုတာကိုလည်း
+                                            လုံးဝ မမှတ်မိခဲ့ပါဘူး။အလ်ဆာ၏ လျှို့ဝှက်ချက်ကို ဖုံးဖိထားဖို့ ဘုရင်ကြီးနှင့်
+                                            ဘုရင်မဟာ
+                                            ရဲတိုက် အဝင်တံခါးမ ကြီးကို ပိတ်ကာ ရဲတိုက်အတွင်း ဝင်ထွက်သွားလာသူများကို
+                                            ကန့်သတ်ခဲ့ကြပါတယ်။
+                                            အလ်ဆာဟာ သူ့ ညီမကို ယခုလို နောက်ထပ် မနာကျင်စေလိုတာကြောင့် အန်နာနဲ့
+                                            အပြင်ထွက်မကစားတော့ဘဲ
+                                            သူ့အခန်းထဲမှာသာ သူ နေခဲ့ပါတယ်။ ဒါဟာ အန်နာ့ကို အလွန်ဝမ်းနည်း၊
+                                            အထီးကျန်သွားစေခဲ့ပါတယ်။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">အန်နာဟာ
+                                            အလ်ဆာကို အပြင်ထွက် ကစားလာရန် ဆက်လက်ကြိုးစားခဲ့ပါတယ်။ သို့သော်လည်း အလ်ဆာ့
+                                            ပါဝါတွေဟာ
+                                            ပိုမို အားကောင်းလာနေပြီး သူ့ကြောင့် သူ့ညီမကို မထိခိုက်စေလိုတာကြောင့်
+                                            အခန်းထဲမှာသာ
+                                            သူမ နေနေခဲ့ပါတယ်။ ဘုရင်ကြီးနှင့် ဘုရင်မ ပင်လယ်ထဲ မုန်တိုင်းတစ်ခုကြောင့်
+                                            ပျောက်ဆုံးသွားခဲ့သည့်တိုင်
+                                            အလ်ဆာ အပြင်သို့ မထွက်လာခဲ့ချေ။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">နှစ်တွေအတော်
+                                            ကြာသွားပြီး အလ်ဆာကို အဲရန်ဒဲလ်၏ ဘုရင်မအဖြစ် သရဖူဆောင်းပေးရမဲ့
+                                            အချိန်ရောက်ရှိနေ ခဲ့ပါပြီ။
+                                            အခမ်းအနားကို ပြည်သူတွေတက်ရောက်နိုင်ရန် ရဲတိုက်အား တစ်ရက်တည်းအတွက်သာ
+                                            ဖွင့်ထားပေးခဲ့
+                                            ပါတယ်။ အခမ်းအနားအပြီး ကပွဲခန်းမထဲမှာ ပါတီအကြီးကြီးတစ်ခု ရှိခဲ့ပါတယ်။
+                                            အဲဒီပါတီပွဲမှာမှ
+                                            သူတို့ညီအစ်မ နှစ်ယောက် နှစ်ပေါင်းများစွာကြာပြီး ပထမဆုံး
+                                            စကားပြန်ပြောဖြစ်ခဲ့ကြပါတယ်။
+                                            အန်နာဟာ မြို့ရိုးတံခါးကြီး   ဖွင့်ထားပြီး
+                                            သူ့ညီမအား ပြန်ရရှိတာကို အတော်လေး နှစ်သက်နေခဲ့ပါတယ်။ ကပွဲမှာ အန်နာဟာ
+                                            ဆွဲဆောင်မှုရှိပြီး
+                                            ခန့်ငြားတဲ့ တောင်ပိုင်းကျွန်းစုရဲ့ မင်းသားလေး ဟန်းစ် နဲ့ တွေ့ဆုံဖြစ်ခဲ့ပြီး
+                                            မင်းသားလေးဟာလည်း
+                                            အန်နာ့ကို အလွန်နှစ်သက်ပုံ ပေါ်နေခဲ့ပါတယ်။ ဟန်းစ် အန်နာ့ကို
+                                            လက်ထပ်ခွင့်တောင်းခဲ့ပြီး
+                                            အန်နာလည်း လက်ထပ်မည် ဟု ပြန်ဖြေခဲ့၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">အန်နာဟာ
+                                            သူ့ လက်ထပ်ထိန်းမြားမှုအတွက် ကောင်းချီးပေးဖို့ အလ်ဆာ့အား တောင်းဆိုခဲ့သည်။
+                                            သို့ပေမဲ့
+                                            အလ်ဆာ ကတော့ “ ခုမှတွေ့တဲ့ သူတစ်ယောက်ကို နင်လက်ထပ်လို့ မရဘူး” ဟု ဆိုကာ
+                                            ငြင်းခဲ့လေ၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">ညီအစ်မနှစ်ယောက် ငြင်းခုံနေတုန်း အလ်ဆာဟာ သူ့စိတ်ခံစားချက်တွေကို
+                                            မထိန်းနိုင်ဘဲ ဖြစ်ခဲ့လေ၏။ သူမ စိတ်တိုသွားခဲ့ချိန်မှာတော့
+                                            မှော်အစွမ်းကို ထိန်းချုပ်ရန် ပိုမိုခက်ခဲသွားခဲ့ပြီး သူ့လက်တွေထဲမှ ရေခဲကို
+                                            ကပွဲ ခန်းမကြီး၏
+                                            ကြမ်းပြင်ပေါ်သို့ ပစ်ချခဲ့လေ၏။ အဲဒီလိုနဲ့ လူတိုင်း သူမရဲ့လျှို့ဝှက်ချက်ကို
+                                            သိသွားခဲ့ကြပါတယ်။
+                                            သူမလည်း စိုးရိမ်ကြောက်ရွံ့ပြီး တောင်တန်းတွေဆီ ပြေးထွက်သွားခဲ့လေတယ်။ သူမရဲ့
+                                            စိုးရိမ်ထိတ်လန့်မှုဟာ
+                                            နွေခေါင်ခေါင်ဖြစ်ရမည့်အချိန်မှာ အဆုံးအဆမဲ့ဆောင်းရာသီတစ်ခုကို အဲရန်ဒဲလ်အပေါ်
+                                            ကျရောက်စေခဲ့ပါတယ်။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">အန်နာဟာ
+                                            အလ်ဆာနဲ့ စကားပြောပြီး နွေရာသီဖြစ်အောင် ပြန်လုပ်ခိုင်းဖို့ အလ်ဆာ့ အနောက်ကို
+                                            လိုက်သွားခဲ့
+                                            လေတယ်။လမ်းထဲတွင် ရေခဲကျုံးသမား ခရစ်တော့ဖ်၊ သူ၏ဒရယ် ဆဗန်း တို့နှင့်
+                                            သူမတွေ့ခဲ့လေ၏။
+                                            အလ်ဆာ အားရှာရန် သူမကို မြောက်ဘက်တောင်တန်းပေါ် ခေါ်သွားမည်ဟု ခရစ်တော့ဖ်
+                                            သဘောတူခဲ့လေ၏။
+                                            သူတို့ဟာ အလ်ဆာ အသက်သွင်းထားခဲ့ပြီး မှော်အစွမ်းတွေရှိနေတဲ့ နှင်းလူသား အိုးလဖ်
+                                            နဲ့လည်း
+                                            တွေ့ခဲ့ကြပါသေး၏။ အိုးလဖ်ဟာ သူတို့ကို တောင်ပေါ်မှာ အလ်ဆာ တည်ဆောက်ထားခဲ့တဲ့
+                                            ကြီးမားသော
+                                            ရေခဲနန်းတော်အား ကူညီရှာဖွေပေးခဲ့လေ၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">အန်နာဟာ
+                                            အလ်ဆာ့ကို သူနဲ့အတူ အဲရန်ဒဲလ် ကို ပြန်လိုက်လာဖို့ ကြိုးစားခဲ့ပါတယ်။သို့ပေမဲ့
+                                            အလ်ဆာကတော့
+                                            သူ့စွမ်းအားတွေကို လွှတ်ထားလို့ မည်သူတစ်ဦးတစ်ယောက်ကိုမှ ထိခိုက်သွားမှာကို
+                                            စိုးရိမ်နေစရာမလိုတဲ့
+                                            တောင်ထဲမှာ တစ်ကိုယ်တည်းရှိနေရတာကို နှစ်သက်နေခဲ့ပါတယ်။ အန်နာဟာ အလ်ဆာ့ကို
+                                            အဲရန်ဒဲလ်
+                                            ဆောင်းရာသီထဲ ဒုက္ခကြုံနေရကြောင်းနှင့် သူတို့ကို သူမ နွေရာသီဖြစ်အောင်
+                                            ပြန်လုပ်ပေးဖို့
+                                            လိုအပ်ကြောင်း ပြောပြခဲ့၏။ အလ်ဆာ စိုးရိမ်ကြောက်ရွံ့သွားခဲ့ပြီး
+                                            သူမ၏စိတ်ခံစားချက်တွေကို
+                                            ပြန်၍ ထိန်းမရနိုင်ဖြစ်သွားကာ သူမ၏ မှော်အစွမ်းဖြင့် အန်နာ၏ နှလုံးကို
+                                            သတိမထားမိဘဲ
+                                            အမှတ်မထင် တိုက်ခိုက်မိခဲ့လေ၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">ထိုသို့
+                                            ဖြစ်သွားပြီးသည့်တိုင်အောင် အန်နာဟာ အလ်ဆာမပါဘဲ ပြန်မလာချင်ခဲ့ပါဘူး။ ဒါနဲ့
+                                            အလ်ဆာဟာ
+                                            သူမ မရှိခြင်းက အန်နာရော အဲရန်ဒဲလ် အတွက်ရော ပိုကောင်းလိမ့်မည်ဟုတွေးပြီး
+                                            သူတို့အား
+                                            ထွက်သွားစေရန် ကြီးမားသော နှင်းလူသား တစ်ယောက်ကို ဖန်ဆင်းခဲ့လေ၏။ ထို
+                                            နှင်းလူသားဆီက
+                                            လွတ်မြောက်ခဲ့ပြီးနောက် အန်နာ အေးစက်၊ အားလျော့ပြီး သူမဆံပင်တွေပင်
+                                            အဖြူရောင်ပြောင်းနေခဲ့ပြီကို
+                                            ခရစ်တော့ဖ် သတိထားမိခဲ့ လေ၏။ ဒါဟာ အန်နာ့ကို မှော်အစွမ်းနဲ့ အလ်ဆာ
+                                            တိုက်ခိုက်ခဲ့ပြီဖြစ်ကြောင်း
+                                            သူသိသွားခဲ့ပြီး သူ့ရဲ့ မွေးစား မိသားစုဖြစ်တဲ့ မှော်စွမ်းအားရှင်
+                                            သက်ရှိသတ္တဝါတွေဆီ
+                                            အန်နာ့ကို ခေါ်ဆောင်သွားခဲ့လေတော့၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">ဂရဲန်ပေါ့ပီ
+                                            ဆိုတဲ့ မှော်စွမ်းအားရှင်ကတော့ သူမကို မကူညီနိုင်တော့ဘူးလို့ ဆိုခဲ့ပါတယ်။
+                                            ရေခဲဟာ အန်နာရဲ့
+                                            နှလုံးထဲ ရှိနေခဲ့ပါပြီ။စစ်မှန်တဲ့ချစ်ခြင်းမေတ္တာကို အခြေခံတဲ့
+                                            ပြုလုပ်ဆောင်ရွက်ချက်တစ်ခုကသာ
+                                            အေးခဲသွားတဲ့ နှလုံးသားကို အရည်ပျော်နိုင်တော့မှာ ဖြစ်ပြီး
+                                            အချစ်စစ်အနမ်းတစ်ခုကို သူတို့
+                                            အကြံပြုခဲ့ကြပါတယ်။ အန်နာဟာ ဟန်းစ်ကို သူမချစ်နေခဲ့တယ်လို့ ထင်တာကြောင့်
+                                            ခရစ်တော့ဖ်ဟာ
+                                            သူမကို ရဲတိုက်ဆီ အလျင်အမြန် ပြန်လည် ခေါ်ဆောင်လာခဲ့လေ၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">ထိုအချိန်တွင်
+                                            ဟန်းစ်သည် အန်နာနှင့် အလ်ဆာကိုရှာရန် လူတစ်ချို့ကိုခေါ် ပြီး
+                                            မြောက်ဘက်တောင်ပေါ်သို့
+                                            ထွက်သွားခဲ့လေ၏။ နွေရာသီဖြစ်အောင် ပြန်လုပ်ပေးရမည်ဟု အတင်းအကျပ် တောင်းဆိုရင်း
+                                            အလ်ဆာ့ကို
+                                            သူတို့ဖမ်းဆီးပြီး ရဲတိုက်ဆီ ပြန်၍ခေါ်ဆောင်လာခဲ့လေ၏။ သို့ပေမဲ့
+                                            အလ်ဆာကတော့“ရှင်တို့
+                                            မတွေ့ဘူးလား? ကျွန်မ မလုပ်တတ်ဘူး….ဘယ်လိုလုပ်ရမလဲ မသိဘူး” ဟု ပြောခဲ့ပြီး သူမ၏
+                                            မှော်အစွမ်းကို
+                                            အသုံးပြု၍ ရဲတိုက်မှ လွတ်မြောက်ကာ အေးခဲနေသည့် ပင်လယ်အော် ရေပြင်ဆီသို့
+                                            ပြေးထွက်သွားခဲ့လေတော့၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">ခရစ်တော့ဖ်
+                                            အန်နာ့ကို ရဲတိုက်ဆီခေါ်လာခဲ့တဲ့အခါမှာတော့ ဟန်းစ်ဟာ သူမကိုအနမ်းပေးဖို့
+                                            ငြင်းဆိုခဲ့လေ၏။
+                                            ထို့အပြင် အဲရန်ဒဲလ်ကို အုပ်ချုပ်ဖို့ သူအာဏာရရန် အတွက်သာ သူမကို
+                                            ချစ်ဟန်ဆောင်နေခဲ့ခြင်းဖြစ်ပြီး
+                                            အမှန်တကယ် သူမကို သူ မချစ်ခဲ့ဘူးဟု ဆိုခဲ့လေ၏။ သူဟာ အန်နာ့ကို ရဲတိုက်ထဲရှိ
+                                            အခန်းတစ်ခုတွင်
+                                            ပိတ်လှောင်ထားခဲ့ပြီး အဲဒီမှာ သူမဟာ ပိုပြီးအေးလာ၊ ပိုပြီးအားနည်းလာရင်း
+                                            မကြာခင်မှာ
+                                            ရေခဲတုံးအဖြစ်ကို လုံးဝ ပြောင်းသွားတော့မယ့် အနေအထားကို ရောက်နေခဲ့ပါပြီ။
+                                            သို့ပေမဲ့
+                                            အိုးလဖ် သူမကို ရှာတွေ့သွားပြီး အခန်းထဲမှ အပြင်ထုတ်ပေးခဲ့လေ၏။ အလ်ဆာ၏
+                                            စိုးရိမ်နေမှုဟာ
+                                            ရဲတိုက်ကြီးအပေါ် မည်းမှောင်တဲ့တိမ်တိုက် အကြီးကြီးတစ်ခု ဖြစ်သွားစေခဲ့ပြီး
+                                            ခရစ်တော့ဖ်ဟာတော့
+                                            အန်နာ့ကို အမှန်တကယ် ချစ်မြတ်နိုးနေခဲ့တာကြောင့် သူတတ်နိုင်တဲ့
+                                            ဘယ်လိုပုံစံနဲ့မဆို
+                                            သူမကို ကူညီချင်၊ ကာကွယ်စောင့်ရှောက်ချင်နေခဲ့ပါတယ်။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">အန်နာလည်း
+                                            ခရစ်တော့ဖ်အား သူမချစ်နေမိပြီကို သတိထားမိခဲ့လေ၏။ အိုးလဖ်၏ ကူညီမှုဖြင့်
+                                            ရဲတိုက်မှ လွတ်မြောက်ခဲ့ပြီးနောက်
+                                            ရေခဲတုံးအဖြစ် အေးခဲသွားခြင်းမှ သူမအား ကာကွယ်ပေးမည့် အချစ်စစ်အနမ်းတစ်ခု အတွက်
+                                            ခရစ်တော့ဖ်အားတွေ့ဆုံရန်
+                                            အေးခဲနေသည့် ပင်လယ်အော် ရေပြင်ဆီသို့ အပြေးသွားခဲ့လေ၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">မင်းသား
+                                            ဟန်းစ်ဟာ ရေခဲပြင်အထိ ဘုရင်မ အလ်ဆာ အနောက်မှလိုက်ပါလာခဲ့ပြီး “သင့်
+                                            မှော်အစွမ်းက အန်နာ့
+                                            အား တိုက်ခိုက်ခဲ့ပြီ” ဟု ပြော၏။ အလ်ဆာ အလွန် ထိတ်လန့်တုန်လှုပ်သွားခဲ့လေ၏။
+                                            သူ့နှမကို
+                                            ကာကွယ်ဖို့ သူ ပြုလုပ်ခဲ့တဲ့ အရာမှန်သမျှ သဲထဲရေသွန် ဖြစ်ခဲ့လေပြီ။ အလ်ဆာ့အား
+                                            ရှင်းပစ်ရန်
+                                            ရည်ရွယ်၍ ဟန်းစ် သူ့ဓါးရှည် ကို ဆွဲထုတ်ပြီး သူမအပေါ် မမြှောက်ချိန်ရွယ်ခဲ့လေ၏။
+                                            <o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">အန်နာဟာ
+                                            မင်းသား ဟန်းစ် ဓါးရှည်ဆွဲထုတ်တာကို ကြားပြီး အလ်ဆာ၏ ဦးခေါင်းပေါ် သူ
+                                            ဓါးရှည်ဖြင့်
+                                            ချိန်ရွယ် နေသည်ကို မြင်သွားခဲ့လေ၏။ အလ်ဆာ့အား သူ နာကျင်အောင်လုပ်မည်ကို သူမ
+                                            လက်ပိုက်ကြည့်မနေနိုင်ခဲ့
+                                            ပါဘူး။ သူမကိုယ်သူမ ကယ်ဆယ်ရမယ့်အစား သူ့နှမအားကယ်ဆယ်ရန် အန်နာဟာ
+                                            အလ်ဆာနှင့်ဟန်းစ်ကြား
+                                            ပြေး၍တိုးဝင်သွားခဲ့လေ၏။ ဟန်းစ် သူ့ဓါးရှည်ကို
+                                            အောက်သို့ဆွဲချလိုက်သည့်အချိန်မှာဘဲ
+                                            အန်နာဟာရေခဲတုံး အဖြစ် ပြောင်းသွားကာ မှော်အစွမ်းဝင်သွားသည့် သူမလက်ထဲက
+                                            ရေခဲများကြောင့်
+                                            ဓါးသွားလည်း အစိတ်စိတ် အမွှာမွှာ ကွဲထက်သွားပြီး ခရစ်တော့ဖ်ကို နောက်သို့ပြန်၍
+                                            အားဖြင့်
+                                            တွန်းပစ်ခဲ့လေတော့၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">အလ်ဆာဟာ
+                                            အန်နာ အေးခဲသွားသည်ကိုကြည့်ပြီး သူ့အစ်မ၏ ရေခဲပုံစံကြီးကိုဖက်ကာ
+                                            ငိုကြွေးနေခဲ့လေ၏။ သို့သော်လည်းဘဲ
+                                            အလ်ဆာအားကယ်ရန် အန်နာ သူ့ကိုယ်သူအနစ်နာခံပြီး အလ်ဆာနှင့်ဟန်းစ်ကြား တိုးဝင်ခဲ့
+                                            ခြင်းက
+                                            စစ်မှန်တဲ့ ချစ်ခြင်းမေတ္တာကို အခြေခံတဲ့ ပြုလုပ်ဆောင်ရွက်ချက်တစ်ခု
+                                            ဖြစ်ခဲ့တာကြောင့်
+                                            အန်နာ အရည် ပျော်သွားပြီး အသက်ပြန်ရှင်လာခဲ့ပါတယ်။ညီအစ်မနှစ်ယောက် အားပါးတရ
+                                            ဖက်ထားခဲ့ကြပြီး
+                                            ချစ်ခြင်းမေတ္တာ ဟာ ဆောင်းရာသီကိုအရည်ပျော်စေမယ့် သော့ချက်ဖြစ်ကြောင်း
+                                            အလ်ဆာနားလည်သွားခဲ့လေ၏။
+                                            ထို့နောက် အန်နာ့ကို သူဘယ်လောက်ထိ ချစ်ခဲ့တယ်ဆိုတဲ့အကြောင်း တွေးတောပြီး
+                                            အဲရန်ဒဲလ်ရှိ
+                                            ရေခဲနှင့် နှင်း အားလုံးကို ဖယ်ရှားပေးခဲ့လေ၏။<o:p></o:p></span></p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">
+                                            <o:p> </o:p>
+                                        </span></p>
+                                    <p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    </p>
+                                    <p class="MsoNormal"><span style="font-family:" zawgyi-one","sans-serif""=""
+                                            lang="EN-US">မင်းသားဟန်းစ်ကိုတော့
+                                            သူနဲ့ပတ်သက်ပြီး သူ့အစ်ကိုများ ကိုင်တွယ်ဖြေရှင်းရန် တောင်ပိုင်းကျွန်းစုသို့
+                                            ပြန်ပို့ခဲ့
+                                            လေ၏။ ခရစ်တော့ဖ်အား အဲရန်ဒဲလ်၏ရေခဲနှင့်ပတ်သက်သည့် တရားဝင်အရာရှိ၊
+                                            ဖြန့်ဖြူးသူအဖြစ်
+                                            သတ်မှတ် လိုက်ပြီး ရဲတိုက်၏ ဂိတ်တံခါးများကို အလ်ဆာက အမြဲ
+                                            ဖွင့်ထားပေးခဲ့လေတော့၏။ သူမ၏
+                                            လျှို့ဝှက်ချက်ကို တိုင်းပြည်ရှိပြည်သူအားလုံး ယခု သိခဲ့ကြပြီဖြစ်သော်လည်း
+                                            အားလုံးက
+                                            သူမကို ဆက်၍ချစ်ခင်နေခဲ့ကြပေ၏။ သူတို့ညီအစ်မနှစ်ဦးလည်း အရင်းနှီးဆုံး
+                                            သူငယ်ချင်းတွေ
+                                            ပြန်ဖြစ်သွားခဲ့ကြပြီး အားလုံးလည်း အသက်ဆုံးတိုင် ပျော်ရွှင်ချမ်းမြေ့စွာဖြင့်
+                                            ဆက်လက်နေသွားခဲ့ကြလေတော့၏။<o:p></o:p></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <script type="text/javascript"
+                        src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b06d274b98b9384"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.scrollbar.min.js"></script>
+    <script src="../js/amplitude.min.js"></script>
+    <script src="../js/index.js@v=5"></script>
+    <script src="../js/custom.js@v=5"></script>
+</body>
+
+</html>

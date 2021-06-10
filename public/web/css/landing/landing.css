@@ -1,0 +1,76 @@
+body {
+    background: #ffffff;
+    overflow-y: hidden;
+}
+
+.land-img {
+    padding: 12px;
+    text-align: center;
+}
+
+.land-img img {
+    width: 200px;
+}
+
+.rainbow {
+    height: 4px;
+    padding-bottom: 15px;
+    display: flex;
+}
+
+.text-ing {
+    color: #000000;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.text-burmese {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 2em;
+    background: none;
+    color: #000000;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.subs-div {
+    text-align: center;
+    padding-top: 20px
+}
+
+.subs-div button {
+    background: #1db33d;
+    color: #ffffff;
+    height: 45px;
+    line-height: 48px;
+    border-radius: 25px;
+    width: 80%;
+    max-width: 400px;
+    font-size: 1.3em;
+}
+
+.pay-text {
+    border-width: 3px 0px 3px 0px;
+    border-color: #58c7d8;
+    border-style: solid;
+    padding: 6px;
+    margin-top: 9px;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    padding-top: 15px;
+    line-height: 2em;
+}
+
+.flex-icons {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.flex-icons img {
+    width: 70px;
+    height: 70px
+}

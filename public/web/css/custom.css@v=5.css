@@ -1,0 +1,19 @@
+*, html, body {
+    font-family: 'Pyidaungsu', sans-serif;
+}
+
+@font-face {
+    font-family: 'Pyidaungsu';
+    src: local('Pyidaungsu'), url('../fonts/Pyidaungsu/Pyidaungsu-2.1_Regular.woff') format('woff'), url('http://my-smartkids.com/fonts/Pyidaungsu-2.1_Regular.ttf') format('ttf');
+}
+
+.favorite-btn-profile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fcad04 !important;
+}
+
+.favorite-btn-profile > i {
+    font-size: 24px;
+}
