@@ -23,7 +23,9 @@ Route::group(['namespace' => 'Frontend', 'middleware' => 'signature'], function(
 	Route::get('otp', 'WebController@otp');
 	Route::post('otp', 'WebController@postOtp');
 	Route::get('resentotp', 'WebController@resentOtp');
-
-	Route::get('checkstatus', 'MptCallbackController@notify');
-	Route::get('callback', 'MptCallbackController@callback');
 });
+
+Route::get('smartkid/callback', 'MaCallbackController@callback');
+Route::get('mmsport/callback', 'MaCallbackController@callback');
+Route::get('smartkid/checkstatus', 'MaCallbackController@notify');
+Route::get('mmsport/checkstatus', 'MaCallbackController@notify');

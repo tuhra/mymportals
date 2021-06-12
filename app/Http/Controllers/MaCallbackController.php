@@ -20,8 +20,10 @@ class MaCallbackController extends Controller
 
     public function callback() {
     	$callback = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+        \Log::info($callback);
+        /*
 		$this->reqBody = $callback;
-		
 		$data = $request->all();
 		$msisdn = $data['callingParty'];
 
@@ -182,6 +184,7 @@ class MaCallbackController extends Controller
 					break;
 			}
 		}
+        */
     }
 
     private function callbacklog($player_id, $action) {
@@ -201,8 +204,9 @@ class MaCallbackController extends Controller
 
     public function notify(Request $request){
    		$notify = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-   		$data = $request->all();
-   		return view('frontend.landing.loading', compact('data'));
+        \Log::info($notify);
+   		// $data = $request->all();
+   		// return view('frontend.landing.loading', compact('data'));
    	}
 
    	public function checkStatus(Request $request){

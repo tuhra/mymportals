@@ -7,7 +7,7 @@ return [
     ],
 
     'SMARTKID' => [
-    	'cpId' => 'CF',
+    	'CpId' => 'CF',
     	'productID' => '9500', 
     	'pName' => ' Smart Kids',
     	'pPrice' => 150,
@@ -27,7 +27,7 @@ return [
     ],
 
     'MMSPORT' => [
-    	'cpId' => 'CF',
+    	'CpId' => 'CF',
     	'productID' => '9510', 
     	'pName' => 'Myanmar Sports',
     	'pPrice' => 150,

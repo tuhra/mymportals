@@ -19,6 +19,7 @@ class CreateSubscribersTable extends Migration
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->boolean('is_active');
             $table->boolean('is_subscribed');
+            $table->string('service_type');
             $table->timestamps();
         });
     }
