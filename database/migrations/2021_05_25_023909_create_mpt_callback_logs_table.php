@@ -15,6 +15,14 @@ class CreateMptCallbackLogsTable extends Migration
     {
         Schema::create('mpt_callback_logs', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('customer_id');
+            $table->text('reqBody');
+            $table->text('resBody');
+            $table->string('status_code');
+            $table->string('tranid');
+            $table->string('service_id');
+            $table->string('message');
+            $table->string('action');
             $table->timestamps();
         });
     }

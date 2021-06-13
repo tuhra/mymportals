@@ -1,18 +1,20 @@
 <?php
 
 use Propaganistas\LaravelPhone\PhoneNumber;
+use Carbon\Carbon;
+use App\Model\Subscriber;
+use App\Model\SubscriberLog;
 
 /***  For WEB  ***/
-function subscriber_creation ($player_id, $tranid, $is_not_enough)
+function subscriber_creation ($customer_id, $service_id)
 {
     $valid_date = Carbon::now()->addDays(1);
     Subscriber::create([
-        'player_id' => $player_id,
-        'tranid' => $tranid,
+        'customer_id' => $customer_id,
+        'is_active' => 1,
         'is_subscribed' => 1,
         'valid_date' => $valid_date,
-        'is_not_enough' => $is_not_enough,
-        'is_new_user' => 1
+        'service_id' => $service_id
     ]);
 }
 
@@ -20,36 +22,37 @@ function unsubscribe($subscriber_id)
 {
     $row = Subscriber::find($subscriber_id)
         ->update([
+            'is_active' => 0,
             'is_subscribed' => 0,
             'is_not_enough' => 0,
             'is_new_user' => 0
         ]);
 }
 
-function subscriber_log ($player_id, $event) 
+function subscriber_log ($customer_id, $event, $service_id) 
 {
     SubscriberLog::create([
-        'player_id' => $player_id,
-        'event' => $event
+        'customer_id' => $customer_id,
+        'event' => $event,
+        'service_id' => $service_id
     ]);
 }
 
-function renewal ($subscriber_id, $tranid, $is_not_enough)
+function renewal ($subscriber_id)
 {
     $valid_date = Carbon::now()->addDays(1);
     Subscriber::find($subscriber_id)
         ->update([
-            'tranid' => $tranid,
             'is_subscribed' => 1,
             'valid_date' => $valid_date,
             'is_new_user' => 0
         ]);
 }
 
-function check_callback ($player_id, $tranid)
+function check_callback ($customer_id, $tranid)
 {
     $callback_log = DB::table('callback_log')
-                        ->where('player_id', $player_id)
+                        ->where('customer_id', $customer_id)
                         ->where('tranid', $tranid)
                         ->first();
     return $callback_log;
@@ -91,18 +94,34 @@ function getServiceType() {
     return Session::get('service_type');
 }
 
-function otpSend() {
-    $url = config('custom.URL')[config('app.env')] . 'GetOtp';
-    $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&serviceName=Taptube&serviceDesc=Taptube&CLI=8934&transId='. getTranid() .'&cpId=TAP&cpPassWord=tap@123&email=&requestChannel=PIN';
-    $fullurl = urlencode($url."?".$params);
+function setServiceId($service_id) {
+    Session::put('service_id', $service_id);
+}
+
+function getServiceId() {
+    return Session::get('service_id');
+}
+
+function curlRequest($url) {
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $fullurl); 
+    curl_setopt($ch, CURLOPT_URL, $url); 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT , 7);
     curl_setopt($ch, CURLOPT_HEADER, 0);
     $result = curl_exec($ch);
     curl_close($ch);
-    return ['req' => $url .'?'.$params , 'res' => $result];
+    return ['req' => $url , 'res' => $result];
+}
+
+function otpSend() {
+    $tranid = getUUID();
+    Session::put('opt_tranid', $tranid);
+    $service_type = getServiceType();
+    $env = config('app')['env'];
+    $url = config('custom')['URL'][$env]. 'GetOtp?';
+    $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&serviceName='.config('custom')[$service_type]['pName'].'&serviceDesc='.config('custom')[$service_type]['CpPwd'].'&CLI=8934&transId='. $tranid .'&cpId='.config('custom')[$service_type]['CpId'].'&cpPassWord='.config('custom')[$service_type]['CpPwd'].'&email=&requestChannel=PIN';
+    $result = curlRequest($url.$params);
+    return $result;
 }
 
 function otpValidation($otp) {
@@ -156,7 +175,6 @@ function build_http_query( $query ){
     foreach( $query as $key => $key_value ){
 
         $query_array[] = urlencode( $key ) . '=' . urlencode( $key_value );
-
     }
     return implode( '&', $query_array );
 }

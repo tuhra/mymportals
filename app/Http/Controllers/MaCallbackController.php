@@ -16,13 +16,11 @@ class MaCallbackController extends Controller
 	private $message;
 	private $tranid;
 	private $vDay;
-	private $link;
+    private $serviceId;
 
-    public function callback() {
+    public function callback(Request $request) {
     	$callback = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-        \Log::info($callback);
-        /*
+        
 		$this->reqBody = $callback;
 		$data = $request->all();
 		$msisdn = $data['callingParty'];
@@ -47,9 +45,11 @@ class MaCallbackController extends Controller
 			$this->vDay = $data['validityDays'];
 		}
 
-		$customer = Customer::where('msisdn',$msisdn)->first();
+        if(array_key_exists('serviceId', $data)) {
+            $this->serviceId = $data['serviceId'];
+        }
 
-
+		$customer = Customer::where('msisdn',$msisdn)->where('service_id', $this->serviceId)->first();
 		if (array_key_exists('resultCode', $data)) {
 			$this->status_code = $data['resultCode'];
 			// check respose code
@@ -60,15 +60,16 @@ class MaCallbackController extends Controller
 					switch ($operationId) {
 						// New Subscriber
 						case 'SN':
-							$subscriber = Subscriber::where('customer_id', $customer->id)->first();
+							$subscriber = Subscriber::where('customer_id', $customer->id)
+                                        ->where('service_id', $this->serviceId)->first();
 							if (empty($subscriber)) {	
-								subscriber_creation($customer->id, $this->tranid, 0);
-                                subscriber_log($customer->id, 'SUBSCRIBED', $channel_id);
-                                $this->callbacklog($customer->id, 'SUBSCRIBED');
+								$subscriber = subscriber_creation($customer->id, $this->serviceId);
+                                subscriber_log($customer->id, 'SUBSCRIBED', $this->serviceId);
+                                $this->callbacklog($customer->id, 'SUBSCRIBED', $this->serviceId);
 							} else {
-								renewal($subscriber->id, $this->tranid, 0);
-                                subscriber_log($customer->id, 'RENEWAL', $channel_id);
-                                $this->callbacklog($customer->id, 'RENEWAL');
+								renewal($subscriber->id);
+                                subscriber_log($customer->id, 'RENEWAL', $this->serviceId);
+                                $this->callbacklog($customer->id, 'RENEWAL', $this->serviceId);
 							}
 							$response['status'] = 200;
 							return $response;
@@ -77,15 +78,16 @@ class MaCallbackController extends Controller
 
 						// Returning Subscriber
                         case 'PN':
-                            $subscriber = Subscriber::where('customer_id', $customer->id)->first();
+                            $subscriber = Subscriber::where('customer_id', $customer->id)
+                            ->where('service_id', $this->serviceId)->first();
                             if (empty($subscriber)) {   
-                                subscriber_creation($customer->id, $this->tranid, 0);
-                                subscriber_log($customer->id, 'SUBSCRIBED', $channel_id);
-                                $this->callbacklog($customer->id, 'SUBSCRIBED');
+                                subscriber_creation($customer->id, $this->serviceId);
+                                subscriber_log($customer->id, 'SUBSCRIBED', $this->serviceId);
+                                $this->callbacklog($customer->id, 'SUBSCRIBED', $this->serviceId);
                             } else {
-                                renewal($subscriber->id, $this->tranid, 0);
-                                subscriber_log($customer->id, 'RENEWAL', $channel_id);
-                                $this->callbacklog($customer->id, 'RENEWAL');
+                                renewal($subscriber->id);
+                                subscriber_log($customer->id, 'RENEWAL', $this->serviceId);
+                                $this->callbacklog($customer->id, 'RENEWAL', $this->serviceId);
                             }
                             $response['status'] = 200;
                             return $response;
@@ -100,11 +102,11 @@ class MaCallbackController extends Controller
                         case 'PD':
                         case 'RD':
                         // case 'SP':
-                            $subscriber = Subscriber::where('customer_id', $customer->id)->first();
-
+                        $subscriber = Subscriber::where('customer_id', $customer->id)
+                        ->where('service_id', $this->serviceId)->first();
                             unsubscribe($subscriber->id);
-                            subscriber_log($customer->id, 'UNSUBSCRIBED', $channel_id);
-                            $this->callbacklog($customer->id, 'UNSUBSCRIBED');
+                            subscriber_log($customer->id, 'UNSUBSCRIBED', $this->serviceId);
+                            $this->callbacklog($customer->id, 'UNSUBSCRIBED', $this->serviceId);
                             $response['status'] = 200;
                             return $response;
                             break;
@@ -115,11 +117,12 @@ class MaCallbackController extends Controller
                         case 'YF':
                         case 'RR':
                         case 'RF':
-                            $this->link = 'http://taptubemm.com/welcome';
-                            $subscriber = Subscriber::where('customer_id', $customer->id)->first();
-                            renewal($subscriber->id, $this->tranid, 0);
-                            subscriber_log($customer->id, 'RENEWAL', $channel_id);
-                            $this->callbacklog($customer->id, 'RENEWAL');
+                            
+                            $subscriber = Subscriber::where('customer_id', $customer->id)
+                            ->where('service_id', $this->serviceId)->first();
+                            renewal($subscriber->id, $this->serviceId);
+                            subscriber_log($customer->id, 'RENEWAL', $this->serviceId);
+                            $this->callbacklog($customer->id, $subscriber->id, 'RENEWAL', $this->serviceId);
                             $response['status'] = 200;
                             return $response;
                             break;
@@ -130,8 +133,9 @@ class MaCallbackController extends Controller
 
                 // User have already subscribe
 				case '2084':
-                    $subscriber = Subscriber::where('customer_id', $customer->id)->first();
-					$this->callbacklog($customer->id, 'ALREADY_SUBSCRIBED');
+                    $subscriber = Subscriber::where('customer_id', $customer->id)
+                    ->where('service_id', $this->serviceId)->first();
+					$this->callbacklog($customer->id, 'ALREADY_SUBSCRIBED', $this->serviceId);
 					$response['status'] = 200;
 					return $response;
 					break;
@@ -145,10 +149,11 @@ class MaCallbackController extends Controller
                         case 'SCI':
                         case 'PD':
                         case 'RD':
-                            $subscriber = Subscriber::where('customer_id', $customer->id)->first();
+                            $subscriber = Subscriber::where('customer_id', $customer->id)
+                            ->where('service_id', $this->serviceId)->first();
                             unsubscribe($subscriber->id);
-                            subscriber_log($customer->id, 'UNSUBSCRIBED', $channel_id);
-                            $this->callbacklog($customer->id, 'UNSUBSCRIBED');
+                            subscriber_log($customer->id, 'UNSUBSCRIBED', $this->serviceId);
+                            $this->callbacklog($customer->id, 'UNSUBSCRIBED', $this->serviceId);
                             Session::forget('msisdn');
                             Session::forget('customer_id');
                             Session::forget('error_code');
@@ -159,22 +164,24 @@ class MaCallbackController extends Controller
                         //End unsubscribe case
                     }
 
-                    $subscriber = Subscriber::where('customer_id', $customer->id)->first();
+                    $subscriber = Subscriber::where('customer_id', $customer->id)
+                    ->where('service_id', $this->serviceId)->first();
                     if (!$subscriber) {
-                        subscriber_creation($customer->id, $this->tranid, 1);
-                        subscriber_log($customer->id, 'SUBSCRIBED', $channel_id);
+                        subscriber_creation($customer->id, $this->serviceId);
+                        subscriber_log($customer->id, 'SUBSCRIBED', $this->serviceId);
                     } else {
-                        renewal($subscriber->id, $this->tranid, 1);
-                        subscriber_log($customer->id, 'RENEWAL', $channel_id);
+                        renewal($subscriber->id, $this->serviceId);
+                        renewal($subscriber->id);
+                        subscriber_log($customer->id, 'RENEWAL', $this->serviceId);
                     }
-                    $this->callbacklog($customer->id, 'INSUFFICIENT BALANCE');
+                    $this->callbacklog($customer->id, 'INSUFFICIENT BALANCE', $this->serviceId);
                     $response['status'] = 200;
                     return $response;
 					break;
 
 				// Msisdn is in black list
 				case '4105':
-                    $this->callbacklog($customer->id, 'BLACK LIST');
+                    $this->callbacklog($customer->id, 'BLACK LIST', $this->serviceId);
                     $response['status'] = 200;
                     return $response;
 					break;
@@ -184,10 +191,9 @@ class MaCallbackController extends Controller
 					break;
 			}
 		}
-        */
     }
 
-    private function callbacklog($player_id, $action) {
+    private function callbacklog($player_id, $action, $serviceId) {
         $date = $date = date('Y-m-d H:i:s');
         MptCallbackLog::create([
             'customer_id' => $player_id,
@@ -197,6 +203,7 @@ class MaCallbackController extends Controller
             'tranid' => $this->tranid,
             'message' => $this->message,
             'action' => $action,
+            'service_id' => $serviceId,
             'created_at' => $date,
             'updated_at' => $date
         ]);
@@ -205,7 +212,8 @@ class MaCallbackController extends Controller
     public function notify(Request $request){
    		$notify = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         \Log::info($notify);
-   		// $data = $request->all();
+   		$data = $request->all();
+        return $data;
    		// return view('frontend.landing.loading', compact('data'));
    	}
 
@@ -214,15 +222,15 @@ class MaCallbackController extends Controller
         $msisdn = '95'.$data['msisdn'];
         $customer = Customer::where('msisdn', $msisdn)->first();
         $subscriber = Subscriber::where('customer_id', $customer->id)->first();
-        if($subscriber != null) {
-            if (TRUE == $subscriber->is_not_enough) {
-                Session::put('insufficient', TRUE);
-                $response['url'] = url('/landing');
-            }
-        }
+        // if($subscriber != null) {
+        //     if (TRUE == $subscriber->is_not_enough) {
+        //         Session::put('insufficient', TRUE);
+        //         $response['url'] = url('/landing');
+        //     }
+        // }
         $result = check_callback($customer->id, $data['tranid']);
         if ($result) {
-            $response['url'] = $result->link;
+            $response['url'] = url('success');
         } else {
             $response['url'] = url('/');
         }

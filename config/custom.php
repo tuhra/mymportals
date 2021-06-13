@@ -45,4 +45,14 @@ return [
     	'planId' => 'T_CF_SPORT_SUB_D_150',
     	'opId' => 101
     ],
+
+    'SMARTKID_CREDENTIAL' => [
+        'regUser' => 'REGIS_MPT',
+        'regPassword' => 'UkVHSVNfT1RQQDU0MzI',
+    ],
+
+    'MMSPORT_CREDENTIAL' => [
+        'regUser' => 'REGIS_MPT',
+        'regPassword' => 'UkVHSVNfT1RQQDU0MzI',
+    ],
 ];

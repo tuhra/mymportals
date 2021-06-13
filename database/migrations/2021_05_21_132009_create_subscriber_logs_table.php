@@ -17,9 +17,8 @@ class CreateSubscriberLogsTable extends Migration
             $table->increments('id');
             $table->integer('customer_id')->unsigned();
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
-            $table->integer('subscriber_id')->unsigned();
-            $table->foreign('subscriber_id')->references('id')->on('subscribers')->onDelete('cascade');
             $table->string('event');
+            $table->string('service_id');
             $table->timestamps();
         });
     }

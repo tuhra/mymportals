@@ -13,11 +13,13 @@ class MsisdnHelper
 		switch ($operator) {
 			case 'MPT':
 				$msisdn = getMsisdn(setMsisdn($msisdn));
-				$transid = getTranid(setTranid(getUUID()));
-				$user = Customer::where('msisdn', $msisdn)->first();
+				$transid = getUUID();
+				$service_id = getServiceId();
+				$user = Customer::where('msisdn', $msisdn)->where('service_id', $service_id)->first();
 				if(empty($user)) {
 					$user = new Customer;
 					$user->msisdn = $msisdn;
+					$user->service_id = $service_id;
 					$user->save();
 					return $this->cgRequestURL($msisdn, $transid);
 				}

@@ -47,7 +47,6 @@ class WebController extends Controller
         $msisdn = '959'. $data['msisdn'];
         $msisdnhelper = new MsisdnHelper;
         $url = $msisdnhelper->checkMsisdnStatus($msisdn);
-        \Log::info($url);
         return redirect(url($url));
     }
 

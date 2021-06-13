@@ -18,6 +18,7 @@ class SignatureMiddleware
         $data = $request->all();
         if(array_key_exists('service_type', $data)) {
             setServiceType($data['service_type']);
+            setServiceId($data['service_id']);
         }
         return $next($request);
     }
