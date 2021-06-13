@@ -35,6 +35,20 @@
 <body>
 
     @yield('content')
-
+    <input type="hidden" id="continue-url" value="{{ url('continue') }}">
+    <input type="hidden" id="home-url" value="{{ url('msisdn') }}">
+    <script type="text/javascript" src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).on('click', '#continue-btn', function () {
+                var url = $('#continue-url').val();
+                window.location.href = url;
+            })
+            $(document).on('click', '#home-btn', function () {
+                var url = $('#home-url').val();
+                window.location.href = url;
+            })
+        })
+    </script>
 </body>
 </html>

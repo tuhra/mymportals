@@ -23,20 +23,10 @@
                 ကလေးများအတွက် ပညာရေးဝန်ဆောင်မှု၊ <br/>သီချင်းများ၊ ရုပ်ပြများ၊ ဥာဏ်စမ်းပဟေဠိများ <br/> ပါဝင်ပါသည်။
             </div>
 
-            <form method="post" action="{{ url('otp') }}">
-                <div class="uk-flex uk-flex-center">
-                    {{ csrf_field() }}
-                    <div class="input-group msisdn">
-                        <input type="text" class="form-control" placeholder="Enter OTP" name="otp" required="">
-                    </div>
-                </div>
-                <div class="uk-flex uk-flex-center subs-div">
-                    <button class="uk-button" id="subscribe-btn">Submit</button>
-                </div>
-                <div class="uk-flex uk-flex-center subs-div">
-                    <a href="{{ url('resentotp') }}">Resent</a>
-                </div>
-            </form>
+
+            <div class="uk-flex uk-flex-center subs-div">
+                <button class="uk-button" id="continue-btn">Continue</button>
+            </div>
 
         </div>
     </div>

@@ -8,6 +8,7 @@ use App\Model\Subscriber;
 use App\Model\SubscriberLog;
 use App\Model\MptCallbackLog;
 use DB;
+use Session;
 
 class MaCallbackController extends Controller
 {
@@ -213,26 +214,23 @@ class MaCallbackController extends Controller
    		$notify = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         \Log::info($notify);
    		$data = $request->all();
-        return $data;
-   		// return view('frontend.landing.loading', compact('data'));
+   		return view('frontend.loading', compact('data'));
    	}
 
    	public function checkStatus(Request $request){
         $data = $request->all();
+        $serviceId = getServiceId();
         $msisdn = '95'.$data['msisdn'];
-        $customer = Customer::where('msisdn', $msisdn)->first();
+        $customer = Customer::where('msisdn', $msisdn)->where('service_id', $serviceId)->first();
         $subscriber = Subscriber::where('customer_id', $customer->id)->first();
-        // if($subscriber != null) {
-        //     if (TRUE == $subscriber->is_not_enough) {
-        //         Session::put('insufficient', TRUE);
-        //         $response['url'] = url('/landing');
-        //     }
-        // }
         $result = check_callback($customer->id, $data['tranid']);
+        $response = [];
         if ($result) {
+            $response['status'] = TRUE;
             $response['url'] = url('success');
         } else {
-            $response['url'] = url('/');
+            $response['status'] = FALSE;
+            $response['url'] = url('error');
         }
         return json_encode($response);
     }

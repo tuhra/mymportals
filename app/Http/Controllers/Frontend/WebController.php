@@ -7,6 +7,10 @@ use App\Http\Controllers\Controller;
 use Session;
 use App\Helpers\MptHelper;
 use App\Helpers\MsisdnHelper;
+use App\Model\Customer;
+use App\Model\Subscriber;
+use Illuminate\Support\Facades\Crypt;
+use Redirect;
 
 class WebController extends Controller
 {
@@ -39,7 +43,8 @@ class WebController extends Controller
     }
 
     public function msisdn() {
-        return view('frontend.msisdn');
+        $config = config('custom')[getServiceId()];
+        return view('frontend.msisdn', compact('config'));
     }
 
     public function postMsisdn(Request $request) {
@@ -51,20 +56,59 @@ class WebController extends Controller
     }
 
     public function otp() {
-        return view('frontend.otp');
+        $config = config('custom')[getServiceId()];
+        return view('frontend.otp', compact('config'));
     }
 
     public function postOtp(Request $request) {
         $data = $request->all();
         $otp = $data['otp'];
         $result = otpValidation($otp);
+        \Log::info('OTP Validation Req Res');
+        \Log::info($result);
         return $result;
     }
 
     public function resentOtp() {
         $data = otpRegeneration();
-        return Session::all();
+        \Log::info('OTP Resent Req Res');
+        \Log::info($data);
         return redirect(url('otp'));
+    }
+
+    public function continue() {
+        $msisdn = getMsisdn();
+        $service_id = getServiceId();
+        $customer = Customer::where('msisdn', $msisdn)->where('service_id', $service_id)->first();
+        $subscriber = Subscriber::where('customer_id', $customer->id)->first();
+        if($subscriber->is_active && $subscriber->is_subscribed) {
+            $array = [
+                'user_id' => $customer->id
+            ];
+            $json = json_encode($array);
+            $signature = Crypt::encryptString($json);
+            $url = config('custom')[$service_id]['url'] . "?signature=".$signature;
+            return Redirect::away($url);
+        }
+    }
+
+    public function success() {
+        $config = config('custom')[getServiceId()];
+        return view('frontend.success', compact('config'));
+    }
+
+    public function error() {
+        $config = config('custom')[getServiceId()];
+        return view('frontend.error', compact('config'));   
+    }
+
+    public function invalid() {
+        $config = config('custom')[getServiceId()];
+        return view('frontend.invalid', compact('config'));   
+    }
+
+    public function invalidService() {
+        return view('frontend.invalidservice');   
     }
 
 }

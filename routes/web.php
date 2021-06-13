@@ -23,9 +23,16 @@ Route::group(['namespace' => 'Frontend', 'middleware' => 'signature'], function(
 	Route::get('otp', 'WebController@otp');
 	Route::post('otp', 'WebController@postOtp');
 	Route::get('resentotp', 'WebController@resentOtp');
+	Route::get('success', 'WebController@success');
+	Route::get('error', 'WebController@error');
+	Route::get('continue', 'WebController@continue');
 });
+
+Route::get('invalid', 'Frontend\WebController@invalid');
+Route::get('services', 'Frontend\WebController@invalidService');
 
 Route::get('smartkid/callback', 'MaCallbackController@callback');
 Route::get('mmsport/callback', 'MaCallbackController@callback');
 Route::get('smartkid/checkstatus', 'MaCallbackController@notify');
 Route::get('mmsport/checkstatus', 'MaCallbackController@notify');
+Route::get('checkTran', 'MaCallbackController@checkStatus');

@@ -4,6 +4,7 @@ use Propaganistas\LaravelPhone\PhoneNumber;
 use Carbon\Carbon;
 use App\Model\Subscriber;
 use App\Model\SubscriberLog;
+use App\Model\MptCallbackLog;
 
 /***  For WEB  ***/
 function subscriber_creation ($customer_id, $service_id)
@@ -51,10 +52,7 @@ function renewal ($subscriber_id)
 
 function check_callback ($customer_id, $tranid)
 {
-    $callback_log = DB::table('callback_log')
-                        ->where('customer_id', $customer_id)
-                        ->where('tranid', $tranid)
-                        ->first();
+    $callback_log = MptCallbackLog::where('customer_id', $customer_id)->where('tranid', $tranid)->first();
     return $callback_log;
 }
 
@@ -114,55 +112,46 @@ function curlRequest($url) {
 }
 
 function otpSend() {
-    $tranid = getUUID();
-    Session::put('opt_tranid', $tranid);
+    $otp_tranid = getUUID();
+    Session::put('otp_tranid', $otp_tranid);
     $service_type = getServiceType();
     $env = config('app')['env'];
     $url = config('custom')['URL'][$env]. 'GetOtp?';
-    $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&serviceName='.config('custom')[$service_type]['pName'].'&serviceDesc='.config('custom')[$service_type]['CpPwd'].'&CLI=8934&transId='. $tranid .'&cpId='.config('custom')[$service_type]['CpId'].'&cpPassWord='.config('custom')[$service_type]['CpPwd'].'&email=&requestChannel=PIN';
+    $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&serviceName='.config('custom')[$service_type]['pName'].'&serviceDesc='.config('custom')[$service_type]['CpPwd'].'&CLI=8934&transId='. $otp_tranid .'&cpId='.config('custom')[$service_type]['CpId'].'&cpPassWord='.config('custom')[$service_type]['CpPwd'].'&email=&requestChannel=PIN';
     $result = curlRequest($url.$params);
+    \Log::info($result);
     return $result;
 }
 
 function otpValidation($otp) {
-    $url = config('custom.URL')[config('app.env')] . 'VerifyOtp';
-    $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&otp='.$otp.'&serviceName=Taptube&serviceDesc=Taptube&CLI=8934&transId='. getTranid() .'&cpId=TAP&cpPassWord=tap@123&email=&requestChannel=PIN';
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url.'?'.$params);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT , 7);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    $result = curl_exec($ch);
-    curl_close($ch);
-    return ['req' => $url .'?'.$params , 'res' => $result];
+    $env = config('app')['env'];
+    $otp_tranid = Session::get('otp_tranid');
+    $service_type = getServiceType();
+    $url = config('custom')['URL'][$env]. 'VerifyOtp';
+    $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&otp='.$otp.'&serviceName='.config('custom')[$service_type]['pName'].'&serviceDesc='.config('custom')[$service_type]['CpPwd'].'&CLI=8934&transId='. $otp_tranid .'&cpId='.config('custom')[$service_type]['CpId'].'&cpPassWord='.config('custom')[$service_type]['CpPwd'].'&email=&requestChannel=PIN';
+    $result = curlRequest($url.$params);
+    return $result;
 }
 
-function otpRegeneration()  {
-    $msisdn = getMsisdn();
-    $tranid = getTranid();
-    $url = config('custom.URL')[config('app.env')] . 'ResendOtp';
-    $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&serviceName=Taptube&serviceDesc=Taptube&CLI=8934&transId='. getTranid() .'&cpId=TAP&cpPassWord=tap@123&email=&requestChannel=PIN';
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url.'?'.$params ); //Url together with parameters
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Return data instead printing directly in Browser
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT , 7); //Timeout after 7 seconds
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    $result = curl_exec($ch);
-    curl_close($ch);
-    return ['req' => $url .'?'.$params , 'res' => $result];
+function otpRegeneration() {
+    $otp_tranid = Session::get('otp_tranid');
+    $service_type = getServiceType();
+    $env = config('app')['env'];
+    $url = config('custom')['URL'][$env] . 'ResendOtp';
+    $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&serviceName='.config('custom')[$service_type]['pName'].'&serviceDesc='.config('custom')[$service_type]['CpPwd'].'&CLI=8934&transId='. $otp_tranid .'&cpId='.config('custom')[$service_type]['CpId'].'&cpPassWord='.config('custom')[$service_type]['CpPwd'].'&email=&requestChannel=PIN';
+    $result = curlRequest($url.$params);
+    return $result;
 }
 
 function unsubscribe_process($msisdn, $tranid) {
-    $url = config('custom.URL')[config('app.env')] . 'CGUnsubscribe';
-    $params = 'MSISDN='.$msisdn.'&productID=10500&pName=Taptube&pPrice=99&pVal=1&CpId=TAP&CpPwd=tap@123&CpName=TAP&reqMode=WAP&reqType=SUBSCRIPTION&ismID=17&transID='. getUUID() .'&sRenewalPrice=99&sRenewalValidity=1&serviceType=T_TAP_WAP_SUB_D&planId=T_TAP_WAP_SUB_D_99&request_locale=my&opId=101';
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url.'?'.$params); 
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT , 7); 
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    $result = curl_exec($ch);
-    curl_close($ch);
-    return ['req' => $url .'?'.$params , 'res' => $result]; 
+    $service_type = getServiceType();
+    $append = '&MSISDN=' . $msisdn . '&transID=' . $tranid;
+    $env = config('app')['env'];
+    $endpoint = config('custom')['URL'][$env];
+    $query = build_http_query(config('custom')[$service_type]) . $append;
+    $url = $endpoint . 'CGUnsubscribe?' . $query;
+    $result = curlRequest($url);
+    return $result;
 }
 
 /**

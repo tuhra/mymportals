@@ -15,16 +15,16 @@ class MsisdnHelper
 				$msisdn = getMsisdn(setMsisdn($msisdn));
 				$transid = getUUID();
 				$service_id = getServiceId();
-				$user = Customer::where('msisdn', $msisdn)->where('service_id', $service_id)->first();
-				if(empty($user)) {
-					$user = new Customer;
-					$user->msisdn = $msisdn;
-					$user->service_id = $service_id;
-					$user->save();
+				$customer = Customer::where('msisdn', $msisdn)->where('service_id', $service_id)->first();
+				if(empty($customer)) {
+					$customer = new Customer;
+					$customer->msisdn = $msisdn;
+					$customer->service_id = $service_id;
+					$customer->save();
 					return $this->cgRequestURL($msisdn, $transid);
 				}
 
-				$subscriber = Subscriber::where('customer_id', $user->id)->first();
+				$subscriber = Subscriber::where('customer_id', $customer->id)->first();
 				if($subscriber) {
 					if(FALSE == $subscriber->is_active && FALSE == $subscriber->is_subscribed) {
 						return $this->cgRequestURL($msisdn, $transid);
@@ -35,6 +35,8 @@ class MsisdnHelper
 
 				// OTP Process for Active User
 				$data = otpSend(); 
+				\Log::info('OTP Send Req Res');
+				\Log::info($data);
 				$url = 'otp';
 				return $url;
 

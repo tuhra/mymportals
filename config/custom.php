@@ -46,13 +46,23 @@ return [
     	'opId' => 101
     ],
 
-    'SMARTKID_CREDENTIAL' => [
+    '538' => [
+        'logo' => 'web/images/sport_logo.png',
+        'url' => 'http://localhost:8000',
+        'image' => 'web/images/sports-lp.png',
+        'landing' => 'ပရီးမီးယားလိဒ်၊ မြန်မာနေရှင်နယ်လိဒ်နှင့် လိဒ်အစုံ၏ ရမှတ်၊ အဆင့်များကို အချိန်နှင့်တပြေးညီ သိရှိရမှာပါ။',
+        'landing_price' => 'စာရင်းသွင်းခြင်းအတွက်နေ့စဉ်(၁၅၀)ကျပ်',
         'regUser' => 'REGIS_MPT',
-        'regPassword' => 'UkVHSVNfT1RQQDU0MzI',
+        'regPassword' => 'UkVHSVNfT1RQQDU0MzI'
     ],
 
-    'MMSPORT_CREDENTIAL' => [
+    '542' => [
+        'logo' => 'web/images/kids_logo.png',
+        'url' => 'http://localhost:9000/categories',
+        'image' => 'web/images/kids-lp.png',
+        'landing' => 'ကလေးများအတွက် ပညာရေးဝန်ဆောင်မှု၊ <br/> သီချင်းများ၊ ရုပ်ပြများ၊ ဥာဏ်စမ်းပဟေဠိများ <br/> ပါဝင်ပါသည်။', 
+        'landing_price' => 'စာရင်းသွင်းခြင်းအတွက်နေ့စဉ်(၁၅၀)ကျပ်',
         'regUser' => 'REGIS_MPT',
-        'regPassword' => 'UkVHSVNfT1RQQDU0MzI',
+        'regPassword' => 'UkVHSVNfT1RQQDU0MzI'
     ],
 ];
