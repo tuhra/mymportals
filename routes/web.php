@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 Route::group(['namespace' => 'Frontend', 'middleware' => 'signature'], function() {
 	Route::get('/', 'WebController@index');
+});
+
+Route::group(['namespace' => 'Frontend'], function() {
 	Route::get('/singleHE', 'WebController@singleHE');
 	Route::get('msisdn', 'WebController@msisdn');
 	Route::post('msisdn', 'WebController@postMsisdn');
@@ -26,10 +29,9 @@ Route::group(['namespace' => 'Frontend', 'middleware' => 'signature'], function(
 	Route::get('success', 'WebController@success');
 	Route::get('error', 'WebController@error');
 	Route::get('continue', 'WebController@continue');
+	Route::get('invalid', 'WebController@invalid');
+	Route::get('services', 'WebController@invalidService');
 });
-
-Route::get('invalid', 'Frontend\WebController@invalid');
-Route::get('services', 'Frontend\WebController@invalidService');
 
 Route::get('smartkid/callback', 'MaCallbackController@callback');
 Route::get('mmsport/callback', 'MaCallbackController@callback');

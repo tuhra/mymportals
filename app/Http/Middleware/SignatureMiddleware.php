@@ -17,9 +17,9 @@ class SignatureMiddleware
     public function handle($request, Closure $next)
     {
         $data = $request->all();
-        if(Session::has('service_type') && Session::has('service_id')) {
-            return $next($request); 
-        }
+        // if(Session::has('service_type') && Session::has('service_id')) {
+        //     return $next($request); 
+        // }
 
         if(array_key_exists('service_type', $data) && array_key_exists('service_id', $data)) {
             setServiceType($data['service_type']);
