@@ -56,7 +56,7 @@ class MsisdnHelper
 		$env = config('app')['env'];
 		$endpoint = config('custom')['URL'][$env];
 		$query = build_http_query(config('custom')[$service_type]) . $append;
-		$url = $endpoint . 'CGRequest?' . $query;
+		$url = $endpoint . 'CGRequest?' . $query . '&dRcp=DirectCP';
 		return $url;
 	}
 }

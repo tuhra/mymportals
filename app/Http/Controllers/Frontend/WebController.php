@@ -52,6 +52,7 @@ class WebController extends Controller
         $msisdn = '959'. $data['msisdn'];
         $msisdnhelper = new MsisdnHelper;
         $url = $msisdnhelper->checkMsisdnStatus($msisdn);
+        \Log::info($url);
         return redirect(url($url));
     }
 
@@ -64,15 +65,19 @@ class WebController extends Controller
         $data = $request->all();
         $otp = $data['otp'];
         $result = otpValidation($otp);
-        \Log::info('OTP Validation Req Res');
-        \Log::info($result);
-        return $result;
+        $xml = $result['res'];
+        $xml = simplexml_load_string($xml, "SimpleXMLElement", LIBXML_NOCDATA);
+        $json = json_encode($xml);
+        $array = json_decode($json, TRUE);
+        if(0 == $array['error_code']) {
+            return redirect(url('success'));
+        } 
+
+        return redirect(url('otp'));
     }
 
     public function resentOtp() {
         $data = otpRegeneration();
-        \Log::info('OTP Resent Req Res');
-        \Log::info($data);
         return redirect(url('otp'));
     }
 
@@ -109,6 +114,28 @@ class WebController extends Controller
 
     public function invalidService() {
         return view('frontend.invalidservice');   
+    }
+
+    public function unsubscribe(Request $request) {
+        $data = $request->all();
+        $customer = Customer::find($data['customer_id']);
+        if(empty($customer)) {
+            return "0";
+        }
+
+        $subscriber = Subscriber::where('customer_id', $customer->id)->first();
+        $result = unsubscribe_process($customer->msisdn, $data['service_type']);
+        $xml = $result['res'];
+        $xml = simplexml_load_string($xml, "SimpleXMLElement", LIBXML_NOCDATA);
+        $json = json_encode($xml);
+        $array = json_decode($json, TRUE);
+        $response = [];
+        if("0" == $array['error_code']) {
+            unsubscribe($subscriber->id);
+            return $array['error_code'];
+        }
+
+        return $array['error_code'];
     }
 
 }

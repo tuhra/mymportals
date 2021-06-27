@@ -20,7 +20,7 @@
               You can learn educational videos, songs, stories, puzzles and more in Smart Kids.
           </div>-->
             <div class="uk-flex uk-flex-center text-burmese">
-                ကလေးများအတွက် ပညာရေးဝန်ဆောင်မှု၊ <br/>သီချင်းများ၊ ရုပ်ပြများ၊ ဥာဏ်စမ်းပဟေဠိများ <br/> ပါဝင်ပါသည်။
+                {!! $config['landing'] !!}
             </div>
 
             <form method="post" action="{{ url('otp') }}">

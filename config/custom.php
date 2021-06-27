@@ -9,7 +9,7 @@ return [
     'SMARTKID' => [
     	'CpId' => 'CF',
     	'productID' => '9500', 
-    	'pName' => ' Smart Kids',
+    	'pName' => 'Smart+Kids',
     	'pPrice' => 150,
     	'pVal' => 1,
     	'CpPwd' => 'cf@123',
@@ -29,7 +29,7 @@ return [
     'MMSPORT' => [
     	'CpId' => 'CF',
     	'productID' => '9510', 
-    	'pName' => 'Myanmar Sports',
+    	'pName' => 'Myanmar+Sports',
     	'pPrice' => 150,
     	'pVal' => 1,
     	'CpPwd' => 'cf@123',
@@ -48,7 +48,7 @@ return [
 
     '538' => [
         'logo' => 'web/images/sport_logo.png',
-        'url' => 'http://localhost:8000',
+        'url' => 'http://myanmar-sport.co/news',
         'image' => 'web/images/sports-lp.png',
         'landing' => 'ပရီးမီးယားလိဒ်၊ မြန်မာနေရှင်နယ်လိဒ်နှင့် လိဒ်အစုံ၏ ရမှတ်၊ အဆင့်များကို အချိန်နှင့်တပြေးညီ သိရှိရမှာပါ။',
         'landing_price' => 'စာရင်းသွင်းခြင်းအတွက်နေ့စဉ်(၁၅၀)ကျပ်',
@@ -58,7 +58,7 @@ return [
 
     '542' => [
         'logo' => 'web/images/kids_logo.png',
-        'url' => 'http://localhost:9000/categories',
+        'url' => 'http://my-smartkids.co/categories',
         'image' => 'web/images/kids-lp.png',
         'landing' => 'ကလေးများအတွက် ပညာရေးဝန်ဆောင်မှု၊ <br/> သီချင်းများ၊ ရုပ်ပြများ၊ ဥာဏ်စမ်းပဟေဠိများ <br/> ပါဝင်ပါသည်။', 
         'landing_price' => 'စာရင်းသွင်းခြင်းအတွက်နေ့စဉ်(၁၅၀)ကျပ်',
