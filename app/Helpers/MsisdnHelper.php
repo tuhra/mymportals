@@ -56,8 +56,17 @@ class MsisdnHelper
 		$env = config('app')['env'];
 		$endpoint = config('custom')['URL'][$env];
 		$query = build_http_query(config('custom')[$service_type]) . $append;
-		$url = $endpoint . 'CGRequest?' . $query . '&dRcp=DirectCP';
-		return $url;
+		switch ($service_type) {
+			case 'MMSPORT':
+				$url = $endpoint . 'CGRequest?CpId=CF&MSISDN='.$msisdn.'&productID=9510&pName=Myanmar+Sports&pPrice=150&pVal=1&CpPwd=cf%40123&CpName=CF&reqMode=WAP&reqType=Subscription&ismID=17&transID='.$transid.'&sRenewalPrice=150&sRenewalValidity=1&Wap_mdata=&request_locale=my&serviceType=T_CF_KIDS_SUB_D&planId=T_CF_KIDS_SUB_D_150';
+				return $url;
+				break;
+			
+			case 'SMARTKID':
+				$url = $endpoint . 'CGRequest?CpId=CF&MSISDN='.$msisdn.'&productID=9500&pName=Smart%2BKids&pPrice=150&pVal=1&CpPwd=cf%40123&CpName=CF&reqMode=WAP&reqType=Subscription&ismID=17&transID='.$transid.'&sRenewalPrice=150&sRenewalValidity=1&Wap_mdata=&request_locale=my&serviceType=T_CF_SPORT_SUB_D&planId=T_CF_SPORT_SUB_D_150';
+				return $url;
+				break;
+		}
 	}
 }
 
