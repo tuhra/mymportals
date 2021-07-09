@@ -46,7 +46,7 @@ return [
     	'opId' => 101
     ],
 
-    '538' => [
+    '9510' => [
         'logo' => 'web/images/sport_logo.png',
         'url' => 'http://myanmar-sport.co/news',
         'image' => 'web/images/sports-lp.png',
@@ -56,7 +56,7 @@ return [
         'regPassword' => 'UkVHSVNfT1RQQDU0MzI'
     ],
 
-    '542' => [
+    '9500' => [
         'logo' => 'web/images/kids_logo.png',
         'url' => 'http://my-smartkids.co/categories',
         'image' => 'web/images/kids-lp.png',

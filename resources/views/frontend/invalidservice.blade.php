@@ -20,11 +20,11 @@
               You can learn educational videos, songs, stories, puzzles and more in Smart Kids.
           </div>-->
             <div class="uk-flex uk-flex-center text-burmese">
-                  <input type="radio" id="smartkid" name="service" value="542">
+                  <input type="radio" id="smartkid" name="service" value="9500">
                   <label for="male">Smart Kid</label><br>
             </div>
             <div class="uk-flex uk-flex-center text-burmese">
-                  <input type="radio" id="mmsport" name="service" value="538">
+                  <input type="radio" id="mmsport" name="service" value="9510">
                   <label for="female">MM Sport</label>
             </div>
             <div class="uk-flex uk-flex-center subs-div">
@@ -41,12 +41,12 @@
             if ($(this).is(':checked')) {
                 var checked = $(this).val();
                 console.log(typeof(checked));
-                if (checked === "542") {
+                if (checked === "9500") {
                     var url = "{{ url('/') }}";
-                    window.location.href = url + "?service_type=SMARTKID&service_id=542";
-                } else if (checked === "538") {
+                    window.location.href = url + "?service_type=SMARTKID&service_id=9500";
+                } else if (checked === "9510") {
                     var url = "{{ url('/') }}";
-                    window.location.href = url + "?service_type=MMSPORT&service_id=538";                    
+                    window.location.href = url + "?service_type=MMSPORT&service_id=9510";                    
                 }
             }
         });
