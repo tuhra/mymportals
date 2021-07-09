@@ -19,7 +19,7 @@ Route::group(['namespace' => 'Frontend', 'middleware' => 'signature'], function(
 	Route::get('/', 'WebController@index');
 });
 
-Route::group(['namespace' => 'Frontend'], function() {
+Route::group(['namespace' => 'Frontend', 'middleware' => 'cors'], function() {
 	Route::get('/singleHE', 'WebController@singleHE');
 	Route::get('msisdn', 'WebController@msisdn');
 	Route::post('msisdn', 'WebController@postMsisdn');
