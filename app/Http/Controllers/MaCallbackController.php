@@ -138,7 +138,20 @@ class MaCallbackController extends Controller
 				case '2084':
                     $subscriber = Subscriber::where('customer_id', $customer->id)
                     ->where('service_id', $this->serviceId)->first();
-					$this->callbacklog($customer->id, 'ALREADY_SUBSCRIBED', $this->serviceId);
+
+                    $subscriber = Subscriber::where('customer_id', $customer->id)
+                                ->where('service_id', $this->serviceId)->first();
+                    if (empty($subscriber)) {   
+                        $subscriber = subscriber_creation($customer->id, $this->serviceId);
+                        subscriber_log($customer->id, 'SUBSCRIBED', $this->serviceId);
+                        $this->callbacklog($customer->id, 'SUBSCRIBED', $this->serviceId);
+                    } else {
+                        renewal($subscriber->id);
+                        subscriber_log($customer->id, 'RENEWAL', $this->serviceId);
+                        $this->callbacklog($customer->id, 'RENEWAL', $this->serviceId);
+                    }
+
+					// $this->callbacklog($customer->id, 'ALREADY_SUBSCRIBED', $this->serviceId);
 					$response['status'] = 200;
 					return $response;
 					break;
