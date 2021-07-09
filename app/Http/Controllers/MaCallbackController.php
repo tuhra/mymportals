@@ -62,6 +62,7 @@ class MaCallbackController extends Controller
 					switch ($operationId) {
 						// New Subscriber
 						case 'SN':
+                        case 'SAA':
 							$subscriber = Subscriber::where('customer_id', $customer->id)
                                         ->where('service_id', $this->serviceId)->first();
 							if (empty($subscriber)) {	
