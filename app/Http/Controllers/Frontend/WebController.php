@@ -125,6 +125,7 @@ class WebController extends Controller
 
         $subscriber = Subscriber::where('customer_id', $customer->id)->first();
         $result = unsubscribe_process($customer->msisdn, $data['service_type']);
+        \Log::info($result);
         $xml = $result['res'];
         $xml = simplexml_load_string($xml, "SimpleXMLElement", LIBXML_NOCDATA);
         $json = json_encode($xml);

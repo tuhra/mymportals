@@ -137,9 +137,6 @@ class MaCallbackController extends Controller
                 // User have already subscribe
 				case '2084':
                     $subscriber = Subscriber::where('customer_id', $customer->id)
-                    ->where('service_id', $this->serviceId)->first();
-
-                    $subscriber = Subscriber::where('customer_id', $customer->id)
                                 ->where('service_id', $this->serviceId)->first();
                     if (empty($subscriber)) {   
                         $subscriber = subscriber_creation($customer->id, $this->serviceId);
