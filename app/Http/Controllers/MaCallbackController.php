@@ -157,6 +157,7 @@ class MaCallbackController extends Controller
 				case '2032':
 					switch ($operationId) {
 						// Unsubscribe case (Remove 'YS')
+                        case 'YS':
                         case 'ACI':
                         case 'PCI':
                         case 'SCI':
