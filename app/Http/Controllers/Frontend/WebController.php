@@ -120,7 +120,7 @@ class WebController extends Controller
         $data = $request->all();
         $customer = Customer::find($data['customer_id']);
         if(empty($customer)) {
-            return "0";
+            return redirect(url('/'));
         }
 
         $subscriber = Subscriber::where('customer_id', $customer->id)->first();
@@ -133,10 +133,14 @@ class WebController extends Controller
         $response = [];
         if("0" == $array['error_code']) {
             unsubscribe($subscriber->id);
-            return $array['error_code'];
+            $config = config('custom')[$data['service_id']];
+            return view('frontend.unsubscribed', compact('config'));
         }
 
-        return $array['error_code'];
+        return redirect(url('/'));
+        // return redirect(url('unsub_success'));
+
+        // return $array['error_code'];
     }
 
 }

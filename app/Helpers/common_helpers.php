@@ -45,6 +45,7 @@ function renewal ($subscriber_id)
     Subscriber::find($subscriber_id)
         ->update([
             'is_subscribed' => 1,
+            'is_active' => 1,
             'valid_date' => $valid_date,
             'is_new_user' => 0
         ]);

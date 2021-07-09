@@ -31,7 +31,7 @@ Route::group(['namespace' => 'Frontend', 'middleware' => 'cors'], function() {
 	Route::get('continue', 'WebController@continue');
 	Route::get('invalid', 'WebController@invalid');
 	Route::get('services', 'WebController@invalidService');
-	Route::post('unsubscribe', 'WebController@unsubscribe');
+	Route::get('unsubscribe', 'WebController@unsubscribe');
 });
 
 Route::get('smartkid/callback', 'MaCallbackController@callback');
