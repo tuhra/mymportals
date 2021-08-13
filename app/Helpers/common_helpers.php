@@ -24,7 +24,7 @@ function otpsub_createion($customer_id, $service_id, $sub_type) {
     Subscriber::create([
         'customer_id' => $customer_id,
         'is_active' => 1,
-        'is_subscribed' => 1,
+        'is_subscribed' => 0,
         'valid_date' => $valid_date,
         'service_id' => $service_id,
         'sub_type' => $sub_type

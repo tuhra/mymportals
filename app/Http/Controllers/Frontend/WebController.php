@@ -91,8 +91,14 @@ class WebController extends Controller
                 'user_id' => $customer->id
             ];
 
-            
-
+            if("9520" == $service_id || "9530" == $service_id) {
+                $array = [
+                    'msisdn' => $customer->msisdn,
+                    'is_active' => $subscriber->is_active,
+                    'is_subscribed' => $subscriber->is_subscribed,
+                    'valid_date' => $subscriber->valid_date
+                ];
+            }
 
             $json = json_encode($array);
             $signature = Crypt::encryptString($json);
