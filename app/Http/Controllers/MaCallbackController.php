@@ -66,7 +66,7 @@ class MaCallbackController extends Controller
 					switch ($operationId) {
                         // Event Charge
 
-                        case 'EN':
+                        case 'ES':
                             $subscriber = Subscriber::where('customer_id', $customer->id)
                                         ->where('service_id', $this->serviceId)->first();
                             if (empty($subscriber)) {   

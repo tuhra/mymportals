@@ -33,6 +33,10 @@ class MsisdnHelper
 					return $this->cgRequestURL($msisdn, $transid);
 				}
 
+				if("9530" == $service_id) {
+					return $this->cgRequestURL($msisdn, $transid);
+				}
+
 				// OTP Process for Active User
 				$data = otpSend(); 
 				\Log::info('OTP Send Req Res');
