@@ -24,6 +24,10 @@ class MaCallbackController extends Controller
         \Log::info($callback);
         
 		$this->reqBody = $callback;
+        $response = [];
+        $response['status'] = 200;
+        return $response;
+
 		$data = $request->all();
 		$msisdn = $data['callingParty'];
 
@@ -60,6 +64,24 @@ class MaCallbackController extends Controller
 				case '0':
 					// check subscribe status
 					switch ($operationId) {
+                        // Event Charge
+
+                        case 'EN':
+                            $subscriber = Subscriber::where('customer_id', $customer->id)
+                                        ->where('service_id', $this->serviceId)->first();
+                            if (empty($subscriber)) {   
+                                $subscriber = otpsub_createion($customer->id, $this->serviceId, "ONETIMEPURCHASE");
+                                subscriber_log($customer->id, 'ONETIMEPURCHASE', $this->serviceId);
+                                $this->callbacklog($customer->id, 'ONETIMEPURCHASE', $this->serviceId);
+                            } else {
+                                otp_renewal($subscriber->id, "ONETIMEPURCHASE");
+                                subscriber_log($customer->id, 'ONETIMEPURCHASE', $this->serviceId);
+                                $this->callbacklog($customer->id, 'ONETIMEPURCHASE', $this->serviceId);
+                            }
+                            $response['status'] = 200;
+                            return $response;
+                            break;
+
 						// New Subscriber
 						case 'SN':
                         case 'SAA':

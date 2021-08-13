@@ -90,6 +90,10 @@ class WebController extends Controller
             $array = [
                 'user_id' => $customer->id
             ];
+
+            
+
+
             $json = json_encode($array);
             $signature = Crypt::encryptString($json);
             $url = config('custom')[$service_id]['url'] . "?signature=".$signature;

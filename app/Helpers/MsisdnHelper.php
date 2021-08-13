@@ -55,7 +55,6 @@ class MsisdnHelper
 		$append = '&MSISDN=' . $msisdn . '&transID=' . $transid;
 		$env = config('app')['env'];
 		$endpoint = config('custom')['URL'][$env];
-		$query = build_http_query(config('custom')[$service_type]) . $append;
 		switch ($service_type) {
 			case 'MMSPORT':
 				$url = $endpoint . 'CGRequest?CpId=CF&MSISDN='.$msisdn.'&productID=9510&pName=Myanmar+Sports&pPrice=150&pVal=1&CpPwd=cf%40123&CpName=CF&reqMode=WAP&reqType=Subscription&ismID=17&transID='.$transid.'&sRenewalPrice=150&sRenewalValidity=1&Wap_mdata=&request_locale=my&serviceType=T_CF_SPORT_SUB_D&planId=T_CF_SPORT_SUB_D_150';
@@ -64,7 +63,14 @@ class MsisdnHelper
 			
 			case 'SMARTKID':
 				$url = $endpoint . 'CGRequest?CpId=CF&MSISDN='.$msisdn.'&productID=9500&pName=Smart%2BKids&pPrice=150&pVal=1&CpPwd=cf%40123&CpName=CF&reqMode=WAP&reqType=Subscription&ismID=17&transID='.$transid.'&sRenewalPrice=150&sRenewalValidity=1&Wap_mdata=&request_locale=my&serviceType=T_CF_KIDS_SUB_D&planId=T_CF_KIDS_SUB_D_150';
-				\Log::info($url);
+				return $url;
+				break;
+			case 'GUESSIT':
+				$url = $endpoint . 'CGRequest?CpId=CF&MSISDN='.$msisdn.'&productID=9520&pName=Guess%2BIt&pPrice=150&pVal=1&CpPwd=cf%40123&CpName=CF&reqMode=WAP&reqType=Subscription&ismID=17&transID='.$transid.'&sRenewalPrice=150&sRenewalValidity=1&Wap_mdata=&request_locale=my&serviceType=T_CF_GUESS_SUB_D&planId=T_CF_GUESS_SUB_D_150';
+				return $url;
+				break;
+			case 'GUESSITEVENT':
+				$url = $endpoint . 'CGRequest?CpId=CF&MSISDN='.$msisdn.'&productID=9530&pName=Guess%2BIt%2BEvent&pPrice=100&pVal=1&CpPwd=cf%40123&CpName=CF&reqMode=WAP&reqType=Event&ismID=17&transID='.$transid.'&sRenewalPrice=100&sRenewalValidity=1&Wap_mdata=&request_locale=my&serviceType=T_CF_GUESS_PUR&planId=T_CF_GUESS_PUR_E_100';
 				return $url;
 				break;
 		}

@@ -36,6 +36,8 @@ Route::group(['namespace' => 'Frontend', 'middleware' => 'cors'], function() {
 
 Route::get('smartkid/callback', 'MaCallbackController@callback');
 Route::get('mmsport/callback', 'MaCallbackController@callback');
+Route::get('guessit/callback', 'MaCallbackController@callback');
 Route::get('smartkid/checkstatus', 'MaCallbackController@notify');
 Route::get('mmsport/checkstatus', 'MaCallbackController@notify');
+Route::get('guessit/checkstatus', 'MaCallbackController@notify');
 Route::get('checkTran', 'MaCallbackController@checkStatus');

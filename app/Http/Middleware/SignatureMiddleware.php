@@ -21,6 +21,8 @@ class SignatureMiddleware
         //     return $next($request); 
         // }
 
+
+
         if(array_key_exists('service_type', $data) && array_key_exists('service_id', $data)) {
             setServiceType($data['service_type']);
             setServiceId($data['service_id']);

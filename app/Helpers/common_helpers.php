@@ -19,6 +19,18 @@ function subscriber_creation ($customer_id, $service_id)
     ]);
 }
 
+function otpsub_createion($customer_id, $service_id, $sub_type) {
+    $valid_date = Carbon::now()->addDays(1);
+    Subscriber::create([
+        'customer_id' => $customer_id,
+        'is_active' => 1,
+        'is_subscribed' => 1,
+        'valid_date' => $valid_date,
+        'service_id' => $service_id,
+        'sub_type' => $sub_type
+    ]);
+}
+
 function unsubscribe($subscriber_id)
 {
     $row = Subscriber::find($subscriber_id)
@@ -48,6 +60,19 @@ function renewal ($subscriber_id)
             'is_active' => 1,
             'valid_date' => $valid_date,
             'is_new_user' => 0
+        ]);
+}
+
+function otp_renewal ($subscriber_id, $sub_type)
+{
+    $valid_date = Carbon::now()->addDays(1);
+    Subscriber::find($subscriber_id)
+        ->update([
+            'is_subscribed' => 1,
+            'is_active' => 1,
+            'valid_date' => $valid_date,
+            'is_new_user' => 0,
+            'sub_type' => $sub_type
         ]);
 }
 
@@ -99,6 +124,14 @@ function setServiceId($service_id) {
 
 function getServiceId() {
     return Session::get('service_id');
+}
+
+function setReqType($req_type) {
+    Session::put('req_type', $req_type);   
+}
+
+function getReqType() {
+    return Session::get('req_type');
 }
 
 function curlRequest($url) {

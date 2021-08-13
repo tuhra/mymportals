@@ -21,6 +21,7 @@ class CreateSubscribersTable extends Migration
             $table->boolean('is_subscribed');
             $table->datetime('valid_date');
             $table->string('service_id');
+            $table->string('sub_type')->default(null);
             $table->timestamps();
         });
     }

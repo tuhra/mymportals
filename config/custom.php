@@ -69,4 +69,33 @@ return [
         'regUser' => 'REGIS_MPT',
         'regPassword' => 'UkVHSVNfT1RQQDU0MzI'
     ],
+
+    '9520' => [
+        'logo' => 'web/images/kids_logo.png',
+        'home' => 'https://guessitmm.com',
+        'url' => 'https://guessitmm.com',
+        'image' => 'web/images/guessit.png',
+        'landing' => 'Guessit Subscription',
+        'landing_price' => 'စာရင်းသွင်းခြင်းအတွက်နေ့စဉ်(၁၅၀)ကျပ်',
+        'unsubscribed' => 'MM Sport ဝန်ဆောင်မှု ရပ်တန်ခြင်း အောင်မြင်ပါသည်',
+        'regUser' => 'REGIS_MPT',
+        'regPassword' => 'UkVHSVNfT1RQQDU0MzI'
+    ],
+
+    '9530' => [
+        'logo' => 'web/images/kids_logo.png',
+        'home' => 'https://guessitmm.com',
+        'url' => 'https://guessitmm.com/',
+        'image' => 'web/images/guessit.png',
+        'landing' => 'Guessit Subscription Event',
+        'landing_price' => 'စာရင်းသွင်းခြင်းအတွက်နေ့စဉ်(၁၀၀)ကျပ်',
+        'unsubscribed' => 'MM Sport ဝန်ဆောင်မှု ရပ်တန်ခြင်း အောင်မြင်ပါသည်',
+        'regUser' => 'REGIS_MPT',
+        'regPassword' => 'UkVHSVNfT1RQQDU0MzI'
+    ],
 ];
+
+
+
+
+
