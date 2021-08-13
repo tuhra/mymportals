@@ -194,6 +194,18 @@ function unsubscribe_process($msisdn, $service_type) {
     return $result;
 }
 
+function checkEligible($valid_date) {
+    $eligible = FALSE;
+    $now = strtotime(Carbon::now());
+    $valid = strtotime($valid_date);
+
+    if($now < $valid_date) {
+        $eligible = TRUE;
+    }
+    return $eligible;
+}
+
+
 /**
 * Builds an http query string.
 * @param array $query  // of key value pairs to be used in the query

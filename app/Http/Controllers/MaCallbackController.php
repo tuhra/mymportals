@@ -270,4 +270,71 @@ class MaCallbackController extends Controller
         return json_encode($response);
     }
 
+    public function checkMsisdn(Request $request) {
+        $data = $request->all();
+        $msisdn = $data['msisdn'];
+        $serviceId = $data['service_id'];
+        $servicetype = $data['service_type'];
+        $response = [];
+        if(array_key_exists('msisdn', $data)) {
+            $customer = Customer::where('msisdn', $msisdn)->where('service_id', $serviceId)->first();
+            if(empty($customer)) {
+                $response['status'] = FALSE;
+                $response['message'] = "msisdn does not exist";
+                $response['url'] = "http://mymportals.com/?service_type=". $servicetype."&service_id=" . $serviceId;
+                return response()->json($response, 404);
+            }
+
+            $subscriber = Subscriber::where('customer_id', $customer->id)->first();
+            if(empty($subscriber)) {
+                $response['status'] = FALSE;
+                $response['message'] = "msisdn is not subscribed!";
+                $response['url'] = "http://mymportals.com/?service_type=". $servicetype."&service_id=" . $serviceId;
+                return response()->json($response, 404);
+            }
+
+             
+            switch ($subscriber->sub_type) {
+                case 'ONETIMEPURCHASE':
+                    $response = [
+                        'status' => TRUE,
+                        'msisdn' => $customer->msisdn,
+                        'is_active' => $subscriber->is_active,
+                        'is_subscribed' => $subscriber->is_subscribed,
+                        'valid_date' => $subscriber->valid_date,
+                        'subscribe_type' => "ONETIMEPURCHASE",
+                        'eligible' => ($subscriber->is_active==1)?true:false,
+                    ];
+                    return response()->json($response, 200);
+                    break;
+                
+                default:
+                    $response = [
+                        'status' => TRUE,
+                        'msisdn' => $customer->msisdn,
+                        'is_active' => $subscriber->is_active,
+                        'is_subscribed' => $subscriber->is_subscribed,
+                        'valid_date' => $subscriber->valid_date,
+                        'subscribe_type' => "SUBSCRIPTION",
+                        'eligible' => ($subscriber->is_active==1)?true:false,
+                    ];
+                    return response()->json($response, 200);
+                    break;
+            }
+        }
+
+        $response['status'] = FALSE;
+        $response['message'] = "Something went wrong!";
+        $response['url'] = "";
+        return response()->json($response, 404);
+
+    }
 }
+
+
+
+
+
+
+
+
