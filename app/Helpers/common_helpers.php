@@ -15,7 +15,8 @@ function subscriber_creation ($customer_id, $service_id)
         'is_active' => 1,
         'is_subscribed' => 1,
         'valid_date' => $valid_date,
-        'service_id' => $service_id
+        'service_id' => $service_id,
+        'sub_type' => "SUBSCRIPTION"
     ]);
 }
 
@@ -194,15 +195,12 @@ function unsubscribe_process($msisdn, $service_type) {
     return $result;
 }
 
-function checkEligible($valid_date) {
-    $eligible = FALSE;
-    $now = strtotime(Carbon::now());
-    $valid = strtotime($valid_date);
-
-    if($now < $valid_date) {
-        $eligible = TRUE;
+function checkEligible($is_active) {
+    if(FALSE == $is_active) {
+        return FALSE;
     }
-    return $eligible;
+
+    return TRUE;
 }
 
 

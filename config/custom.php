@@ -46,6 +46,47 @@ return [
     	'opId' => 101
     ],
 
+    'GUESSIT' => [
+        'CpId' => 'CF',
+        'productID' => '9520', 
+        'pName' => 'Guess+It',
+        'pPrice' => 150,
+        'pVal' => 1,
+        'CpPwd' => 'cf@123',
+        'CpName' => 'CF',
+        'reqMode' => 'WAP',
+        'reqType' => 'SUBSCRIPTION',
+        'ismID' => 17,
+        'sRenewalPrice' => 150,
+        'sRenewalValidity' => 1,
+        'Wap_mdata' => NULL,
+        'request_locale' => 'my',
+        'serviceType' => 'T_CF_GUESS_PUR',
+        'planId' => 'T_CF_GUESS_SUB_D_150',
+        'opId' => 101
+    ],
+
+    'GUESSITEVENT' => [
+        'CpId' => 'CF',
+        'productID' => '9530', 
+        'pName' => 'Guess+It+Event',
+        'pPrice' => 100,
+        'pVal' => 1,
+        'CpPwd' => 'cf@123',
+        'CpName' => 'CF',
+        'reqMode' => 'WAP',
+        'reqType' => 'EVENT',
+        'ismID' => 17,
+        'sRenewalPrice' => 100,
+        'sRenewalValidity' => 1,
+        'Wap_mdata' => NULL,
+        'request_locale' => 'my',
+        'serviceType' => 'T_CF_GUESS_SUB_D',
+        'planId' => 'T_CF_GUESS_PUR_E_100',
+        'opId' => 101
+    ],
+
+
     '9510' => [
         'logo' => 'web/images/sport_logo.png',
         'home' => 'http://myanmar-sport.co',

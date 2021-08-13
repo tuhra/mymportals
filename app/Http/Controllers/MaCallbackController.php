@@ -25,8 +25,8 @@ class MaCallbackController extends Controller
         
 		$this->reqBody = $callback;
         $response = [];
-        $response['status'] = 200;
-        return $response;
+        // $response['status'] = 200;
+        // return $response;
 
 		$data = $request->all();
 		$msisdn = $data['callingParty'];
@@ -293,17 +293,14 @@ class MaCallbackController extends Controller
                 return response()->json($response, 404);
             }
 
-             
             switch ($subscriber->sub_type) {
                 case 'ONETIMEPURCHASE':
                     $response = [
                         'status' => TRUE,
                         'msisdn' => $customer->msisdn,
-                        'is_active' => $subscriber->is_active,
-                        'is_subscribed' => $subscriber->is_subscribed,
                         'valid_date' => $subscriber->valid_date,
                         'subscribe_type' => "ONETIMEPURCHASE",
-                        'eligible' => ($subscriber->is_active==1)?true:false,
+                        'eligible' => checkEligible($subscriber->is_active),
                     ];
                     return response()->json($response, 200);
                     break;
@@ -312,11 +309,9 @@ class MaCallbackController extends Controller
                     $response = [
                         'status' => TRUE,
                         'msisdn' => $customer->msisdn,
-                        'is_active' => $subscriber->is_active,
-                        'is_subscribed' => $subscriber->is_subscribed,
                         'valid_date' => $subscriber->valid_date,
                         'subscribe_type' => "SUBSCRIPTION",
-                        'eligible' => ($subscriber->is_active==1)?true:false,
+                        'eligible' => checkEligible($subscriber->is_active),
                     ];
                     return response()->json($response, 200);
                     break;

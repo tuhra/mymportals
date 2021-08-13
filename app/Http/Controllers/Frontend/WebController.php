@@ -93,15 +93,15 @@ class WebController extends Controller
 
             if("9520" == $service_id || "9530" == $service_id) {
                 $array = [
+                    'user_id' => $customer->id,
                     'msisdn' => $customer->msisdn,
-                    'is_active' => $subscriber->is_active,
-                    'is_subscribed' => $subscriber->is_subscribed,
-                    'valid_date' => $subscriber->valid_date
+                    'valid_date' => $subscriber->valid_date,
+                    'eligible' => checkEligible($subscriber->is_active),
                 ];
             }
-
             $json = json_encode($array);
             $signature = Crypt::encryptString($json);
+            return Crypt::decryptString($signature);
             $url = config('custom')[$service_id]['url'] . "?signature=".$signature;
             return Redirect::away($url);
         }
