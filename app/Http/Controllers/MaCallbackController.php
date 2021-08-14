@@ -259,7 +259,8 @@ class MaCallbackController extends Controller
         $customer = Customer::where('msisdn', $msisdn)->where('service_id', $serviceId)->first();
         if(empty($customer)) {
             $response['status'] = FALSE;
-            $response['url'] = url('error'); 
+            $response['url'] = url('error');
+            return json_encode($response);
         }
         $subscriber = Subscriber::where('customer_id', $customer->id)->first();
         $result = check_callback($customer->id, $data['tranid']);
