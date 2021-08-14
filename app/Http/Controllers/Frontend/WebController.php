@@ -86,7 +86,7 @@ class WebController extends Controller
         $service_id = getServiceId();
         $customer = Customer::where('msisdn', $msisdn)->where('service_id', $service_id)->first();
         $subscriber = Subscriber::where('customer_id', $customer->id)->first();
-        if($subscriber->is_active && $subscriber->is_subscribed) {
+        if($subscriber->is_active) {
             $array = [
                 'user_id' => $customer->id
             ];
