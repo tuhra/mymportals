@@ -101,7 +101,6 @@ class WebController extends Controller
             }
             $json = json_encode($array);
             $signature = Crypt::encryptString($json);
-            // return Crypt::decryptString($signature);
             $url = config('custom')[$service_id]['url'] . "?signature=".$signature;
             return Redirect::away($url);
         }
