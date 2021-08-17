@@ -359,23 +359,19 @@ class MaCallbackController extends Controller
             ];
             return response()->json($errors);
         }
-
-
-        // $subscriber = Subscriber::where('customer_id', $customer->id)->first();
-
-        // if(empty($subscriber)) {
-        //     $e = new \stdClass();
-        //     $e->key = "invalid";
-        //     $e->errors = "User Id not subscribed";
-        //     $errors['validation'][] = [
-        //         'attribute' => 'user_id',
-        //         'errors' => [
-        //             $e
-        //         ],
-        //     ];
-        //     return response()->json($errors);
-        // }
-
+        $subscriber = Subscriber::where('customer_id', $customer->id)->first();
+        if(empty($subscriber)) {
+            $e = new \stdClass();
+            $e->key = "invalid";
+            $e->errors = "User Id not subscribed";
+            $errors['validation'][] = [
+                'attribute' => 'user_id',
+                'errors' => [
+                    $e
+                ],
+            ];
+            return response()->json($errors);
+        }
         $result = unsubscribe_process($customer->msisdn, $data['service_type']);
         return $result;
         $xml = $result['res'];
@@ -388,7 +384,7 @@ class MaCallbackController extends Controller
             $response = [
                 'status' => TRUE,
                 'msisdn' => $customer->msisdn,
-                'valid_date' => 'test',
+                'valid_date' => $subscriber->valid_date,
                 'subscribe_type' => $array['errorDesc'],
                 'eligible' => true
             ];
@@ -398,15 +394,11 @@ class MaCallbackController extends Controller
         $response = [
             'status' => FALSE,
             'msisdn' => $customer->msisdn,
-            'valid_date' => 'test',
+            'valid_date' => $subscriber->valid_date,
             'subscribe_type' => $array['errorDesc'],
             'eligible' => true
         ];
         return response()->json($response, 200);
-
-        
-
-
     }
 
     public function validator($data) {
