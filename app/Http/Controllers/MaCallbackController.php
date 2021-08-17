@@ -343,7 +343,7 @@ class MaCallbackController extends Controller
                     'errors' => $error
                 ];
             }
-            return response()->json($errors); 
+            return response()->json($errors, 400); 
         }
 
         $customer = Customer::find($data['user_id']);
