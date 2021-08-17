@@ -373,7 +373,6 @@ class MaCallbackController extends Controller
             return response()->json($errors);
         }
         $result = unsubscribe_process($customer->msisdn, $data['service_type']);
-        return $result;
         $xml = $result['res'];
         $xml = simplexml_load_string($xml, "SimpleXMLElement", LIBXML_NOCDATA);
         $json = json_encode($xml);
