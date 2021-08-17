@@ -48,7 +48,7 @@ return [
 
     'GUESSIT' => [
         'CpId' => 'CF',
-        'productID' => '9520_D', 
+        'productID' => '9520', 
         'pName' => 'Guess+It',
         'pPrice' => 150,
         'pVal' => 1,
@@ -111,7 +111,7 @@ return [
         'regPassword' => 'UkVHSVNfT1RQQDU0MzI'
     ],
 
-    '9520_D' => [
+    '9520' => [
         'logo' => 'web/images/kids_logo.png',
         'home' => 'https://guessitmm.com',
         'url' => 'https://guessitmm.com',
