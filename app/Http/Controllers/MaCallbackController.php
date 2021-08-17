@@ -357,7 +357,7 @@ class MaCallbackController extends Controller
                     $e
                 ],
             ];
-            return response()->json($errors);
+            return response()->json($errors, 400);
         }
         $subscriber = Subscriber::where('customer_id', $customer->id)->first();
         if(empty($subscriber)) {
@@ -370,7 +370,7 @@ class MaCallbackController extends Controller
                     $e
                 ],
             ];
-            return response()->json($errors);
+            return response()->json($errors, 400);
         }
         $result = unsubscribe_process($customer->msisdn, $data['service_type']);
         $xml = $result['res'];
