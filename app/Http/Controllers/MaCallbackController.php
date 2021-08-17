@@ -385,7 +385,7 @@ class MaCallbackController extends Controller
                 'msisdn' => $customer->msisdn,
                 'valid_date' => $subscriber->valid_date,
                 'subscribe_type' => $array['errorDesc'],
-                'eligible' => true
+                'eligible' => checkEligible($subscriber->is_active)
             ];
             return response()->json($response, 200);
         }
@@ -395,7 +395,7 @@ class MaCallbackController extends Controller
             'msisdn' => $customer->msisdn,
             'valid_date' => $subscriber->valid_date,
             'subscribe_type' => $array['errorDesc'],
-            'eligible' => true
+            'eligible' => checkEligible($subscriber->is_active)
         ];
         return response()->json($response, 200);
     }
