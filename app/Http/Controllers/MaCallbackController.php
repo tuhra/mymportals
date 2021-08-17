@@ -403,7 +403,7 @@ class MaCallbackController extends Controller
     public function validator($data) {
         $rules = [
             'user_id' => 'required|integer',
-            'service_id' => 'required|integer',
+            'service_id' => 'required|integer|in:9520',
             'service_type' => 'required|in:GUESSIT',
         ];
 
@@ -423,6 +423,10 @@ class MaCallbackController extends Controller
             'service_id.integer' => [
                 'key' => 'required',
                 'message' => 'The :attribute must be integer.'
+            ],
+            'service_id.in' => [
+                'key' => 'required',
+                'message' => 'The :attribute value must be 9520.'
             ],
             'service_type.required' => [
                 'key' => 'required',
