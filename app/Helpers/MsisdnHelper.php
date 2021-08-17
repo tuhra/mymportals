@@ -16,6 +16,7 @@ class MsisdnHelper
 				$transid = getUUID();
 				$service_id = getServiceId();
 				$customer = Customer::where('msisdn', $msisdn)->where('service_id', $service_id)->first();
+				return $this->cgRequestURL($msisdn, $transid);
 				if(empty($customer)) {
 					$customer = new Customer;
 					$customer->msisdn = $msisdn;
@@ -70,7 +71,7 @@ class MsisdnHelper
 				return $url;
 				break;
 			case 'GUESSIT':
-				$url = $endpoint . 'CGRequest?CpId=CF&MSISDN='.$msisdn.'&productID=9520&pName=Guess%2BIt&pPrice=150&pVal=1&CpPwd=cf%40123&CpName=CF&reqMode=WAP&reqType=Subscription&ismID=17&transID='.$transid.'&sRenewalPrice=150&sRenewalValidity=1&Wap_mdata=&request_locale=my&serviceType=T_CF_GUESS_SUB_D&planId=T_CF_GUESS_SUB_D_150';
+				$url = $endpoint . 'CGRequest?CpId=CF&MSISDN='.$msisdn.'&productID=9520_D&pName=Guess%2BIt&pPrice=150&pVal=1&CpPwd=cf%40123&CpName=CF&reqMode=WAP&reqType=Subscription&ismID=17&transID='.$transid.'&sRenewalPrice=150&sRenewalValidity=1&Wap_mdata=&request_locale=my&serviceType=T_CF_GUESS_SUB_D&planId=T_CF_GUESS_SUB_D_150';
 				return $url;
 				break;
 			case 'GUESSITEVENT':

@@ -48,7 +48,7 @@ return [
 
     'GUESSIT' => [
         'CpId' => 'CF',
-        'productID' => '9520', 
+        'productID' => '9520_D', 
         'pName' => 'Guess+It',
         'pPrice' => 150,
         'pVal' => 1,
@@ -61,7 +61,7 @@ return [
         'sRenewalValidity' => 1,
         'Wap_mdata' => NULL,
         'request_locale' => 'my',
-        'serviceType' => 'T_CF_GUESS_PUR',
+        'serviceType' => 'T_CF_GUESS_SUB_D',
         'planId' => 'T_CF_GUESS_SUB_D_150',
         'opId' => 101
     ],
@@ -81,7 +81,7 @@ return [
         'sRenewalValidity' => 1,
         'Wap_mdata' => NULL,
         'request_locale' => 'my',
-        'serviceType' => 'T_CF_GUESS_SUB_D',
+        'serviceType' => 'T_CF_GUESS_PUR',
         'planId' => 'T_CF_GUESS_PUR_E_100',
         'opId' => 101
     ],
@@ -111,7 +111,7 @@ return [
         'regPassword' => 'UkVHSVNfT1RQQDU0MzI'
     ],
 
-    '9520' => [
+    '9520_D' => [
         'logo' => 'web/images/kids_logo.png',
         'home' => 'https://guessitmm.com',
         'url' => 'https://guessitmm.com',

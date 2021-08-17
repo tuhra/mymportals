@@ -34,10 +34,31 @@ Route::group(['namespace' => 'Frontend', 'middleware' => 'cors'], function() {
 	Route::get('unsubscribe', 'WebController@unsubscribe');
 });
 
+// Smart Kid Callback and Redirect URL
 Route::get('smartkid/callback', 'MaCallbackController@callback');
-Route::get('mmsport/callback', 'MaCallbackController@callback');
-Route::get('guessit/callback', 'MaCallbackController@callback');
 Route::get('smartkid/checkstatus', 'MaCallbackController@notify');
+
+// Myanmar Sport Callback and Redirect URL
+Route::get('mmsport/callback', 'MaCallbackController@callback');
 Route::get('mmsport/checkstatus', 'MaCallbackController@notify');
+
+// Guess It Subscription Callback and Redirect URL
+Route::get('guessitsub/callback', 'MaCallbackController@callback');
+Route::get('guessitsub/checkstatus', 'MaCallbackController@notify');
+
+// Guess It Event Callback and Redirect URL
+Route::get('guessit/callback', 'MaCallbackController@callback');
 Route::get('guessit/checkstatus', 'MaCallbackController@notify');
+
 Route::get('checkTran', 'MaCallbackController@checkStatus');
+
+
+
+
+
+
+
+
+
+
+

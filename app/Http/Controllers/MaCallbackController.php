@@ -9,6 +9,7 @@ use App\Model\SubscriberLog;
 use App\Model\MptCallbackLog;
 use DB;
 use Session;
+use Illuminate\Support\Facades\Validator;
 
 class MaCallbackController extends Controller
 {
@@ -327,8 +328,125 @@ class MaCallbackController extends Controller
         $response['message'] = "Something went wrong!";
         $response['url'] = "";
         return response()->json($response, 404);
+    }
+
+    public function unsubscribe(Request $request) {
+        $data = json_decode($request->getContent(), TRUE);
+        $validator = $this->validator($data);
+        $errors = [];
+        $errors['validation'] = [];
+        if ($validator->fails()) {
+            $validators = $validator->errors()->getMessages();
+            foreach ($validators as $key => $error) {
+                $errors['validation'][] = [
+                    'attribute' => $key,
+                    'errors' => $error
+                ];
+            }
+            return response()->json($errors); 
+        }
+
+        $customer = Customer::find($data['user_id']);
+        if(empty($customer)) {
+            $e = new \stdClass();
+            $e->key = "invalid";
+            $e->errors = "User Id not found";
+            $errors['validation'][] = [
+                'attribute' => 'user_id',
+                'errors' => [
+                    $e
+                ],
+            ];
+            return response()->json($errors);
+        }
+
+
+        // $subscriber = Subscriber::where('customer_id', $customer->id)->first();
+
+        // if(empty($subscriber)) {
+        //     $e = new \stdClass();
+        //     $e->key = "invalid";
+        //     $e->errors = "User Id not subscribed";
+        //     $errors['validation'][] = [
+        //         'attribute' => 'user_id',
+        //         'errors' => [
+        //             $e
+        //         ],
+        //     ];
+        //     return response()->json($errors);
+        // }
+
+        $result = unsubscribe_process($customer->msisdn, $data['service_type']);
+        return $result;
+        $xml = $result['res'];
+        $xml = simplexml_load_string($xml, "SimpleXMLElement", LIBXML_NOCDATA);
+        $json = json_encode($xml);
+        $array = json_decode($json, TRUE);
+        $response = [];
+        if("0" == $array['error_code']) {
+            unsubscribe($subscriber->id);
+            $response = [
+                'status' => TRUE,
+                'msisdn' => $customer->msisdn,
+                'valid_date' => 'test',
+                'subscribe_type' => $array['errorDesc'],
+                'eligible' => true
+            ];
+            return response()->json($response, 200);
+        }
+
+        $response = [
+            'status' => FALSE,
+            'msisdn' => $customer->msisdn,
+            'valid_date' => 'test',
+            'subscribe_type' => $array['errorDesc'],
+            'eligible' => true
+        ];
+        return response()->json($response, 200);
+
+        
+
 
     }
+
+    public function validator($data) {
+        $rules = [
+            'user_id' => 'required|integer',
+            'service_id' => 'required|integer',
+            'service_type' => 'required|in:GUESSIT',
+        ];
+
+        $messages = [
+            'user_id.required' => [
+                'key' => 'required',
+                'message' => 'The :attribute field is required.'
+            ],
+            'user_id.integer' => [
+                'key' => 'integer',
+                'message' => 'The :attribute must be integer.'
+            ],
+            'service_id.required' => [
+                'key' => 'integer',
+                'message' => 'The :attribute field is required.'
+            ],
+            'service_id.integer' => [
+                'key' => 'required',
+                'message' => 'The :attribute must be integer.'
+            ],
+            'service_type.required' => [
+                'key' => 'required',
+                'message' => 'The :attribute field is required.'
+            ],
+            'service_type.in' => [
+                'key' => 'invalid',
+                'message' => 'The :attribute value must be GUESSIT.'
+            ],
+        ];
+        return Validator::make($data, $rules, $messages);
+    }
+
+
+
 }
 
 
