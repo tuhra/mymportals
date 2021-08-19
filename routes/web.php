@@ -34,6 +34,11 @@ Route::group(['namespace' => 'Frontend', 'middleware' => 'cors'], function() {
 	Route::get('unsubscribe', 'WebController@unsubscribe');
 });
 
+
+Route::get('import', 'ImportController@import');
+Route::post('import', 'ImportController@postImport');
+
+
 // Smart Kid Callback and Redirect URL
 Route::get('smartkid/callback', 'MaCallbackController@callback');
 Route::get('smartkid/checkstatus', 'MaCallbackController@notify');
