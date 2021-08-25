@@ -37,7 +37,7 @@ class WebController extends Controller
         		// $msisdn = exec('cd /var/www/decrypt && java JavaDecryptCaller '.$encrypted_msisdn);
                 $msisdnhelper = new MsisdnHelper;
                 $url = $msisdnhelper->checkMsisdnStatus($msisdn);
-                return redirect(away($url));
+                return redirect(url($url));
         		break;
         }
     }
@@ -53,7 +53,7 @@ class WebController extends Controller
         $msisdnhelper = new MsisdnHelper;
         $url = $msisdnhelper->checkMsisdnStatus($msisdn);
         \Log::info($url);
-        return redirect(away($url));
+        return redirect(url($url));
     }
 
     public function otp() {
