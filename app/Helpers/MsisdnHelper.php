@@ -16,7 +16,6 @@ class MsisdnHelper
 				$transid = getUUID();
 				$service_id = getServiceId();
 				$customer = Customer::where('msisdn', $msisdn)->where('service_id', $service_id)->first();
-				return $this->cgRequestURL($msisdn, $transid);
 				if(empty($customer)) {
 					$customer = new Customer;
 					$customer->msisdn = $msisdn;
