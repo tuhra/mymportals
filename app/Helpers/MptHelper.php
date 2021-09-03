@@ -22,6 +22,7 @@ class MptHelper
         $$checksum = urlencode(base64_encode($checksum));
         $checksum = urlencode(base64_encode(pack('H*',$checksum)));
         $request_url = $url . '?' .$CpId .'&requestParam=' . $enc . '&checksum='.$checksum.'&opcoId=1002';
+        \Log::info($request_url);
         return $request_url;
     }
 }
