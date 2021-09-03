@@ -11,11 +11,6 @@
 |
 */
 
-Route::get('test', function () {
-	$plaintext = Crypt::decryptString("eyJpdiI6ImU5TWdrMGZ3T2FvbEIzN24rRkk0VWc9PSIsInZhbHVlIjoibmxvTFZJWERQaHJcLzdMXC9KckZXbEhKWEttK1NJWFZxTnkyNURVV0ZpZGpScm01SHB5cWlvcHNhaHVSa2FoV2hHRWVucFhzTE1DZ3FyNlwvdEswZFJTUGwrQ3h6dU5yOW1OUHU4Y05RNWhWXC9hMnk4SmFkZGNWV3NWRTg1OXE4SU9RIiwibWFjIjoiNTZhZjNhNmM3YTlkMTJjYTUyNzYyZTk1MzEwMTQzM2I2MDkwYzUwNzE2NmUzM2YyNjc5ZmUyMTEwZjE1NGU4YSJ9");
-	return $plaintext;
-});
-
 Route::get('/', function () {
     return view('welcome');
 });

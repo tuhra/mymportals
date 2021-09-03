@@ -15,11 +15,12 @@ use Redirect;
 class WebController extends Controller
 {
     public function index(Request $request) {
-    	return redirect(url('msisdn'));
-        // $data = $request->all();
-        // $aes = new MptHelper;
-        // $url = $aes->mptHe();
-        // return redirect(url($url));
+    	// return redirect(url('msisdn'));
+        /* Single HE */
+        $data = $request->all();
+        $aes = new MptHelper;
+        $url = $aes->mptHe();
+        return redirect(url($url));
     }
 
     public function singleHE(Request $request) {

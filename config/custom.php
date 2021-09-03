@@ -6,6 +6,11 @@ return [
         'PRODUCTION' => 'http://macnt.mpt.com.mm/API/'
     ],
 
+    'HE' => [
+        'STAGING' => 'http://matestrpt.mpt.com.mm/SingleSiteHE/getHE',
+        'PRODUCTION' => 'http://marpt.mpt.com.mm/SingleSiteHE/getHE'
+    ],
+
     'SMARTKID' => [
     	'CpId' => 'CF',
     	'productID' => '9500', 
@@ -116,9 +121,9 @@ return [
         'home' => 'https://guessitmm.com',
         'url' => 'https://guessitmm.com',
         'image' => 'web/images/guessit.png',
-        'landing' => 'Guessit Subscription',
+        'landing' => 'မြန်မာနိုင်ငံရဲ့ အကောင်းဆုံးဂိမ်းကို ကစားပြီး ဂိုး(သို့မဟုတ်)ဂိုးဝင်မဝင် ခန့်မှန်းရအောင်',
         'landing_price' => 'စာရင်းသွင်းခြင်းအတွက်နေ့စဉ်(၁၅၀)ကျပ်',
-        'unsubscribed' => 'MM Sport ဝန်ဆောင်မှု ရပ်တန်ခြင်း အောင်မြင်ပါသည်',
+        'unsubscribed' => 'Guess It ဝန်ဆောင်မှု ရပ်တန်ခြင်း အောင်မြင်ပါသည်',
         'regUser' => 'REGIS_MPT',
         'regPassword' => 'UkVHSVNfT1RQQDU0MzI'
     ],
@@ -128,9 +133,9 @@ return [
         'home' => 'https://guessitmm.com',
         'url' => 'https://guessitmm.com/',
         'image' => 'web/images/guessit.png',
-        'landing' => 'Guessit Subscription Event',
+        'landing' => 'မြန်မာနိုင်ငံရဲ့ အကောင်းဆုံးဂိမ်းကို ကစားပြီး ဂိုး(သို့မဟုတ်)ဂိုးဝင်မဝင် ခန့်မှန်းရအောင်',
         'landing_price' => 'စာရင်းသွင်းခြင်းအတွက်နေ့စဉ်(၁၀၀)ကျပ်',
-        'unsubscribed' => 'MM Sport ဝန်ဆောင်မှု ရပ်တန်ခြင်း အောင်မြင်ပါသည်',
+        'unsubscribed' => 'Guess It ဝန်ဆောင်မှု ရပ်တန်ခြင်း အောင်မြင်ပါသည်',
         'regUser' => 'REGIS_MPT',
         'regPassword' => 'UkVHSVNfT1RQQDU0MzI'
     ],
