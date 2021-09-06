@@ -27,6 +27,7 @@ class WebController extends Controller
     	$sshe = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         \Log::info($sshe);
         $data = $request->all();
+        dd($data);
         switch ($data['Reason']) {
         	case 'WIFI':
         		return redirect(url('msisdn'));
