@@ -11,6 +11,13 @@
 |
 */
 
+Route::get('test', function () {
+	$encode="[MCV]CrmPxVUi59gEFbmHah5avA==";
+	// $decode=exec("java JavaDecryptCaller ".$encode);
+	$decode = exec('cd /var/www/decrypt && java JavaDecryptCaller '.$encode);
+	echo $decode;	
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
