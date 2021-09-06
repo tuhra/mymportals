@@ -14,10 +14,10 @@ class MptHelper
         $CpId = 'CpId='.config('custom')[$service_type]['CpId'];
         \Log::info($CpId);
         $tranid = getUUID();
-        $params = 'productID='.config('custom')[$service_type]['productID'].'&pName='.config('custom')[$service_type]['pName'].'CpId='.config('custom')[$service_type]['CpId'].'&CpPwd='.config('custom')[$service_type]['CpPwd'].'CpName='.config('custom')[$service_type]['CpName'].'&transID='. $tranid;
+        $params = 'productID='.config('custom')[$service_type]['productID'].'&pName='.config('custom')[$service_type]['pName'].'&CpId='.config('custom')[$service_type]['CpId'].'&CpPwd='.config('custom')[$service_type]['CpPwd'].'&CpName='.config('custom')[$service_type]['CpName'].'&transID='. $tranid;
 
         // $params = 'CpId='.config('custom')[$service_type]['CpId'].'&CpPwd='.config('custom')[$service_type]['CpPwd'].'CpName='.config('custom')[$service_type]['CpName'].'&transID='.$tranid.'&opcoId=1002&productID='.config('custom')[$service_type]['productID'].'&pName='.config('custom')[$service_type]['pName'];
-        
+
         \Log::info($params);
         $key = "3Tob9yt5i9ajBPaw8GkTm8QekCG9sUnW9cn0ndZmulQ=";
         $d  = base64_decode($key);
