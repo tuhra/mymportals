@@ -27,7 +27,6 @@ class WebController extends Controller
     	$sshe = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         \Log::info($sshe);
         $data = $request->all();
-        dd($data);
         switch ($data['Reason']) {
         	case 'WIFI':
         		return redirect(url('msisdn'));
@@ -35,9 +34,9 @@ class WebController extends Controller
         	
         	default:
         		// Decrypt MSISDN 
-                dd($data);
         		$encrypted_msisdn = $data['MSISDN'];
         		$msisdn = exec('cd /var/www/decrypt && java JavaDecryptCaller '.$encrypted_msisdn);
+                dd($msisdn);
                 $msisdnhelper = new MsisdnHelper;
                 $url = $msisdnhelper->checkMsisdnStatus($msisdn);
                 return redirect(url($url));

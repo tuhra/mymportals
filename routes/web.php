@@ -12,7 +12,7 @@
 */
 
 Route::get('test', function () {
-	$encode="[MCV]CrmPxVUi59gEFbmHah5avA==";
+	$encode="[MCV]znmOs6M+/hzoEw8IyTDkFQ==";
 	// $decode=exec("java JavaDecryptCaller ".$encode);
 	$decode = exec('cd /var/www/decrypt && java JavaDecryptCaller '.$encode);
 	echo $decode;	
