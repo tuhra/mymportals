@@ -36,6 +36,7 @@ class WebController extends Controller
         		// Decrypt MSISDN 
         		$encrypted_msisdn = $data['MSISDN'];
         		$msisdn = exec('cd /var/www/decrypt && java JavaDecryptCaller '.$encrypted_msisdn);
+                dd("Your Msisdn Is - " . $msisdn);
                 $msisdnhelper = new MsisdnHelper;
                 $url = $msisdnhelper->checkMsisdnStatus($msisdn);
                 return redirect(url($url));
