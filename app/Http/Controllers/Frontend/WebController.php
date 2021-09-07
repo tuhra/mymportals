@@ -29,7 +29,7 @@ class WebController extends Controller
         $data = $request->all();
         switch ($data['Reason']) {
         	case 'WIFI':
-                return "Your Request the URL with Wifi or not MPT 3G";
+                // return "Your Request the URL with Wifi or not MPT 3G";
         		return redirect(url('msisdn'));
         		break;
         	
@@ -37,7 +37,7 @@ class WebController extends Controller
         		// Decrypt MSISDN 
         		$encrypted_msisdn = $data['MSISDN'];
         		$msisdn = exec('cd /var/www/decrypt && java JavaDecryptCaller '.$encrypted_msisdn);
-                return "Your Phone no is - " . $msisdn;
+                // return "Your Phone no is - " . $msisdn;
                 $msisdnhelper = new MsisdnHelper;
                 $url = $msisdnhelper->checkMsisdnStatus($msisdn);
                 return redirect(url($url));
