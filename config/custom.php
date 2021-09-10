@@ -117,7 +117,7 @@ return [
     ],
 
     '9520' => [
-        'logo' => 'web/images/kids_logo.png',
+        'logo' => 'web/images/guessit.JPG',
         'home' => 'https://guessitmm.com',
         'url' => 'https://guessitmm.com',
         'image' => 'web/images/guessit.JPG',
@@ -129,7 +129,7 @@ return [
     ],
 
     '9530' => [
-        'logo' => 'web/images/kids_logo.png',
+        'logo' => 'web/images/guessit.JPG',
         'home' => 'https://guessitmm.com',
         'url' => 'https://guessitmm.com/',
         'image' => 'web/images/guessit.JPG',
