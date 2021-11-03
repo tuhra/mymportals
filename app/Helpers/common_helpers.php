@@ -163,7 +163,7 @@ function otpSend() {
     // if("GUESSIT" === $service_type || "GUESSITEVENT" === $service_type) {
     //     $url = config('custom')['URL']['STAGING'];
     // }
-    $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&serviceName='.config('custom')[$service_type]['pName'].'&serviceDesc='.config('custom')[$service_type]['CpPwd'].'&CLI=8934&transId='. $otp_tranid .'&cpId='.config('custom')[$service_type]['CpId'].'&cpPassWord='.config('custom')[$service_type]['CpPwd'].'&email=&requestChannel=PIN';
+    $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&serviceName='.config('custom')[$service_type]['pName'].'&serviceDesc='.config('custom')[$service_type]['CpPwd'].'&CLI='.config('custom')[$service_type]['cli'].'&transId='. $otp_tranid .'&cpId='.config('custom')[$service_type]['CpId'].'&cpPassWord='.config('custom')[$service_type]['CpPwd'].'&email=&requestChannel=PIN';
     $result = curlRequest($url.$params);
     return $result;
 }
@@ -176,7 +176,7 @@ function otpValidation($otp) {
     // if("GUESSIT" === $service_type || "GUESSITEVENT" === $service_type) {
     //     $url = config('custom')['URL']['STAGING'];
     // }
-    $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&otp='.$otp.'&serviceName='.config('custom')[$service_type]['pName'].'&serviceDesc='.config('custom')[$service_type]['CpPwd'].'&CLI=8934&transId='. $otp_tranid .'&cpId='.config('custom')[$service_type]['CpId'].'&cpPassWord='.config('custom')[$service_type]['CpPwd'].'&email=&requestChannel=PIN';
+    $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&otp='.$otp.'&serviceName='.config('custom')[$service_type]['pName'].'&serviceDesc='.config('custom')[$service_type]['CpPwd'].'&CLI='.config('custom')[$service_type]['cli'].'&transId='. $otp_tranid .'&cpId='.config('custom')[$service_type]['CpId'].'&cpPassWord='.config('custom')[$service_type]['CpPwd'].'&email=&requestChannel=PIN';
     $result = curlRequest($url.$params);
     return $result;
 }
@@ -186,10 +186,7 @@ function otpRegeneration() {
     $service_type = getServiceType();
     $env = config('app')['env'];
     $url = config('custom')['URL'][$env] . 'ResendOtp?';
-    // if("GUESSIT" === $service_type || "GUESSITEVENT" === $service_type) {
-    //     $url = config('custom')['URL']['STAGING'];
-    // }
-    $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&serviceName='.config('custom')[$service_type]['pName'].'&serviceDesc='.config('custom')[$service_type]['CpPwd'].'&CLI=8934&transId='. $otp_tranid .'&cpId='.config('custom')[$service_type]['CpId'].'&cpPassWord='.config('custom')[$service_type]['CpPwd'].'&email=&requestChannel=PIN';
+    $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&serviceName='.config('custom')[$service_type]['pName'].'&serviceDesc='.config('custom')[$service_type]['CpPwd'].'&CLI='.config('custom')[$service_type]['cli'].'&transId='. $otp_tranid .'&cpId='.config('custom')[$service_type]['CpId'].'&cpPassWord='.config('custom')[$service_type]['CpPwd'].'&email=&requestChannel=PIN';
     $result = curlRequest($url.$params);
     return $result;
 }

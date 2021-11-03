@@ -28,7 +28,8 @@ return [
     	'request_locale' => 'my',
     	'serviceType' => 'T_CF_KIDS_SUB_D',
     	'planId' => 'T_CF_KIDS_SUB_D_150',
-    	'opId' => 101
+    	'opId' => 101,
+        'cli' => '8733'
     ],
 
     'MMSPORT' => [
@@ -48,7 +49,8 @@ return [
     	'request_locale' => 'my',
     	'serviceType' => 'T_CF_SPORT_SUB_D',
     	'planId' => 'T_CF_SPORT_SUB_D_150',
-    	'opId' => 101
+    	'opId' => 101,
+        'cli' => '8633'
     ],
 
     'GUESSIT' => [
@@ -68,7 +70,8 @@ return [
         'request_locale' => 'my',
         'serviceType' => 'T_CF_GUESS_SUB_D',
         'planId' => 'T_CF_GUESS_SUB_D_150',
-        'opId' => 101
+        'opId' => 101,
+        'cli' => '8533'
     ],
 
     'GUESSITEVENT' => [
@@ -88,7 +91,8 @@ return [
         'request_locale' => 'my',
         'serviceType' => 'T_CF_GUESS_PUR',
         'planId' => 'T_CF_GUESS_PUR_E_100',
-        'opId' => 101
+        'opId' => 101,
+        'cli' => '8533'
     ],
 
 
