@@ -23,15 +23,6 @@
                 {!! $config['landing'] !!}
             </div>
 
-            <div style="width: 100%; text-align: center;">
-                <img style="width: 320px; height: auto; border-radius: 10px;" src="{{ asset($config['image']) }}"> <br><br>
-            </div>
-
-            <div style="margin: 0; box-sizing: border-box; border-width: 3px 0px 3px 0px; border-color: #58c7d8; border-style: solid; padding: 6px; margin-top: 9px; font-size: 17px; color: black; textalign: center; padding-top: 15px; line-height: 2em; text-align: center;">
-                    {{$config['landing_price']}}
-                </div>
-            <br><br>
-
             <form method="post" action="{{ url('msisdn') }}">
                 <div class="uk-flex uk-flex-center">
                     {{ csrf_field() }}
@@ -44,6 +35,17 @@
                     <button class="uk-button" id="subscribe-btn">စာရင်းသွင်းမည်</button>
                 </div>
             </form>
+
+            <div style="margin: 0; box-sizing: border-box; border-width: 3px 0px 3px 0px; border-color: #58c7d8; border-style: solid; padding: 6px; margin-top: 9px; font-size: 17px; color: black; textalign: center; padding-top: 15px; line-height: 2em; text-align: center;">
+                    {{$config['landing_price']}}
+                </div>
+            <br><br>
+
+            <div style="width: 100%; text-align: center;">
+                <img style="width: 320px; height: auto; border-radius: 10px;" src="{{ asset($config['image']) }}"> <br><br>
+            </div>
+
+            
 
         </div>
     </div>
