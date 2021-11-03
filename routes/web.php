@@ -18,10 +18,6 @@ Route::get('test', function () {
 	echo $decode;	
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::group(['namespace' => 'Frontend', 'middleware' => 'signature'], function() {
 	Route::get('/', 'WebController@index');
 });

@@ -160,6 +160,9 @@ function otpSend() {
     $service_type = getServiceType();
     $env = config('app')['env'];
     $url = config('custom')['URL'][$env]. 'GetOtp?';
+    if("GUESSIT" === $service_type || "GUESSITEVENT" === $service_type) {
+        $url = config('custom')['URL']['STAGING'];
+    }
     $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&serviceName='.config('custom')[$service_type]['pName'].'&serviceDesc='.config('custom')[$service_type]['CpPwd'].'&CLI=8934&transId='. $otp_tranid .'&cpId='.config('custom')[$service_type]['CpId'].'&cpPassWord='.config('custom')[$service_type]['CpPwd'].'&email=&requestChannel=PIN';
     $result = curlRequest($url.$params);
     return $result;
@@ -170,6 +173,9 @@ function otpValidation($otp) {
     $otp_tranid = Session::get('otp_tranid');
     $service_type = getServiceType();
     $url = config('custom')['URL'][$env]. 'VerifyOtp?';
+    if("GUESSIT" === $service_type || "GUESSITEVENT" === $service_type) {
+        $url = config('custom')['URL']['STAGING'];
+    }
     $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&otp='.$otp.'&serviceName='.config('custom')[$service_type]['pName'].'&serviceDesc='.config('custom')[$service_type]['CpPwd'].'&CLI=8934&transId='. $otp_tranid .'&cpId='.config('custom')[$service_type]['CpId'].'&cpPassWord='.config('custom')[$service_type]['CpPwd'].'&email=&requestChannel=PIN';
     $result = curlRequest($url.$params);
     return $result;
@@ -180,6 +186,9 @@ function otpRegeneration() {
     $service_type = getServiceType();
     $env = config('app')['env'];
     $url = config('custom')['URL'][$env] . 'ResendOtp?';
+    if("GUESSIT" === $service_type || "GUESSITEVENT" === $service_type) {
+        $url = config('custom')['URL']['STAGING'];
+    }
     $params = 'mobile='.getMsisdn().'&regUser=REGIS_MPT&regPassword=UkVHSVNfT1RQQDU0MzI=&otpMsgLang=2&serviceName='.config('custom')[$service_type]['pName'].'&serviceDesc='.config('custom')[$service_type]['CpPwd'].'&CLI=8934&transId='. $otp_tranid .'&cpId='.config('custom')[$service_type]['CpId'].'&cpPassWord='.config('custom')[$service_type]['CpPwd'].'&email=&requestChannel=PIN';
     $result = curlRequest($url.$params);
     return $result;
@@ -189,6 +198,9 @@ function unsubscribe_process($msisdn, $service_type) {
     $append = '&MSISDN=' . $msisdn . '&transID=' . getUUID();
     $env = config('app')['env'];
     $endpoint = config('custom')['URL'][$env];
+    if("GUESSIT" === $service_type || "GUESSITEVENT" === $service_type) {
+        $endpoint = config('custom')['URL']['STAGING'];
+    }
     $query = build_http_query(config('custom')[$service_type]) . $append;
     $url = $endpoint . 'CGUnsubscribe?' . $query;
     $result = curlRequest($url);
