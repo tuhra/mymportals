@@ -11,9 +11,9 @@ class MptHelper
         $service_type = getServiceType();
         $env = config('app')['env'];
         $url = config('custom')['HE'][$env];
-        if("GUESSIT" === $service_type || "GUESSITEVENT" === $service_type) {
-            $url = config('custom')['HE']['STAGING'];
-        }
+        // if("GUESSIT" === $service_type || "GUESSITEVENT" === $service_type) {
+        //     $url = config('custom')['HE']['STAGING'];
+        // }
         $CpId = 'CpId='.config('custom')[$service_type]['CpId'];
         \Log::info($CpId);
         $tranid = getUUID();
